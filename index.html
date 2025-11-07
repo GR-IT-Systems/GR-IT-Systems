@@ -94,7 +94,7 @@
     </section>
   </main>
 
-  <!-- Seiten-Drawer: Leistungen -->
+  <!-- Seiten-Drawer: Leistungen (mit Accordion ohne Ränder) -->
   <aside id="services-drawer" class="drawer" aria-hidden="true" aria-labelledby="services-title" role="dialog">
     <div class="drawer-overlay" data-close-drawer></div>
     <div class="drawer-panel" role="document">
@@ -102,28 +102,44 @@
         <h2 id="services-title">Leistungen</h2>
         <button class="drawer-close" aria-label="Schließen" data-close-drawer>&times;</button>
       </header>
-      <div class="grid">
-        <article class="card">
-          <h3>🔧 Hardware-Reparatur</h3>
-          <p>Fehlerdiagnose, Austausch defekter Teile, gründliche Reinigung und Aufrüstungen für mehr Leistung.</p>
-        </article>
-        <article class="card">
-          <h3>🖥️ PC-Zusammenbau & Komplettinstallation</h3>
-          <p>Individuelle Systeme nach Wunsch – vollständig eingerichtet und sofort einsatzbereit.</p>
-        </article>
-        <article class="card">
-          <h3>🌐 Netzwerkinstallation</h3>
-          <p>WLAN & LAN, Router-Konfiguration und kleine Firmennetze – stabil, sicher, sauber dokumentiert.</p>
-        </article>
-        <article class="card">
-          <h3>💾 Software-Service & Updates</h3>
-          <p>Neuinstallationen, Systempflege, Datensicherung, Malware-Bereinigung und Schutz.</p>
-        </article>
-        <article class="card">
-          <h3>💼 Abhol- & Bringservice</h3>
-          <p>Ich hole Ihr Gerät ab, repariere es fachgerecht und bringe es zurück – einfach, sicher, stressfrei.</p>
-        </article>
+
+      <div class="svc-list">
+        <div class="svc-item">
+          <button class="svc-header">🔧 Hardware-Reparatur</button>
+          <div class="svc-content">
+            Fehlerdiagnose, Austausch defekter Teile, gründliche Reinigung und Aufrüstungen für mehr Leistung.
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <button class="svc-header">🖥️ PC-Zusammenbau & Komplettinstallation</button>
+          <div class="svc-content">
+            Individuelle Systeme nach Wunsch – vollständig eingerichtet und sofort einsatzbereit.
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <button class="svc-header">🌐 Netzwerkinstallation</button>
+          <div class="svc-content">
+            WLAN & LAN, Router-Konfiguration und kleine Firmennetze – stabil, sicher, sauber dokumentiert.
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <button class="svc-header">💾 Software-Service & Updates</button>
+          <div class="svc-content">
+            Neuinstallationen, Systempflege, Datensicherung, Malware-Bereinigung und Schutz.
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <button class="svc-header">💼 Abhol- & Bringservice</button>
+          <div class="svc-content">
+            Ich hole Ihr Gerät ab, repariere es fachgerecht und bringe es zurück – einfach, sicher, stressfrei.
+          </div>
+        </div>
       </div>
+
       <div class="drawer-cta">
         <a class="btn btn-primary" href="#kontakt">Jetzt Kontakt aufnehmen</a>
       </div>

@@ -15,7 +15,7 @@
       const el = document.getElementById(id);
       if (el) {
         e.preventDefault();
-        closeMenu(); // Menü schließen beim Navigieren
+        closeMenu();
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
@@ -42,15 +42,9 @@ if (menuToggle && menuPanel){
     const open = menuPanel.getAttribute('aria-hidden') === 'false';
     open ? closeMenu() : openMenu();
   });
-
-  // Klick außerhalb schließt Menü
   document.addEventListener('click', (e)=>{
-    if (!menuPanel.contains(e.target) && !menuToggle.contains(e.target)){
-      closeMenu();
-    }
+    if (!menuPanel.contains(e.target) && !menuToggle.contains(e.target)) closeMenu();
   });
-
-  // ESC schließt Menü
   document.addEventListener('keydown', (e)=>{
     if (e.key === 'Escape') closeMenu();
   });
@@ -58,6 +52,7 @@ if (menuToggle && menuPanel){
 
 // Drawer (seitliches Pop-up) für Leistungen
 const drawer       = document.getElementById('services-drawer');
+const drawerPanel  = drawer ? drawer.querySelector('.drawer-panel') : null;
 const openSvcBtn   = document.getElementById('open-services-cta');
 const menuLeistg   = document.getElementById('menu-leistungen');
 
@@ -70,6 +65,13 @@ function closeDrawer(){
   if (!drawer) return;
   drawer.setAttribute('aria-hidden','true');
   document.body.style.overflow = '';
+  // Detailzustand zurücksetzen
+  if (drawerPanel) {
+    drawerPanel.classList.remove('detail--open');
+    drawer.querySelectorAll('.svc-detail').forEach(p=>{
+      p.setAttribute('aria-hidden','true');
+    });
+  }
 }
 
 if (openSvcBtn) openSvcBtn.addEventListener('click', (e)=>{ e.preventDefault(); openDrawer(); });
@@ -85,17 +87,38 @@ if (drawer){
   });
 }
 
-// Accordion im Drawer: Text erst beim Klick anzeigen
-(function drawerAccordion(){
-  const items = document.querySelectorAll('.svc-item');
-  if (!items.length) return;
+// Durchklicken: Hub -> Detail
+(function svcRouting(){
+  if (!drawer) return;
+  const hub = drawer.querySelector('#svc-hub');
+  const details = drawer.querySelectorAll('.svc-detail');
 
-  items.forEach(item => {
-    const header = item.querySelector('.svc-header');
-    header.addEventListener('click', ()=>{
-      // Nur EINEN Punkt geöffnet lassen (übersichtlich)
-      items.forEach(other => { if (other !== item) other.classList.remove('active'); });
-      item.classList.toggle('active');
+  // Öffnet ein Detailpanel
+  function openDetail(id){
+    if (!drawerPanel) return;
+    details.forEach(p => p.setAttribute('aria-hidden','true'));
+    const target = drawer.querySelector(`.svc-detail[data-id="${id}"]`);
+    if (target){
+      target.setAttribute('aria-hidden','false');
+      drawerPanel.classList.add('detail--open');
+    }
+  }
+  // Zurück zum Hub
+  function backToHub(){
+    if (!drawerPanel) return;
+    drawerPanel.classList.remove('detail--open');
+    details.forEach(p => p.setAttribute('aria-hidden','true'));
+  }
+
+  // Klick auf einen Hub-Eintrag
+  hub.querySelectorAll('.svc-header').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      openDetail(btn.getAttribute('data-detail'));
     });
+  });
+
+  // Back-Buttons
+  drawer.querySelectorAll('[data-back]').forEach(btn=>{
+    btn.addEventListener('click', backToHub);
   });
 })();

@@ -94,7 +94,7 @@
     </section>
   </main>
 
-  <!-- Seiten-Drawer: Leistungen (mit Accordion ohne Ränder) -->
+  <!-- Seiten-Drawer: Leistungen (Hub + Detail, wie Durchklicken) -->
   <aside id="services-drawer" class="drawer" aria-hidden="true" aria-labelledby="services-title" role="dialog">
     <div class="drawer-overlay" data-close-drawer></div>
     <div class="drawer-panel" role="document">
@@ -103,46 +103,75 @@
         <button class="drawer-close" aria-label="Schließen" data-close-drawer>&times;</button>
       </header>
 
-      <div class="svc-list">
-        <div class="svc-item">
-          <button class="svc-header">🔧 Hardware-Reparatur</button>
-          <div class="svc-content">
-            Fehlerdiagnose, Austausch defekter Teile, gründliche Reinigung und Aufrüstungen für mehr Leistung.
-          </div>
-        </div>
-
-        <div class="svc-item">
-          <button class="svc-header">🖥️ PC-Zusammenbau & Komplettinstallation</button>
-          <div class="svc-content">
-            Individuelle Systeme nach Wunsch – vollständig eingerichtet und sofort einsatzbereit.
-          </div>
-        </div>
-
-        <div class="svc-item">
-          <button class="svc-header">🌐 Netzwerkinstallation</button>
-          <div class="svc-content">
-            WLAN & LAN, Router-Konfiguration und kleine Firmennetze – stabil, sicher, sauber dokumentiert.
-          </div>
-        </div>
-
-        <div class="svc-item">
-          <button class="svc-header">💾 Software-Service & Updates</button>
-          <div class="svc-content">
-            Neuinstallationen, Systempflege, Datensicherung, Malware-Bereinigung und Schutz.
-          </div>
-        </div>
-
-        <div class="svc-item">
-          <button class="svc-header">💼 Abhol- & Bringservice</button>
-          <div class="svc-content">
-            Ich hole Ihr Gerät ab, repariere es fachgerecht und bringe es zurück – einfach, sicher, stressfrei.
-          </div>
-        </div>
+      <!-- HUB: Liste der Themen -->
+      <div class="svc-hub" id="svc-hub">
+        <div class="svc-item"><button class="svc-header" data-detail="firewall">🛡️ Managed Firewall</button></div>
+        <div class="svc-item"><button class="svc-header" data-detail="switches">🔗 Managed Switches</button></div>
+        <div class="svc-item"><button class="svc-header" data-detail="wlan">📶 Managed WLAN</button></div>
+        <div class="svc-item"><button class="svc-header" data-detail="audio">🔊 Multi-Room Audio</button></div>
       </div>
 
-      <div class="drawer-cta">
-        <a class="btn btn-primary" href="#kontakt">Jetzt Kontakt aufnehmen</a>
+      <!-- DETAIL-PANELS -->
+      <div class="svc-detail" data-id="firewall" aria-hidden="true">
+        <button class="svc-back" data-back>&larr; Zurück</button>
+        <h3>Managed Firewall</h3>
+        <p>Grenzen setzen – bevor’s kritisch wird. Laufende Updates, Monitoring und Regeln, die zu deinem Betrieb passen.</p>
+        <div class="svc-block">
+          <h4>Vorbeugen statt Feuerwehr</h4>
+          <p>Erkennung & Blocken von Bedrohungen in Echtzeit, sichere Standorte-Kopplung (Site-to-Site), Remote-Zugriff per VPN.</p>
+        </div>
+        <div class="svc-block">
+          <h4>Betrieb & Betreuung</h4>
+          <p>Einrichtung, Policies, regelmäßige Sicherheits-Reports – alles gemanagt, damit dein Netz stabil bleibt.</p>
+        </div>
+        <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
       </div>
+
+      <div class="svc-detail" data-id="switches" aria-hidden="true">
+        <button class="svc-back" data-back>&larr; Zurück</button>
+        <h3>Managed Switches</h3>
+        <p>Stabile Verbindungen, QoS & VLAN-Struktur – sauber dokumentiert, zentral verwaltet, skalierbar.</p>
+        <div class="svc-block">
+          <h4>Design & Setup</h4>
+          <p>Segmentierung per VLAN, Priorisierung wichtiger Dienste, Redundanz da, wo es Sinn ergibt.</p>
+        </div>
+        <div class="svc-block">
+          <h4>Monitoring & Pflege</h4>
+          <p>Firmware, Port-Überwachung, Performance-Tuning – wir halten den Verkehr flüssig.</p>
+        </div>
+        <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
+      </div>
+
+      <div class="svc-detail" data-id="wlan" aria-hidden="true">
+        <button class="svc-back" data-back>&larr; Zurück</button>
+        <h3>Managed WLAN</h3>
+        <p>Volle Abdeckung, null Stress: Planung, Ausleuchtung, Gäste-Netze, zentrale Verwaltung.</p>
+        <div class="svc-block">
+          <h4>Planung</h4>
+          <p>Ausleuchtung, Access-Point-Platzierung, Roaming-Optimierung – für mehrstöckige Gebäude & Büros.</p>
+        </div>
+        <div class="svc-block">
+          <h4>Betrieb</h4>
+          <p>Automatische Updates, 24/7-Monitoring, schnelle Störungsbehebung.</p>
+        </div>
+        <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
+      </div>
+
+      <div class="svc-detail" data-id="audio" aria-hidden="true">
+        <button class="svc-back" data-back>&larr; Zurück</button>
+        <h3>Multi-Room Audio</h3>
+        <p>Klarer Klang für Konferenz, Empfang und Besprechung – integrierte, zentral steuerbare Systeme.</p>
+        <div class="svc-block">
+          <h4>Integration</h4>
+          <p>Netzwerk-Audio, Steuerung per App oder Panel, saubere Zonen-Trennung.</p>
+        </div>
+        <div class="svc-block">
+          <h4>Wartung</h4>
+          <p>Updates, Monitoring, schnelle Hilfe bei Ausfällen.</p>
+        </div>
+        <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
+      </div>
+
     </div>
   </aside>
 

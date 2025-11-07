@@ -22,7 +22,7 @@
   });
 })();
 
-// Hamburger-Menü & gestaffelte Anzeige
+// Hamburger-Menü & Dropdown
 const menuToggle = document.getElementById('menu-toggle');
 const menuPanel  = document.getElementById('menu-panel');
 
@@ -85,3 +85,17 @@ if (drawer){
   });
 }
 
+// Accordion im Drawer: Text erst beim Klick anzeigen
+(function drawerAccordion(){
+  const items = document.querySelectorAll('.svc-item');
+  if (!items.length) return;
+
+  items.forEach(item => {
+    const header = item.querySelector('.svc-header');
+    header.addEventListener('click', ()=>{
+      // Nur EINEN Punkt geöffnet lassen (übersichtlich)
+      items.forEach(other => { if (other !== item) other.classList.remove('active'); });
+      item.classList.toggle('active');
+    });
+  });
+})();

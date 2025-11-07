@@ -6,7 +6,7 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Sanftes Scrollen für interne Links (z. B. #leistungen, #kontakt)
+// Sanftes Scrollen für interne Links (#ueber, #kontakt)
 (function smoothScroll() {
   const links = document.querySelectorAll('a[href^="#"]');
   links.forEach(a => {
@@ -21,25 +21,48 @@
   });
 })();
 
-// Accordion: nur ein Punkt gleichzeitig offen
-(function accordionSingleOpen() {
-  const headers = document.querySelectorAll('.accordion-header');
-  if (!headers.length) return;
+// Modal "Leistungen"
+(function servicesModal(){
+  const modal = document.getElementById('services-modal');
+  const openers = [
+    document.getElementById('open-services'),
+    document.getElementById('open-services-cta')
+  ].filter(Boolean);
 
-  headers.forEach(header => {
-    header.addEventListener('click', () => {
-      const item = header.parentElement;        // .accordion-item
-      const acc = item && item.parentElement;   // .accordion
+  const closeButtons = modal ? modal.querySelectorAll('[data-close-modal]') : [];
+  let lastFocus = null;
 
-      if (!acc) return;
+  function openModal(){
+    if (!modal) return;
+    lastFocus = document.activeElement;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    // Fokus auf Close-Button
+    const btnClose = modal.querySelector('.modal-close');
+    if (btnClose) btnClose.focus();
+  }
 
-      // alle anderen Items schließen
-      acc.querySelectorAll('.accordion-item').forEach(other => {
-        if (other !== item) other.classList.remove('active');
-      });
+  function closeModal(){
+    if (!modal) return;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  }
 
-      // geklicktes Item togglen
-      item.classList.toggle('active');
+  openers.forEach(el => el.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); }));
+  closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+
+  // Klick auf Overlay schließt
+  if (modal) {
+    modal.addEventListener('click', (e)=>{
+      if (e.target && e.target.hasAttribute('data-close-modal')) closeModal();
     });
+  }
+
+  // ESC schließt
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape' && modal && modal.getAttribute('aria-hidden') === 'false') {
+      closeModal();
+    }
   });
 })();

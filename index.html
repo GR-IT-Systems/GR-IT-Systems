@@ -23,7 +23,7 @@
         <div class="tagline">IT-Service & Systemlösungen in München</div>
       </div>
       <nav class="nav">
-        <a href="leistungen.html">Leistungen</a>
+        <a href="#" id="open-services">Leistungen</a>
         <a href="#ueber">Über mich</a>
         <a class="btn btn-primary" href="#kontakt">Kontakt</a>
       </nav>
@@ -38,7 +38,7 @@
         <div class="cta-row">
           <a class="btn btn-primary" href="tel:+4917660158769">Jetzt anrufen</a>
           <a class="btn btn-outline" href="https://wa.me/4917660158769" target="_blank" rel="noopener">WhatsApp schreiben</a>
-          <a class="btn btn-outline" href="leistungen.html">Leistungen ansehen</a>
+          <a class="btn btn-outline" href="#" id="open-services-cta">Leistungen ansehen</a>
         </div>
         <ul class="trust-bullets">
           <li>Termin noch heute möglich*</li>
@@ -85,6 +85,43 @@
     </section>
   </main>
 
+  <!-- Leistungen Modal -->
+  <div class="modal" id="services-modal" aria-hidden="true" aria-labelledby="services-title" role="dialog">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" aria-label="Schließen" data-close-modal>&times;</button>
+      <h2 id="services-title">Leistungen</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>🔧 Hardware-Reparatur</h3>
+          <p>Fehlerdiagnose, Austausch defekter Teile, gründliche Reinigung und Aufrüstungen für mehr Leistung.</p>
+        </article>
+        <article class="card">
+          <h3>🖥️ PC-Zusammenbau & Komplettinstallation</h3>
+          <p>Individuelle Systeme nach Wunsch – vollständig eingerichtet und sofort einsatzbereit.</p>
+        </article>
+        <article class="card">
+          <h3>🌐 Netzwerkinstallation</h3>
+          <p>WLAN & LAN, Router-Konfiguration und kleine Firmennetze – stabil, sicher, sauber dokumentiert.</p>
+        </article>
+        <article class="card">
+          <h3>💾 Software-Service & Updates</h3>
+          <p>Neuinstallationen, Systempflege, Datensicherung, Malware-Bereinigung und Schutz.</p>
+        </article>
+        <article class="card">
+          <h3>💼 Abhol- & Bringservice</h3>
+          <p>Ich hole Ihr Gerät ab, repariere es fachgerecht und bringe es zurück – einfach, sicher, stressfrei.</p>
+        </article>
+      </div>
+
+      <div class="modal-cta">
+        <a class="btn btn-primary" href="#kontakt">Jetzt Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </div>
+  <!-- /Modal -->
+
   <footer class="site-footer">
     <div class="container footer-row">
       <div>© <span id="year"></span> GR IT Systems</div>
@@ -95,4 +132,26 @@
       </div>
     </div>
     <script src="script.js"></script>
-    <script type="application/ld+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "GR IT Systems",
+      "description": "IT-Service: Hardware-Reparatur, PC-Zusammenbau, Netzwerkinstallation, Software-Service & Abhol-Bringservice in München.",
+      "areaServed": "München",
+      "telephone": "+49 176 6015 8769",
+      "email": "gritsystems@gmail.com",
+      "url": "https://example.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "München",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://wa.me/4917660158769"
+      ]
+    }
+    </script>
+  </footer>
+</body>
+</html>

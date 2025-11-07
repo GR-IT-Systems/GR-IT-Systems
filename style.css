@@ -110,25 +110,6 @@ body{
 .footer-links a{ color:var(--muted); text-decoration:none }
 .footer-links a:hover{ color:var(--text) }
 
-/* Karten-Grid (für Drawer) */
-.grid{
-  display:grid; gap:16px;
-  grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
-}
-.card{
-  background: var(--card);
-  border:1px solid rgba(255,255,255,.06);
-  padding:18px; border-radius:16px;
-  box-shadow: var(--shadow);
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-.card:hover{
-  transform: translateY(-2px);
-  border-color: var(--ring);
-  box-shadow: 0 12px 30px rgba(77,163,255,.12);
-}
-.card h3{ margin-top:4px }
-
 /* Drawer (seitliches Pop-up) */
 .drawer{ position:fixed; inset:0; pointer-events:none; }
 .drawer[aria-hidden="false"]{ pointer-events:auto; }
@@ -151,6 +132,38 @@ body{
   width:34px; height:34px; border-radius:10px; font-size:22px; line-height:1; cursor:pointer;
 }
 .drawer-cta{ margin-top:16px; text-align:right }
+
+/* Karten (Leistungen untereinander mit Pop-in) */
+.drawer .grid{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drawer .card{
+  background: var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  padding:18px;
+  border-radius:16px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+}
+
+.drawer[aria-hidden="false"] .card{
+  animation: popIn .35s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+.drawer[aria-hidden="false"] .card:nth-child(1){ animation-delay: .05s; }
+.drawer[aria-hidden="false"] .card:nth-child(2){ animation-delay: .12s; }
+.drawer[aria-hidden="false"] .card:nth-child(3){ animation-delay: .19s; }
+.drawer[aria-hidden="false"] .card:nth-child(4){ animation-delay: .26s; }
+.drawer[aria-hidden="false"] .card:nth-child(5){ animation-delay: .33s; }
+
+@keyframes popIn{
+  from{ opacity: 0; transform: translateY(8px) scale(0.98); }
+  to{   opacity: 1; transform: none; }
+}
 
 /* Responsive */
 @media (max-width:720px){

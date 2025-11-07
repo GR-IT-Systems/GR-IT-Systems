@@ -18,7 +18,6 @@ body{
   color: var(--text);
   line-height: 1.6;
 }
-
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
 /* Header */
@@ -66,7 +65,6 @@ body{
   display:block; padding:10px 12px; color:var(--text); text-decoration:none; border-radius:10px; font-weight:700;
 }
 .menu-panel a:hover{ background:rgba(255,255,255,.06) }
-
 @keyframes fadeIn{ from{opacity:0; transform: translateY(-4px)} to{opacity:1; transform:none} }
 @keyframes itemIn{ to{ opacity:1; transform:none } }
 
@@ -88,7 +86,6 @@ body{
 
 .section{ padding:56px 0 }
 .section-alt{ background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0) 60%) }
-
 .about{ display:flex; gap:28px; align-items:center; justify-content:center }
 .features{ list-style:none; padding:0; margin:10px 0 0; display:flex; gap:16px; flex-wrap:wrap }
 .features li{ background:rgba(255,255,255,.06); padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.08) }
@@ -126,7 +123,6 @@ body{
   box-shadow: -12px 0 30px rgba(0,0,0,.35); padding:18px 18px 24px; overflow:auto;
 }
 .drawer[aria-hidden="false"] .drawer-panel{ transform: translateX(0); }
-
 .drawer-header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px }
 .drawer-close{
   background:transparent; border:1px solid rgba(255,255,255,.15); color:var(--text);
@@ -134,57 +130,58 @@ body{
 }
 .drawer-cta{ margin-top:16px; text-align:right }
 
-/* Leistungen-Liste im Drawer (Accordion, ohne sichtbare Ränder) */
-.svc-list{
-  display:flex; flex-direction:column; gap:12px;
-}
+/* HUB-Liste (erste Ebene) */
+.svc-hub{ display:flex; flex-direction:column; gap:12px; }
 .svc-item{
-  /* kein Rahmen, nur dezenter Hintergrund */
   background: rgba(255,255,255,.035);
   border-radius: 14px;
-  transition: box-shadow .2s ease, background .2s ease;
+  opacity:0; transform: translateY(8px) scale(.98);
 }
-.svc-item.active{
-  background: rgba(255,255,255,.055);
-  box-shadow: 0 12px 30px rgba(77,163,255,.12);
+.drawer[aria-hidden="false"] .svc-item{
+  animation: popIn .35s cubic-bezier(.22,.61,.36,1) forwards;
 }
+.svc-item:nth-child(1){ animation-delay:.05s }
+.svc-item:nth-child(2){ animation-delay:.12s }
+.svc-item:nth-child(3){ animation-delay:.19s }
+.svc-item:nth-child(4){ animation-delay:.26s }
 
 .svc-header{
   width:100%; text-align:left; border:none; background:transparent; cursor:pointer;
-  padding:14px 16px; color:var(--text); font-weight:800; font-size:1rem;
+  padding:16px 18px; color:var(--text); font-weight:800; font-size:1rem;
   display:flex; align-items:center; justify-content:space-between;
 }
 .svc-header::after{
   content:""; width:10px; height:10px; border-right:2px solid var(--text); border-bottom:2px solid var(--text);
   transform: rotate(-45deg); opacity:.7; transition: transform .25s ease, opacity .25s ease;
 }
-.svc-item.active .svc-header::after{ transform: rotate(45deg); opacity:1; }
+.svc-item:hover .svc-header::after{ opacity:1 }
 
-.svc-content{
-  max-height:0; overflow:hidden; color:var(--muted);
-  padding: 0 16px; /* kein Rand sichtbar, clean */
-  transition: max-height .3s ease, padding .3s ease;
+/* DETAIL-Layer (zweite Ebene, „durchklicken“) */
+.svc-detail{
+  position:absolute; inset:0; padding:18px 18px 24px 18px;
+  background:var(--panel);
+  transform: translateX(12%); opacity:0; pointer-events:none;
+  transition: transform .32s cubic-bezier(.22,.61,.36,1), opacity .25s ease;
 }
-.svc-item.active .svc-content{
-  max-height: 220px; /* bei Bedarf erhöhen */
-  padding: 0 16px 14px;
+.drawer-panel.detail--open .svc-hub{ opacity:.3; transform: translateX(-8%); transition:.3s ease; }
+.drawer-panel.detail--open .svc-detail[aria-hidden="false"]{
+  transform: translateX(0); opacity:1; pointer-events:auto;
 }
 
-/* Pop-in der Punkte beim Öffnen des Drawers */
-.svc-item{ opacity:0; transform: translateY(8px) scale(.98); }
-.drawer[aria-hidden="false"] .svc-item{
-  animation: popIn .35s cubic-bezier(.22,.61,.36,1) forwards;
+.svc-back{
+  background:transparent; border:1px solid rgba(255,255,255,.18); color:var(--text);
+  border-radius:10px; padding:8px 10px; cursor:pointer; margin-bottom:10px;
 }
-.drawer[aria-hidden="false"] .svc-item:nth-child(1){ animation-delay:.05s }
-.drawer[aria-hidden="false"] .svc-item:nth-child(2){ animation-delay:.12s }
-.drawer[aria-hidden="false"] .svc-item:nth-child(3){ animation-delay:.19s }
-.drawer[aria-hidden="false"] .svc-item:nth-child(4){ animation-delay:.26s }
-.drawer[aria-hidden="false"] .svc-item:nth-child(5){ animation-delay:.33s }
+.svc-block{
+  background: rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px; padding:14px; margin:12px 0;
+}
+.svc-detail h3{ margin:6px 0 6px }
+.svc-detail h4{ margin:0 0 6px }
 
-@keyframes popIn{
-  from{ opacity:0; transform: translateY(8px) scale(.98); }
-  to{ opacity:1; transform:none; }
-}
+/* Animationsbasis */
+@keyframes popIn{ from{ opacity:0; transform: translateY(8px) scale(.98);} to{ opacity:1; transform:none;} }
 
 /* Responsive */
 @media (max-width:720px){

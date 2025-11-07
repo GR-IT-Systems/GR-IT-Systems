@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GR IT Systems – IT-Service & Systemlösungen in München</title>
-  <meta name="description" content="GR IT Systems: Hardware-Reparatur, PC-Zusammenbau, Netzwerkinstallation, Software-Updates & Abhol- und Bringservice in München. Schnelle, persönliche Hilfe." />
+  <title>GR IT Systems – IT-Service in München</title>
+  <meta name="description" content="GR IT Systems: Hardware-Reparatur, PC-Zusammenbau, Netzwerke, Software-Service und Abhol-/Bringservice. Schnell, fair, verständlich." />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="GR IT Systems – IT-Service & Systemlösungen in München" />
-  <meta property="og:description" content="Hardware-Reparatur, PC-Zusammenbau, Netzwerkinstallation, Software-Updates & Abhol- und Bringservice. Schnell. Zuverlässig. Persönlich." />
+  <meta property="og:title" content="GR IT Systems – IT-Service in München" />
+  <meta property="og:description" content="Schnelle Hilfe rund um PC, Netzwerk und Software. Weil jedes System Vertrauen verdient." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
+
+  <!-- Schrift ähnlich „Corporate A“ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,7 +23,7 @@
     <div class="container header-row">
       <div class="brand">
         <div class="logo">GR<span> IT</span> Systems</div>
-        <div class="tagline">IT-Service & Systemlösungen in München</div>
+        <div class="tagline">IT-Service in München</div>
       </div>
 
       <!-- Hamburger -->
@@ -33,40 +36,38 @@
     <nav id="menu-panel" class="menu-panel" aria-hidden="true">
       <ul>
         <li><a href="#" id="menu-leistungen">Leistungen</a></li>
-        <li><a href="#ueber" class="menu-link">Über mich</a></li>
-        <li><a href="#kontakt" class="menu-link">Kontakt</a></li>
+        <li><a href="#ueber" class="menu-link">Über uns</a></li>
+        <li><a href="#kontakt" class="menu-link">Kontakt & Standort</a></li>
+        <li><a href="#impressum" class="menu-link">Impressum</a></li>
+        <li><a href="#datenschutz" class="menu-link">Datenschutz</a></li>
+        <li><a href="#agb" class="menu-link">AGB</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <!-- Hero mit Spruch + transparentem IT-Hintergrund -->
     <section class="hero">
       <div class="container hero-inner">
-        <h1>Schnelle, zuverlässige & persönliche IT-Hilfe.</h1>
-        <p>Hardware-Reparaturen, PC-Zusammenbau, Netzwerkinstallationen und Software-Service – direkt vor Ort oder bequem über meinen <strong>Abhol- & Bringservice</strong>.</p>
+        <h1 class="claim">Weil jedes System Vertrauen verdient</h1>
+        <p class="hero-sub">Schnelle, zuverlässige und verständliche IT-Hilfe – ohne Fachchinesisch.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="tel:+4917660158769">Jetzt anrufen</a>
-          <a class="btn btn-outline" href="https://wa.me/4917660158769" target="_blank" rel="noopener">WhatsApp schreiben</a>
           <a class="btn btn-outline" href="#" id="open-services-cta">Leistungen ansehen</a>
         </div>
-        <ul class="trust-bullets">
-          <li>Termin noch heute möglich*</li>
-          <li>Transparente Preise</li>
-          <li>Für Privat & kleine Unternehmen</li>
-        </ul>
-        <small class="small-note">* wenn Kapazitäten frei sind</small>
       </div>
+      <div class="hero-bg" aria-hidden="true"></div>
     </section>
 
     <section id="ueber" class="section">
       <div class="container about">
         <div class="about-text">
-          <h2>Über mich</h2>
-          <p>Ich bin <strong>Ilja Grichevski</strong>, Gründer von <strong>GR IT Systems</strong>. Mit Leidenschaft für Technik und einem Auge fürs Detail sorge ich dafür, dass Computer, Netzwerke und Systeme schnell wieder zuverlässig laufen – unkompliziert, fair und persönlich.</p>
+          <h2>Über uns</h2>
+          <p>Wir sind GR IT Systems – ein junges Unternehmen aus München. Unser Ziel: Probleme verständlich lösen, Geräte wieder flott machen und Netzwerke stabil betreiben. Klar, fair und persönlich.</p>
           <ul class="features">
-            <li>✓ Persönlicher Ansprechpartner</li>
-            <li>✓ Lokal in München & Umgebung</li>
-            <li>✓ Flexible Termine</li>
+            <li>Persönlicher Ansprechpartner</li>
+            <li>Für Privat & kleine Unternehmen</li>
+            <li>Flexible Termine</li>
           </ul>
         </div>
       </div>
@@ -74,27 +75,105 @@
 
     <section id="kontakt" class="section section-alt">
       <div class="container contact">
-        <h2>Kontakt</h2>
+        <h2>Kontakt & Standort</h2>
         <div class="contact-cards">
-          <a class="contact-card" href="tel:+4917660158769">
-            <div class="contact-title">Telefon</div>
-            <div class="contact-value">0176 6015 8769</div>
-          </a>
+          <div class="contact-card">
+            <div class="contact-title">Name</div>
+            <div class="contact-value">Ilja Grichevski</div>
+          </div>
           <a class="contact-card" href="mailto:gritsystems@gmail.com">
             <div class="contact-title">E-Mail</div>
             <div class="contact-value">gritsystems@gmail.com</div>
           </a>
-          <a class="contact-card" href="https://wa.me/4917660158769" target="_blank" rel="noopener">
-            <div class="contact-title">WhatsApp</div>
-            <div class="contact-value">Nachricht senden</div>
+          <a class="contact-card" href="tel:+4917660158769">
+            <div class="contact-title">Telefon</div>
+            <div class="contact-value">0176 6015 8769</div>
           </a>
+          <div class="contact-card">
+            <div class="contact-title">Standort</div>
+            <div class="contact-value">Herzens München</div>
+          </div>
         </div>
-        <p class="center small-note">München und Umgebung • Abhol- & Bringservice verfügbar</p>
+        <p class="center small-note">Wir sind ein junges Unternehmen aus München und unterstützen Sie verständlich – vom ersten Gespräch bis zur fertigen Lösung.</p>
+      </div>
+    </section>
+
+    <!-- Rechtliches -->
+    <section id="impressum" class="section">
+      <div class="container legal">
+        <h2>Impressum (Muster)</h2>
+        <p><strong>Verantwortlich:</strong> Ilja Grichevski, München</p>
+        <p><strong>Kontakt:</strong> gritsystems@gmail.com · 0176 6015 8769</p>
+        <p>Inhaltlich verantwortlich gemäß § 55 Abs. 2 RStV: Ilja Grichevski.</p>
+        <p class="disclaimer">Hinweis: Diese Angaben sind ein Muster auf Basis deiner Infos und ersetzen keine Rechtsberatung.</p>
+      </div>
+    </section>
+
+    <section id="datenschutz" class="section section-alt">
+      <div class="container legal">
+        <h2>Datenschutz (Muster)</h2>
+        <h3>1. Verantwortlicher</h3>
+        <p>GR IT Systems, Ilja Grichevski, München · E-Mail: gritsystems@gmail.com · Tel.: 0176 6015 8769</p>
+
+        <h3>2. Welche Daten wir verarbeiten</h3>
+        <p>Beim Aufruf der Website werden technisch notwendige Daten (z. B. IP-Adresse, Zeitpunkt, abgerufene Seite) serverseitig verarbeitet. Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Angaben zur Bearbeitung der Anfrage.</p>
+
+        <h3>3. Zweck und Rechtsgrundlagen</h3>
+        <p>Bereitstellung der Website (berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO) sowie Beantwortung von Anfragen und Anbahnung/Erfüllung von Verträgen (Art. 6 Abs. 1 lit. b DSGVO).</p>
+
+        <h3>4. Speicherung</h3>
+        <p>Anfragen speichern wir nur so lange, wie es für die Bearbeitung und gesetzliche Pflichten notwendig ist.</p>
+
+        <h3>5. Weitergabe</h3>
+        <p>Eine Weitergabe an Dritte erfolgt nur, soweit es zur Vertragserfüllung erforderlich ist oder gesetzliche Pflichten bestehen.</p>
+
+        <h3>6. Ihre Rechte</h3>
+        <p>Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch sowie Datenübertragbarkeit. Zudem besteht ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde.</p>
+
+        <h3>7. Cookies & Analyse</h3>
+        <p>Wir setzen derzeit keine Tracking- oder Marketing-Cookies ein. Es werden nur technisch notwendige Cookies genutzt, sofern diese für den Betrieb erforderlich sind.</p>
+
+        <h3>8. Kontakt</h3>
+        <p>Für Datenschutz-Anfragen: gritsystems@gmail.com</p>
+
+        <p class="disclaimer">Hinweis: Mustertext – bitte vor Live-Schaltung rechtlich prüfen lassen.</p>
+      </div>
+    </section>
+
+    <section id="agb" class="section">
+      <div class="container legal">
+        <h2>Allgemeine Geschäftsbedingungen (Muster)</h2>
+
+        <h3>1. Geltung</h3>
+        <p>Diese Bedingungen gelten für alle Leistungen von GR IT Systems gegenüber Verbraucherinnen/Verbrauchern und kleinen Unternehmen.</p>
+
+        <h3>2. Angebote und Preise</h3>
+        <p>Alle Angebote sind freibleibend. Preise werden vorab transparent kommuniziert. Zusätzlich anfallende Kosten (z. B. Ersatzteile) werden vor Ausführung abgestimmt.</p>
+
+        <h3>3. Leistungen</h3>
+        <p>Die Leistungen umfassen u. a. Hardware-Reparatur, PC-Zusammenbau, Netzwerkeinrichtung, Software-Service sowie Abhol-/Bringservice. Leistungsumfang und Termine werden individuell festgelegt.</p>
+
+        <h3>4. Mitwirkung</h3>
+        <p>Kundinnen/Kunden stellen notwendige Zugänge, Informationen und Datensicherungen bereit. Für Datenverluste ohne vorherige Sicherung übernehmen wir keine Haftung.</p>
+
+        <h3>5. Gewährleistung</h3>
+        <p>Es gelten die gesetzlichen Gewährleistungsrechte. Verschleiß, unsachgemäße Nutzung oder Fremdeingriffe sind ausgenommen.</p>
+
+        <h3>6. Haftung</h3>
+        <p>Wir haften unbegrenzt für Vorsatz und grobe Fahrlässigkeit sowie für Verletzung von Leben, Körper oder Gesundheit. Im Übrigen haften wir bei leichter Fahrlässigkeit nur bei Verletzung wesentlicher Pflichten (Kardinalpflichten) und der Höhe nach begrenzt auf den typischen, vorhersehbaren Schaden.</p>
+
+        <h3>7. Zahlung</h3>
+        <p>Sofern nichts anderes vereinbart, ist die Vergütung nach Abschluss der Leistung fällig. Akzeptierte Zahlarten werden bei Auftrag angegeben.</p>
+
+        <h3>8. Schlussbestimmungen</h3>
+        <p>Es gilt deutsches Recht. Gerichtsstand ist – soweit zulässig – München.</p>
+
+        <p class="disclaimer">Hinweis: Muster-AGB – bitte vor Verwendung rechtlich prüfen lassen.</p>
       </div>
     </section>
   </main>
 
-  <!-- Seiten-Drawer: Leistungen (Hub + Detail, wie Durchklicken) -->
+  <!-- Seitlicher Drawer: Leistungen (Überschriften + klickbarer Text) -->
   <aside id="services-drawer" class="drawer" aria-hidden="true" aria-labelledby="services-title" role="dialog">
     <div class="drawer-overlay" data-close-drawer></div>
     <div class="drawer-panel" role="document">
@@ -103,75 +182,46 @@
         <button class="drawer-close" aria-label="Schließen" data-close-drawer>&times;</button>
       </header>
 
-      <!-- HUB: Liste der Themen -->
-      <div class="svc-hub" id="svc-hub">
-        <div class="svc-item"><button class="svc-header" data-detail="firewall">🛡️ Managed Firewall</button></div>
-        <div class="svc-item"><button class="svc-header" data-detail="switches">🔗 Managed Switches</button></div>
-        <div class="svc-item"><button class="svc-header" data-detail="wlan">📶 Managed WLAN</button></div>
-        <div class="svc-item"><button class="svc-header" data-detail="audio">🔊 Multi-Room Audio</button></div>
+      <div class="svc-list">
+        <div class="svc-item">
+          <button class="svc-header">Hardware-Reparatur</button>
+          <div class="svc-content">
+            Wir finden die Ursache, tauschen defekte Teile und reinigen das Gerät gründlich. Ziel: zuverlässig laufen statt neu kaufen.
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <button class="svc-header">PC-Zusammenbau & Komplettinstallation</button>
+          <div class="svc-content">
+            Wunsch-System nach Bedarf – fachgerecht aufgebaut, Windows eingerichtet, Treiber und Updates erledigt. Einschalten und nutzen.
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <button class="svc-header">Netzwerkinstallation</button>
+          <div class="svc-content">
+            Stabiles WLAN und LAN: Router korrekt eingestellt, Access-Points richtig platziert, alles sauber dokumentiert – für Zuhause oder kleines Büro.
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <button class="svc-header">Software-Service & Updates</button>
+          <div class="svc-content">
+            Neuinstallation, Pflege, Datensicherung und Entfernung von Schadsoftware. Wir halten Ihr System aktuell und geschützt.
+          </div>
+        </div>
+
+        <div class="svc-item">
+          <button class="svc-header">Abhol- und Bringservice</button>
+          <div class="svc-content">
+            Gerät bequem abholen lassen, fachgerecht reparieren und zurückbringen. Transparent und sicher – auf Wunsch mit kurzer Übergabe-Erklärung.
+          </div>
+        </div>
       </div>
 
-      <!-- DETAIL-PANELS -->
-      <div class="svc-detail" data-id="firewall" aria-hidden="true">
-        <button class="svc-back" data-back>&larr; Zurück</button>
-        <h3>Managed Firewall</h3>
-        <p>Grenzen setzen – bevor’s kritisch wird. Laufende Updates, Monitoring und Regeln, die zu deinem Betrieb passen.</p>
-        <div class="svc-block">
-          <h4>Vorbeugen statt Feuerwehr</h4>
-          <p>Erkennung & Blocken von Bedrohungen in Echtzeit, sichere Standorte-Kopplung (Site-to-Site), Remote-Zugriff per VPN.</p>
-        </div>
-        <div class="svc-block">
-          <h4>Betrieb & Betreuung</h4>
-          <p>Einrichtung, Policies, regelmäßige Sicherheits-Reports – alles gemanagt, damit dein Netz stabil bleibt.</p>
-        </div>
-        <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
+      <div class="drawer-cta">
+        <a class="btn btn-primary" href="#kontakt">Kontakt aufnehmen</a>
       </div>
-
-      <div class="svc-detail" data-id="switches" aria-hidden="true">
-        <button class="svc-back" data-back>&larr; Zurück</button>
-        <h3>Managed Switches</h3>
-        <p>Stabile Verbindungen, QoS & VLAN-Struktur – sauber dokumentiert, zentral verwaltet, skalierbar.</p>
-        <div class="svc-block">
-          <h4>Design & Setup</h4>
-          <p>Segmentierung per VLAN, Priorisierung wichtiger Dienste, Redundanz da, wo es Sinn ergibt.</p>
-        </div>
-        <div class="svc-block">
-          <h4>Monitoring & Pflege</h4>
-          <p>Firmware, Port-Überwachung, Performance-Tuning – wir halten den Verkehr flüssig.</p>
-        </div>
-        <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
-      </div>
-
-      <div class="svc-detail" data-id="wlan" aria-hidden="true">
-        <button class="svc-back" data-back>&larr; Zurück</button>
-        <h3>Managed WLAN</h3>
-        <p>Volle Abdeckung, null Stress: Planung, Ausleuchtung, Gäste-Netze, zentrale Verwaltung.</p>
-        <div class="svc-block">
-          <h4>Planung</h4>
-          <p>Ausleuchtung, Access-Point-Platzierung, Roaming-Optimierung – für mehrstöckige Gebäude & Büros.</p>
-        </div>
-        <div class="svc-block">
-          <h4>Betrieb</h4>
-          <p>Automatische Updates, 24/7-Monitoring, schnelle Störungsbehebung.</p>
-        </div>
-        <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
-      </div>
-
-      <div class="svc-detail" data-id="audio" aria-hidden="true">
-        <button class="svc-back" data-back>&larr; Zurück</button>
-        <h3>Multi-Room Audio</h3>
-        <p>Klarer Klang für Konferenz, Empfang und Besprechung – integrierte, zentral steuerbare Systeme.</p>
-        <div class="svc-block">
-          <h4>Integration</h4>
-          <p>Netzwerk-Audio, Steuerung per App oder Panel, saubere Zonen-Trennung.</p>
-        </div>
-        <div class="svc-block">
-          <h4>Wartung</h4>
-          <p>Updates, Monitoring, schnelle Hilfe bei Ausfällen.</p>
-        </div>
-        <a class="btn btn-primary" href="#kontakt">Angebot anfragen</a>
-      </div>
-
     </div>
   </aside>
 
@@ -179,32 +229,15 @@
     <div class="container footer-row">
       <div>© <span id="year"></span> GR IT Systems</div>
       <div class="footer-links">
-        <a href="#">Impressum</a>
+        <a href="#impressum">Impressum</a>
         <span aria-hidden="true">•</span>
-        <a href="#">Datenschutz</a>
+        <a href="#datenschutz">Datenschutz</a>
+        <span aria-hidden="true">•</span>
+        <a href="#agb">AGB</a>
       </div>
     </div>
     <script src="script.js"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "GR IT Systems",
-      "description": "IT-Service: Hardware-Reparatur, PC-Zusammenbau, Netzwerkinstallation, Software-Service & Abhol-Bringservice in München.",
-      "areaServed": "München",
-      "telephone": "+49 176 6015 8769",
-      "email": "gritsystems@gmail.com",
-      "url": "https://example.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "München",
-        "addressCountry": "DE"
-      },
-      "sameAs": [
-        "https://wa.me/4917660158769"
-      ]
-    }
-    </script>
   </footer>
 </body>
 </html>
+

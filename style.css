@@ -106,3 +106,51 @@ body{
   .nav a{margin-left:10px}
   .header-row{padding:10px 0}
 }
+/* Accordion-Stil */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordion-item {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.accordion-header {
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header:hover {
+  background: rgba(255,255,255,.05);
+}
+
+.accordion-content {
+ .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 16px;
+  color: var(--muted);
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 300px; /* anpassen, wenn dein Text länger ist */
+  padding: 0 16px 14px;
+}
+

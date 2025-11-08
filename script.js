@@ -4,7 +4,7 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Sanftes Scrollen
+// Sanftes Scrollen für interne Links
 (function smoothScroll() {
   const links = document.querySelectorAll('a[href^="#"]');
   links.forEach(a => {
@@ -48,43 +48,14 @@ if (menuToggle && menuPanel){
   });
 }
 
-// Drawer Leistungen
-const drawer       = document.getElementById('services-drawer');
-const openSvcBtn   = document.getElementById('open-services-cta');
-const menuLeistg   = document.getElementById('menu-leistungen');
-
-function openDrawer(){
-  if (!drawer) return;
-  drawer.setAttribute('aria-hidden','false');
-  document.body.style.overflow = 'hidden';
-}
-function closeDrawer(){
-  if (!drawer) return;
-  drawer.setAttribute('aria-hidden','true');
-  document.body.style.overflow = '';
-  document.querySelectorAll('.svc-item').forEach(i => i.classList.remove('active'));
-}
-
-if (openSvcBtn) openSvcBtn.addEventListener('click', (e)=>{ e.preventDefault(); openDrawer(); });
-if (menuLeistg) menuLeistg.addEventListener('click', (e)=>{ e.preventDefault(); closeMenu(); openDrawer(); });
-
-if (drawer){
-  drawer.addEventListener('click', (e)=>{
-    if (e.target && e.target.hasAttribute('data-close-drawer')) closeDrawer();
-  });
-  document.addEventListener('keydown', (e)=>{
-    if (e.key === 'Escape' && drawer.getAttribute('aria-hidden') === 'false') closeDrawer();
-  });
-}
-
-// Accordion im Drawer
-(function drawerAccordion(){
-  const items = document.querySelectorAll('.svc-item');
+// Akkordeon für leistungen.html
+(function initAccordion(){
+  const items = document.querySelectorAll('.acc-item');
   if (!items.length) return;
-
-  items.forEach(item => {
-    const header = item.querySelector('.svc-header');
+  items.forEach(item=>{
+    const header = item.querySelector('.acc-header');
     header.addEventListener('click', ()=>{
+      // nur ein Eintrag gleichzeitig offen
       items.forEach(other => { if (other !== item) other.classList.remove('active'); });
       item.classList.toggle('active');
     });

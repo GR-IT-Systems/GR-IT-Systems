@@ -27,16 +27,3 @@ if(menuToggle && menuPanel){
   });
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
 }
-
-// Leistungen-Akkordeon (falls vorhanden)
-(function(){
-  const items=document.querySelectorAll('.acc-item');
-  if(!items.length) return;
-  items.forEach(item=>{
-    const h=item.querySelector('.acc-header');
-    h.addEventListener('click',()=>{
-      items.forEach(o=>{ if(o!==item) o.classList.remove('active'); });
-      item.classList.toggle('active');
-    });
-  });
-})();

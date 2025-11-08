@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preise und Anfrage – GR IT Systems</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="site-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <div class="logo">GR<span> IT</span> Systems</div>
+        <div class="tagline">IT Service in München</div>
+      </div>
+      <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="menu-panel" class="menu-panel" aria-hidden="true">
+      <ul>
+        <li><a href="index.html#ueber" class="menu-link">Über Uns</a></li>
+        <li><a href="index.html#kontakt" class="menu-link">Kontakt und Standort</a></li>
+        <li><a href="preise.html" class="menu-link">Preise</a></li>
+        <li><a href="tel:+4917660158769" class="menu-link strong">Notdienst 0176 6015 8769</a></li>
+        <li class="sep"></li>
+        <li><a href="index.html#impressum" class="menu-link">Impressum</a></li>
+        <li><a href="index.html#datenschutz" class="menu-link">Datenschutz</a></li>
+        <li><a href="index.html#agb" class="menu-link">AGB</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Preise und unverbindliche Anfrage</h1>
+      <p class="muted">
+        Bitte senden Sie uns eine kurze Anfrage. Wir melden uns mit einem Vorschlag inklusive Preisrahmen.
+      </p>
+
+      <form id="anfrageForm" class="form">
+        <div class="form-row">
+          <label for="vorname">Vorname</label>
+          <input id="vorname" name="vorname" type="text" required />
+        </div>
+        <div class="form-row">
+          <label for="nachname">Nachname</label>
+          <input id="nachname" name="nachname" type="text" required />
+        </div>
+        <div class="form-row">
+          <label for="nummer">Telefonnummer</label>
+          <input id="nummer" name="nummer" type="tel" required />
+        </div>
+        <div class="form-row">
+          <label for="email">E Mail</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+        <div class="form-row">
+          <label for="leistung">Leistung</label>
+          <select id="leistung" name="leistung" required>
+            <option value="" disabled selected>Bitte auswählen</option>
+            <option>Hardware Reparatur</option>
+            <option>PC Zusammenbau und Komplettinstallation</option>
+            <option>Netzwerkinstallation</option>
+            <option>Software Service und Updates</option>
+            <option>Abhol und Bringservice</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="beschreibung">Kurzbeschreibung optional</label>
+          <textarea id="beschreibung" name="beschreibung" rows="4" placeholder="Zum Beispiel Laptop startet nicht oder WLAN bricht ab"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Jetzt unverbindlich anfragen</button>
+          <a class="btn btn-outline" href="index.html">Zurück zur Startseite</a>
+        </div>
+        <p id="formHinweis" class="small-note"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© <span id="year"></span> GR IT Systems</div>
+      <div class="footer-links">
+        <a href="index.html#impressum">Impressum</a>
+        <span aria-hidden="true">•</span>
+        <a href="index.html#datenschutz">Datenschutz</a>
+        <span aria-hidden="true">•</span>
+        <a href="index.html#agb">AGB</a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      // Mailto Versand ohne Server
+      document.getElementById('anfrageForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const vor = document.getElementById('vorname').value.trim();
+        const nach = document.getElementById('nachname').value.trim();
+        const tel = document.getElementById('nummer').value.trim();
+        const mail = document.getElementById('email').value.trim();
+        const leist = document.getElementById('leistung').value;
+        const besch = document.getElementById('beschreibung').value.trim();
+
+        const subject = 'Unverbindliche Anfrage';
+        const body =
+          'Name: ' + vor + ' ' + nach + '%0D%0A' +
+          'Telefon: ' + tel + '%0D%0A' +
+          'E Mail: ' + mail + '%0D%0A' +
+          'Leistung: ' + leist + '%0D%0A' +
+          'Beschreibung: ' + (besch || 'keine Angabe');
+
+        const href = 'mailto:gritsystems@gmail.com'
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + body;
+
+        document.getElementById('formHinweis').textContent =
+          'Ihr E Mail Programm öffnet sich gleich mit der Anfrage. Bitte prüfen und senden.';
+        window.location.href = href;
+      });
+    </script>
+  </footer>
+</body>
+</html>

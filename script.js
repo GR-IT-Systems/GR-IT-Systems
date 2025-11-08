@@ -1,10 +1,10 @@
-// Jahr automatisch im Footer
+// Jahr im Footer
 (function setYear() {
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Sanftes Scrollen für interne Links
+// Sanftes Scrollen
 (function smoothScroll() {
   const links = document.querySelectorAll('a[href^="#"]');
   links.forEach(a => {

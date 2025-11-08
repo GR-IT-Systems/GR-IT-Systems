@@ -19,6 +19,16 @@ body{
   line-height: 1.6;
 }
 
+/* Seitenweiter, dezenter IT Hintergrund */
+.site-bg{
+  position:fixed; inset:0; z-index:-1; opacity:.12; pointer-events:none;
+  background-image:
+    radial-gradient(transparent 60%, rgba(77,163,255,.25) 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 600 400'><g stroke='rgba(123,200,255,0.25)' stroke-width='0.6' fill='none'><path d='M0 50 L600 50 M0 100 L600 100 M0 150 L600 150 M0 200 L600 200 M0 250 L600 250 M0 300 L600 300 M0 350 L600 350'/><path d='M50 0 L50 400 M100 0 L100 400 M150 0 L150 400 M200 0 L200 400 M250 0 L250 400 M300 0 L300 400 M350 0 L350 400 M400 0 L400 400 M450 0 L450 400 M500 0 L500 400 M550 0 L550 400'/></g></svg>");
+  background-size: cover;
+  mix-blend-mode: screen;
+}
+
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
 /* Header */
@@ -49,10 +59,10 @@ body{
 .hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
 .hamburger[aria-expanded="true"] span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
 
-/* Dropdown-Menü */
+/* Dropdown Menü */
 .menu-panel{
   position:absolute; right:16px; top:64px; background:var(--panel); border:1px solid rgba(255,255,255,.08);
-  border-radius:14px; box-shadow: var(--shadow); padding:10px; width:240px; overflow:hidden;
+  border-radius:14px; box-shadow: var(--shadow); padding:10px; width:260px; overflow:hidden;
   display:none;
 }
 .menu-panel[aria-hidden="false"]{ display:block; animation: fadeIn .18s ease both; }
@@ -65,16 +75,20 @@ body{
 .menu-panel li:nth-child(4){ animation-delay:.26s }
 .menu-panel li:nth-child(5){ animation-delay:.33s }
 .menu-panel li:nth-child(6){ animation-delay:.40s }
+.menu-panel li:nth-child(7){ animation-delay:.47s }
 .menu-panel a{
   display:block; padding:10px 12px; color:var(--text); text-decoration:none; border-radius:10px; font-weight:700;
 }
 .menu-panel a:hover{ background:rgba(255,255,255,.06) }
+.menu-panel .strong{ color: var(--brand-2); }
+
+.menu-panel .sep{ height:1px; background:rgba(255,255,255,.08); margin:6px 0; }
 
 @keyframes fadeIn{ from{opacity:0; transform: translateY(-4px)} to{opacity:1; transform:none} }
 @keyframes itemIn{ to{ opacity:1; transform:none } }
 
-/* Hero mit Spruch + zartem IT-Hintergrund */
-.hero{ position:relative; padding:84px 0 56px; text-align:center; overflow:hidden; }
+/* Hero */
+.hero{ padding:84px 0 56px; text-align:center; }
 .claim{ font-size:2.6rem; line-height:1.15; margin:0 0 10px; letter-spacing:.2px }
 .hero-sub{ color:var(--muted); margin:0 auto; max-width:800px }
 .cta-row{ display:flex; gap:12px; justify-content:center; margin:22px 0 }
@@ -85,16 +99,6 @@ body{
 }
 .btn-primary{ background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:#071018; border-color:transparent }
 .btn-outline{ background:transparent; color:var(--text) }
-
-/* transparenter Netz-Hintergrund (SVG als Data-URI) */
-.hero-bg{
-  position:absolute; inset:0; opacity:.12; pointer-events:none;
-  background-image:
-    radial-gradient(transparent 60%, rgba(77,163,255,.25) 100%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 600 400'><g stroke='rgba(123,200,255,0.25)' stroke-width='0.6' fill='none'><path d='M0 50 L600 50 M0 100 L600 100 M0 150 L600 150 M0 200 L600 200 M0 250 L600 250 M0 300 L600 300 M0 350 L600 350'/><path d='M50 0 L50 400 M100 0 L100 400 M150 0 L150 400 M200 0 L200 400 M250 0 L250 400 M300 0 L300 400 M350 0 L350 400 M400 0 L400 400 M450 0 L450 400 M500 0 L500 400 M550 0 L550 400'/></g></svg>");
-  background-size: cover;
-  mix-blend-mode: screen;
-}
 
 /* Sektionen */
 .section{ padding:56px 0 }
@@ -121,7 +125,7 @@ body{
 .legal h3{ margin:18px 0 8px }
 .disclaimer{ color:var(--muted); font-size:.9rem; margin-top:8px }
 
-/* Drawer (seitliches Pop-up) */
+/* Drawer Leistungen */
 .drawer{ position:fixed; inset:0; pointer-events:none; }
 .drawer[aria-hidden="false"]{ pointer-events:auto; }
 .drawer-overlay{
@@ -144,7 +148,7 @@ body{
 }
 .drawer-cta{ margin-top:16px; text-align:right }
 
-/* Leistungen: Liste mit klickbarem Text (ohne sichtbare Ränder) */
+/* Leistungen Liste mit klickbarem Text ohne sichtbare Ränder */
 .svc-list{ display:flex; flex-direction:column; gap:12px; }
 .svc-item{
   background: rgba(255,255,255,.035);
@@ -182,9 +186,20 @@ body{
   transition: max-height .3s ease, padding .3s ease;
 }
 .svc-item.active .svc-content{
-  max-height: 240px; /* ggf. erhöhen */
+  max-height: 260px; /* bei Bedarf erhöhen */
   padding: 0 18px 14px;
 }
+
+/* Form Preise Seite */
+.form{ max-width:760px; margin-top:18px }
+.form-row{ display:flex; flex-direction:column; margin:12px 0 }
+.form-row label{ font-weight:700; margin-bottom:6px }
+.form-row input, .form-row select, .form-row textarea{
+  background: rgba(255,255,255,.06); color:var(--text);
+  border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:10px 12px;
+}
+.form-actions{ display:flex; gap:10px; align-items:center; margin-top:10px }
+.muted{ color:var(--muted) }
 
 /* Footer */
 .site-footer{ border-top:1px solid rgba(255,255,255,.06); padding:18px 0; margin-top:24px }

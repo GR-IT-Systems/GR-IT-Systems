@@ -10,16 +10,12 @@
   <meta property="og:description" content="Weil jedes System Vertrauen verdient. Professionelle IT Lösungen für Menschen und Unternehmen in München." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
-
-  <!-- Schrift ähnlich Corporate A -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <!-- Seitenweiter, lebendiger IT Hintergrund -->
   <div class="site-bg" aria-hidden="true"></div>
 
@@ -30,16 +26,14 @@
         <div class="tagline">IT Service in München</div>
       </div>
 
-      <!-- Hamburger -->
       <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <!-- Dropdown Menü -->
     <nav id="menu-panel" class="menu-panel" aria-hidden="true">
       <ul>
-        <li><a href="#" id="menu-leistungen">Leistungen</a></li>
+        <li><a href="leistungen.html" class="menu-link">Leistungen</a></li>
         <li><a href="#ueber" class="menu-link">Über Uns</a></li>
         <li><a href="#kontakt" class="menu-link">Kontakt und Standort</a></li>
         <li><a href="preise.html" class="menu-link">Preise</a></li>
@@ -53,14 +47,14 @@
   </header>
 
   <main>
-    <!-- Hero mit Spruch -->
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero-inner">
         <h1 class="claim">Weil jedes System Vertrauen verdient</h1>
         <p class="hero-sub">Professioneller IT Service für stabile Systeme, klare Kommunikation und saubere Umsetzung.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="tel:+4917660158769">Jetzt anrufen</a>
-          <a class="btn btn-outline" href="#" id="open-services-cta">Leistungen ansehen</a>
+          <a class="btn btn-outline" href="leistungen.html">Leistungen ansehen</a>
           <a class="btn btn-outline" href="preise.html">Preise und Anfrage</a>
         </div>
       </div>
@@ -132,7 +126,7 @@
       </div>
     </section>
 
-    <!-- Rechtliches -->
+    <!-- Rechtliches – Muster -->
     <section id="impressum" class="section">
       <div class="container legal">
         <h2>Impressum Muster</h2>
@@ -206,58 +200,6 @@
       </div>
     </section>
   </main>
-
-  <!-- Drawer Leistungen -->
-  <aside id="services-drawer" class="drawer" aria-hidden="true" aria-labelledby="services-title" role="dialog">
-    <div class="drawer-overlay" data-close-drawer></div>
-    <div class="drawer-panel" role="document">
-      <header class="drawer-header">
-        <h2 id="services-title">Leistungen</h2>
-        <button class="drawer-close" aria-label="Schließen" data-close-drawer>&times;</button>
-      </header>
-
-      <div class="svc-list">
-        <div class="svc-item">
-          <button class="svc-header">Hardware Reparatur</button>
-          <div class="svc-content">
-            Wir prüfen Schritt für Schritt woran es liegt, erklären das Ergebnis verständlich und setzen nur das um was sinnvoll ist. Austausch defekter Teile, gründliche Reinigung, Funktionsprüfung und kurze Übergabe Erklärung. Ziel ist ein zuverlässiges Gerät und ein gutes Gefühl.
-          </div>
-        </div>
-
-        <div class="svc-item">
-          <button class="svc-header">PC Zusammenbau und Komplettinstallation</button>
-          <div class="svc-content">
-            Wir planen das System nach Bedarf, bauen fachgerecht zusammen und richten alles ein. Windows Einrichtung, Treiber, Aktualisierungen, Basis Schutz und optional Übernahme Ihrer Daten. Einschalten und direkt arbeiten oder spielen ohne langes Einrichten.
-          </div>
-        </div>
-
-        <div class="svc-item">
-          <button class="svc-header">Netzwerkinstallation</button>
-          <div class="svc-content">
-            Stabiles WLAN und LAN in Wohnung oder kleinem Büro. Router korrekt eingestellt, Access Points passend platziert und sinnvoll benannte Netzwerke. Auf Wunsch Gäste Netzwerk und verständliche Kurz Dokumentation. So läuft Internet und Datei Zugriff verlässlich.
-          </div>
-        </div>
-
-        <div class="svc-item">
-          <button class="svc-header">Software Service und Updates</button>
-          <div class="svc-content">
-            Neuinstallation bei Bedarf, Aktualisierung, Systempflege, Schutz vor Schadsoftware und Entfernung unerwünschter Programme. Auf Wunsch einfache Datensicherungslösung mit kurzer Anleitung, damit wichtige Daten sicher bleiben.
-          </div>
-        </div>
-
-        <div class="svc-item">
-          <button class="svc-header">Abhol und Bringservice</button>
-          <div class="svc-content">
-            Wir holen Ihr Gerät nach Termin Vereinbarung ab, reparieren sorgfältig in der Werkstatt und bringen es zurück. Transparent abgestimmte Schritte, auf Wunsch mit kurzer Einweisung bei Übergabe. Bequem und sicher.
-          </div>
-        </div>
-      </div>
-
-      <div class="drawer-cta">
-        <a class="btn btn-primary" href="preise.html">Preise und Anfrage</a>
-      </div>
-    </div>
-  </aside>
 
   <footer class="site-footer">
     <div class="container footer-row">

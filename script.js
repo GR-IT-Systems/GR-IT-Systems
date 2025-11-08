@@ -1,17 +1,5 @@
-// © Jahr automatisch im Footer
+// Jahr im Footer
 (function(){const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();})();
-
-// Smooth Scroll für interne Anker (falls genutzt)
-(function(){
-  const links=document.querySelectorAll('a[href^="#"]');
-  links.forEach(a=>{
-    a.addEventListener('click',e=>{
-      const id=a.getAttribute('href').slice(1);
-      const el=document.getElementById(id);
-      if(el){ e.preventDefault(); closeMenu(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
-    });
-  });
-})();
 
 // Menü öffnen/schließen
 const menuToggle=document.getElementById('menu-toggle');
@@ -24,7 +12,7 @@ if(menuToggle&&menuPanel){
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
 }
 
-// Leistungen: Akkordeon (nur eins gleichzeitig offen)
+// Leistungen Akkordeon
 (function(){
   const items=document.querySelectorAll('.acc-item');
   if(!items.length) return;

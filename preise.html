@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div class="site-bg" aria-hidden="true"></div>
 
   <header class="site-header">
@@ -23,14 +22,14 @@
     </div>
     <nav id="menu-panel" class="menu-panel" aria-hidden="true">
       <ul>
-        <li><a href="index.html#ueber" class="menu-link">Über Uns</a></li>
-        <li><a href="index.html#kontakt" class="menu-link">Kontakt und Standort</a></li>
+        <li><a href="leistungen.html" class="menu-link">Leistungen</a></li>
+        <li><a href="ueber.html" class="menu-link">Über Uns</a></li>
         <li><a href="preise.html" class="menu-link">Preise</a></li>
         <li><a href="tel:+4917660158769" class="menu-link strong">Notdienst 0176 6015 8769</a></li>
         <li class="sep"></li>
-        <li><a href="index.html#impressum" class="menu-link">Impressum</a></li>
-        <li><a href="index.html#datenschutz" class="menu-link">Datenschutz</a></li>
-        <li><a href="index.html#agb" class="menu-link">AGB</a></li>
+        <li><a href="impressum.html" class="menu-link">Impressum</a></li>
+        <li><a href="datenschutz.html" class="menu-link">Datenschutz</a></li>
+        <li><a href="agb.html" class="menu-link">AGB</a></li>
       </ul>
     </nav>
   </header>
@@ -38,9 +37,7 @@
   <main class="section">
     <div class="container">
       <h1>Preise und unverbindliche Anfrage</h1>
-      <p class="muted">
-        Bitte senden Sie uns eine kurze Anfrage. Wir melden uns mit einem Vorschlag inklusive Preisrahmen.
-      </p>
+      <p class="muted">Senden Sie uns eine kurze Anfrage. Wir melden uns mit einem Vorschlag inklusive Preisrahmen.</p>
 
       <form id="anfrageForm" class="form">
         <div class="form-row">
@@ -63,10 +60,11 @@
           <label for="leistung">Leistung</label>
           <select id="leistung" name="leistung" required>
             <option value="" disabled selected>Bitte auswählen</option>
-            <option>Hardware Reparatur</option>
+            <option>Hardware Reparaturen</option>
             <option>PC Zusammenbau und Komplettinstallation</option>
             <option>Netzwerkinstallation</option>
             <option>Software Service und Updates</option>
+            <option>Website Erstellungen</option>
             <option>Abhol und Bringservice</option>
           </select>
         </div>
@@ -77,7 +75,7 @@
 
         <div class="form-actions">
           <button type="submit" class="btn btn-primary">Jetzt unverbindlich anfragen</button>
-          <a class="btn btn-outline" href="index.html">Zurück zur Startseite</a>
+          <a class="btn btn-outline" href="index.html">Zur Startseite</a>
         </div>
         <p id="formHinweis" class="small-note"></p>
       </form>
@@ -88,16 +86,17 @@
     <div class="container footer-row">
       <div>© <span id="year"></span> GR IT Systems</div>
       <div class="footer-links">
-        <a href="index.html#impressum">Impressum</a>
+        <a href="impressum.html">Impressum</a>
         <span aria-hidden="true">•</span>
-        <a href="index.html#datenschutz">Datenschutz</a>
+        <a href="datenschutz.html">Datenschutz</a>
         <span aria-hidden="true">•</span>
-        <a href="index.html#agb">AGB</a>
+        <a href="agb.html">AGB</a>
       </div>
     </div>
+
     <script src="script.js"></script>
     <script>
-      // Mailto Versand ohne Server
+      // Mailto Versand
       document.getElementById('anfrageForm').addEventListener('submit', function(e){
         e.preventDefault();
         const vor = document.getElementById('vorname').value.trim();

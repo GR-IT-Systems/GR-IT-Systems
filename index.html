@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GR IT Systems – IT-Service in München</title>
-  <meta name="description" content="GR IT Systems: Hardware-Reparatur, PC-Zusammenbau, Netzwerke, Software-Service und Abhol-/Bringservice. Schnell, fair, verständlich." />
+  <title>GR IT Systems – IT Service in München</title>
+  <meta name="description" content="GR IT Systems bietet Hardware Reparatur, PC Zusammenbau, Netzwerke, Software Service und Abhol und Bringservice. Verständlich, fair, persönlich." />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="GR IT Systems – IT-Service in München" />
+  <meta property="og:title" content="GR IT Systems – IT Service in München" />
   <meta property="og:description" content="Schnelle Hilfe rund um PC, Netzwerk und Software. Weil jedes System Vertrauen verdient." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_DE" />
 
-  <!-- Schrift ähnlich „Corporate A“ -->
+  <!-- Schrift ähnlich Corporate A -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,11 +19,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Seitenweiter, dezenter IT Hintergrund -->
+  <div class="site-bg" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="container header-row">
       <div class="brand">
         <div class="logo">GR<span> IT</span> Systems</div>
-        <div class="tagline">IT-Service in München</div>
+        <div class="tagline">IT Service in München</div>
       </div>
 
       <!-- Hamburger -->
@@ -32,12 +36,15 @@
       </button>
     </div>
 
-    <!-- Dropdown-Menü -->
+    <!-- Dropdown Menü -->
     <nav id="menu-panel" class="menu-panel" aria-hidden="true">
       <ul>
         <li><a href="#" id="menu-leistungen">Leistungen</a></li>
-        <li><a href="#ueber" class="menu-link">Über uns</a></li>
-        <li><a href="#kontakt" class="menu-link">Kontakt & Standort</a></li>
+        <li><a href="#ueber" class="menu-link">Über Uns</a></li>
+        <li><a href="#kontakt" class="menu-link">Kontakt und Standort</a></li>
+        <li><a href="preise.html" class="menu-link">Preise</a></li>
+        <li><a href="tel:+4917660158769" class="menu-link strong">Notdienst 0176 6015 8769</a></li>
+        <li class="sep"></li>
         <li><a href="#impressum" class="menu-link">Impressum</a></li>
         <li><a href="#datenschutz" class="menu-link">Datenschutz</a></li>
         <li><a href="#agb" class="menu-link">AGB</a></li>
@@ -46,28 +53,38 @@
   </header>
 
   <main>
-    <!-- Hero mit Spruch + transparentem IT-Hintergrund -->
+    <!-- Hero mit Motivationsspruch -->
     <section class="hero">
       <div class="container hero-inner">
         <h1 class="claim">Weil jedes System Vertrauen verdient</h1>
-        <p class="hero-sub">Schnelle, zuverlässige und verständliche IT-Hilfe – ohne Fachchinesisch.</p>
+        <p class="hero-sub">Schnelle, zuverlässige und verständliche IT Hilfe ohne Fachchinesisch.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="tel:+4917660158769">Jetzt anrufen</a>
           <a class="btn btn-outline" href="#" id="open-services-cta">Leistungen ansehen</a>
+          <a class="btn btn-outline" href="preise.html">Preise und Anfrage</a>
         </div>
       </div>
-      <div class="hero-bg" aria-hidden="true"></div>
     </section>
 
     <section id="ueber" class="section">
       <div class="container about">
         <div class="about-text">
-          <h2>Über uns</h2>
-          <p>Wir sind GR IT Systems – ein junges Unternehmen aus München. Unser Ziel: Probleme verständlich lösen, Geräte wieder flott machen und Netzwerke stabil betreiben. Klar, fair und persönlich.</p>
+          <h2>Über Uns</h2>
+          <p>
+            GR IT Systems betreut Privatpersonen und kleine Unternehmen in München und Umgebung.
+            Wir erklären Technik so, dass sie verständlich ist, und liefern Lösungen, die im Alltag funktionieren.
+            Unser Anspruch ist einfache Kommunikation, saubere Arbeit und transparente Absprachen.
+          </p>
+          <p>
+            Von der ersten Analyse bis zur Übergabe begleiten wir Schritt für Schritt.
+            Wir stimmen jeden Auftrag individuell ab, dokumentieren wichtige Punkte
+            und sorgen dafür, dass Geräte und Netzwerke zuverlässig laufen.
+            Termine erfolgen nach Termin Vereinbarung.
+          </p>
           <ul class="features">
             <li>Persönlicher Ansprechpartner</li>
-            <li>Für Privat & kleine Unternehmen</li>
-            <li>Flexible Termine</li>
+            <li>Für Privat und kleine Unternehmen</li>
+            <li>Termine nach Termin Vereinbarung</li>
           </ul>
         </div>
       </div>
@@ -75,14 +92,14 @@
 
     <section id="kontakt" class="section section-alt">
       <div class="container contact">
-        <h2>Kontakt & Standort</h2>
+        <h2>Kontakt und Standort</h2>
         <div class="contact-cards">
           <div class="contact-card">
             <div class="contact-title">Name</div>
             <div class="contact-value">Ilja Grichevski</div>
           </div>
           <a class="contact-card" href="mailto:gritsystems@gmail.com">
-            <div class="contact-title">E-Mail</div>
+            <div class="contact-title">E Mail</div>
             <div class="contact-value">gritsystems@gmail.com</div>
           </a>
           <a class="contact-card" href="tel:+4917660158769">
@@ -94,86 +111,88 @@
             <div class="contact-value">Herzens München</div>
           </div>
         </div>
-        <p class="center small-note">Wir sind ein junges Unternehmen aus München und unterstützen Sie verständlich – vom ersten Gespräch bis zur fertigen Lösung.</p>
+        <p class="center small-note">
+          Wir arbeiten verständlich, planbar und verlässlich. Auf Wunsch mit Abhol und Bringservice.
+        </p>
       </div>
     </section>
 
     <!-- Rechtliches -->
     <section id="impressum" class="section">
       <div class="container legal">
-        <h2>Impressum (Muster)</h2>
-        <p><strong>Verantwortlich:</strong> Ilja Grichevski, München</p>
-        <p><strong>Kontakt:</strong> gritsystems@gmail.com · 0176 6015 8769</p>
-        <p>Inhaltlich verantwortlich gemäß § 55 Abs. 2 RStV: Ilja Grichevski.</p>
-        <p class="disclaimer">Hinweis: Diese Angaben sind ein Muster auf Basis deiner Infos und ersetzen keine Rechtsberatung.</p>
+        <h2>Impressum Muster</h2>
+        <p><strong>Verantwortlich</strong> Ilja Grichevski, München</p>
+        <p><strong>Kontakt</strong> gritsystems@gmail.com · 0176 6015 8769</p>
+        <p>Inhaltlich verantwortlich gemäß Paragraf 55 Absatz 2 RStV Ilja Grichevski.</p>
+        <p class="disclaimer">Hinweis Mustertext keine Rechtsberatung.</p>
       </div>
     </section>
 
     <section id="datenschutz" class="section section-alt">
       <div class="container legal">
-        <h2>Datenschutz (Muster)</h2>
-        <h3>1. Verantwortlicher</h3>
-        <p>GR IT Systems, Ilja Grichevski, München · E-Mail: gritsystems@gmail.com · Tel.: 0176 6015 8769</p>
+        <h2>Datenschutz Muster</h2>
+        <h3>Verantwortlicher</h3>
+        <p>GR IT Systems, Ilja Grichevski, München. E Mail gritsystems@gmail.com. Tel 0176 6015 8769.</p>
 
-        <h3>2. Welche Daten wir verarbeiten</h3>
-        <p>Beim Aufruf der Website werden technisch notwendige Daten (z. B. IP-Adresse, Zeitpunkt, abgerufene Seite) serverseitig verarbeitet. Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Angaben zur Bearbeitung der Anfrage.</p>
+        <h3>Datenarten</h3>
+        <p>Beim Seitenaufruf fallen technisch notwendige Daten an wie IP Adresse und Zeitpunkt. Bei Kontakt per E Mail oder Telefon verarbeiten wir die von Ihnen mitgeteilten Angaben zur Bearbeitung der Anfrage.</p>
 
-        <h3>3. Zweck und Rechtsgrundlagen</h3>
-        <p>Bereitstellung der Website (berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO) sowie Beantwortung von Anfragen und Anbahnung/Erfüllung von Verträgen (Art. 6 Abs. 1 lit. b DSGVO).</p>
+        <h3>Zwecke und Rechtsgrundlagen</h3>
+        <p>Bereitstellung der Website auf Basis berechtigten Interesses Artikel 6 Absatz 1 Buchstabe f DSGVO sowie Bearbeitung von Anfragen und Vertragsanbahnung Artikel 6 Absatz 1 Buchstabe b DSGVO.</p>
 
-        <h3>4. Speicherung</h3>
-        <p>Anfragen speichern wir nur so lange, wie es für die Bearbeitung und gesetzliche Pflichten notwendig ist.</p>
+        <h3>Speicherdauer</h3>
+        <p>Wir speichern nur so lange wie zur Bearbeitung und zur Einhaltung gesetzlicher Pflichten erforderlich.</p>
 
-        <h3>5. Weitergabe</h3>
-        <p>Eine Weitergabe an Dritte erfolgt nur, soweit es zur Vertragserfüllung erforderlich ist oder gesetzliche Pflichten bestehen.</p>
+        <h3>Weitergabe</h3>
+        <p>Eine Weitergabe erfolgt nur wenn dies zur Vertragserfüllung notwendig ist oder rechtliche Pflichten bestehen.</p>
 
-        <h3>6. Ihre Rechte</h3>
-        <p>Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch sowie Datenübertragbarkeit. Zudem besteht ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde.</p>
+        <h3>Ihre Rechte</h3>
+        <p>Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Datenübertragbarkeit sowie das Recht auf Beschwerde bei einer Aufsichtsbehörde.</p>
 
-        <h3>7. Cookies & Analyse</h3>
-        <p>Wir setzen derzeit keine Tracking- oder Marketing-Cookies ein. Es werden nur technisch notwendige Cookies genutzt, sofern diese für den Betrieb erforderlich sind.</p>
+        <h3>Cookies und Analyse</h3>
+        <p>Wir setzen derzeit keine Tracking oder Marketing Cookies ein. Es werden nur technisch notwendige Cookies genutzt sofern diese für den Betrieb erforderlich sind.</p>
 
-        <h3>8. Kontakt</h3>
-        <p>Für Datenschutz-Anfragen: gritsystems@gmail.com</p>
+        <h3>Kontakt für Datenschutz</h3>
+        <p>gritsystems@gmail.com</p>
 
-        <p class="disclaimer">Hinweis: Mustertext – bitte vor Live-Schaltung rechtlich prüfen lassen.</p>
+        <p class="disclaimer">Hinweis Mustertext bitte rechtlich prüfen lassen.</p>
       </div>
     </section>
 
     <section id="agb" class="section">
       <div class="container legal">
-        <h2>Allgemeine Geschäftsbedingungen (Muster)</h2>
+        <h2>Allgemeine Geschäftsbedingungen Muster</h2>
 
-        <h3>1. Geltung</h3>
-        <p>Diese Bedingungen gelten für alle Leistungen von GR IT Systems gegenüber Verbraucherinnen/Verbrauchern und kleinen Unternehmen.</p>
+        <h3>Geltung</h3>
+        <p>Diese Bedingungen gelten für Leistungen von GR IT Systems gegenüber Verbraucherinnen und Verbrauchern sowie kleinen Unternehmen.</p>
 
-        <h3>2. Angebote und Preise</h3>
-        <p>Alle Angebote sind freibleibend. Preise werden vorab transparent kommuniziert. Zusätzlich anfallende Kosten (z. B. Ersatzteile) werden vor Ausführung abgestimmt.</p>
+        <h3>Angebote und Preise</h3>
+        <p>Angebote sind freibleibend. Preise werden vorab transparent abgestimmt. Zusätzliche Kosten wie Ersatzteile stimmen wir vorher ab.</p>
 
-        <h3>3. Leistungen</h3>
-        <p>Die Leistungen umfassen u. a. Hardware-Reparatur, PC-Zusammenbau, Netzwerkeinrichtung, Software-Service sowie Abhol-/Bringservice. Leistungsumfang und Termine werden individuell festgelegt.</p>
+        <h3>Leistungen</h3>
+        <p>Leistungen umfassen zum Beispiel Hardware Reparatur, PC Zusammenbau, Netzwerkeinrichtung, Software Service und Abhol und Bringservice. Umfang und Termine werden individuell festgelegt.</p>
 
-        <h3>4. Mitwirkung</h3>
-        <p>Kundinnen/Kunden stellen notwendige Zugänge, Informationen und Datensicherungen bereit. Für Datenverluste ohne vorherige Sicherung übernehmen wir keine Haftung.</p>
+        <h3>Mitwirkung</h3>
+        <p>Kundinnen und Kunden stellen notwendige Zugänge und Informationen bereit und sichern Daten vorab. Für Datenverluste ohne vorherige Sicherung übernehmen wir keine Haftung.</p>
 
-        <h3>5. Gewährleistung</h3>
-        <p>Es gelten die gesetzlichen Gewährleistungsrechte. Verschleiß, unsachgemäße Nutzung oder Fremdeingriffe sind ausgenommen.</p>
+        <h3>Gewährleistung</h3>
+        <p>Es gelten die gesetzlichen Rechte. Ausgenommen sind Abnutzung, unsachgemäße Nutzung und Fremdeingriffe.</p>
 
-        <h3>6. Haftung</h3>
-        <p>Wir haften unbegrenzt für Vorsatz und grobe Fahrlässigkeit sowie für Verletzung von Leben, Körper oder Gesundheit. Im Übrigen haften wir bei leichter Fahrlässigkeit nur bei Verletzung wesentlicher Pflichten (Kardinalpflichten) und der Höhe nach begrenzt auf den typischen, vorhersehbaren Schaden.</p>
+        <h3>Haftung</h3>
+        <p>Wir haften unbegrenzt bei Vorsatz, grober Fahrlässigkeit sowie bei Verletzung von Leben, Körper oder Gesundheit. Im Übrigen haften wir bei leichter Fahrlässigkeit nur bei Verletzung wesentlicher Pflichten und der Höhe nach begrenzt auf den typischen vorhersehbaren Schaden.</p>
 
-        <h3>7. Zahlung</h3>
-        <p>Sofern nichts anderes vereinbart, ist die Vergütung nach Abschluss der Leistung fällig. Akzeptierte Zahlarten werden bei Auftrag angegeben.</p>
+        <h3>Zahlung</h3>
+        <p>Wenn nichts anderes vereinbart ist, ist die Vergütung nach Abschluss der Leistung fällig. Akzeptierte Zahlarten teilen wir im Auftrag mit.</p>
 
-        <h3>8. Schlussbestimmungen</h3>
-        <p>Es gilt deutsches Recht. Gerichtsstand ist – soweit zulässig – München.</p>
+        <h3>Schlussbestimmungen</h3>
+        <p>Es gilt deutsches Recht. Gerichtsstand ist soweit zulässig München.</p>
 
-        <p class="disclaimer">Hinweis: Muster-AGB – bitte vor Verwendung rechtlich prüfen lassen.</p>
+        <p class="disclaimer">Hinweis Muster AGB bitte vor Verwendung prüfen lassen.</p>
       </div>
     </section>
   </main>
 
-  <!-- Seitlicher Drawer: Leistungen (Überschriften + klickbarer Text) -->
+  <!-- Seitlicher Drawer Leistungen: Überschrift sichtbar, Text erst beim Klick -->
   <aside id="services-drawer" class="drawer" aria-hidden="true" aria-labelledby="services-title" role="dialog">
     <div class="drawer-overlay" data-close-drawer></div>
     <div class="drawer-panel" role="document">
@@ -184,43 +203,43 @@
 
       <div class="svc-list">
         <div class="svc-item">
-          <button class="svc-header">Hardware-Reparatur</button>
+          <button class="svc-header">Hardware Reparatur</button>
           <div class="svc-content">
-            Wir finden die Ursache, tauschen defekte Teile und reinigen das Gerät gründlich. Ziel: zuverlässig laufen statt neu kaufen.
+            Wir prüfen die Ursache, tauschen defekte Teile und reinigen das Gerät gründlich. Ziel ist ein stabiles System ohne unnötige Neuanschaffung.
           </div>
         </div>
 
         <div class="svc-item">
-          <button class="svc-header">PC-Zusammenbau & Komplettinstallation</button>
+          <button class="svc-header">PC Zusammenbau und Komplettinstallation</button>
           <div class="svc-content">
-            Wunsch-System nach Bedarf – fachgerecht aufgebaut, Windows eingerichtet, Treiber und Updates erledigt. Einschalten und nutzen.
+            Wunsch System nach Bedarf. Fachgerechter Aufbau mit Einrichtung, Treibern, Aktualisierungen und kurzer Einweisung. Einschalten und arbeiten.
           </div>
         </div>
 
         <div class="svc-item">
           <button class="svc-header">Netzwerkinstallation</button>
           <div class="svc-content">
-            Stabiles WLAN und LAN: Router korrekt eingestellt, Access-Points richtig platziert, alles sauber dokumentiert – für Zuhause oder kleines Büro.
+            Stabiles WLAN und LAN. Router richtig eingestellt, Access Points passend platziert und alles verständlich dokumentiert. Für Zuhause oder kleines Büro.
           </div>
         </div>
 
         <div class="svc-item">
-          <button class="svc-header">Software-Service & Updates</button>
+          <button class="svc-header">Software Service und Updates</button>
           <div class="svc-content">
-            Neuinstallation, Pflege, Datensicherung und Entfernung von Schadsoftware. Wir halten Ihr System aktuell und geschützt.
+            Neuinstallation, Pflege, Datensicherung und Entfernung von Schadsoftware. Wir halten Systeme aktuell und geschützt.
           </div>
         </div>
 
         <div class="svc-item">
-          <button class="svc-header">Abhol- und Bringservice</button>
+          <button class="svc-header">Abhol und Bringservice</button>
           <div class="svc-content">
-            Gerät bequem abholen lassen, fachgerecht reparieren und zurückbringen. Transparent und sicher – auf Wunsch mit kurzer Übergabe-Erklärung.
+            Gerät abholen lassen, fachgerecht reparieren und zurückbringen. Transparent und sicher. Auf Wunsch mit kurzer Übergabe Erklärung.
           </div>
         </div>
       </div>
 
       <div class="drawer-cta">
-        <a class="btn btn-primary" href="#kontakt">Kontakt aufnehmen</a>
+        <a class="btn btn-primary" href="preise.html">Preise und Anfrage</a>
       </div>
     </div>
   </aside>
@@ -240,4 +259,3 @@
   </footer>
 </body>
 </html>
-

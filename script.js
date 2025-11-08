@@ -1,6 +1,4 @@
-// ===== GR IT Systems – Skript =====
-
-// © Jahr automatisch im Footer
+// Jahr automatisch im Footer
 (function setYear() {
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
@@ -22,7 +20,7 @@
   });
 })();
 
-// Hamburger-Menü
+// Hamburger Menü
 const menuToggle = document.getElementById('menu-toggle');
 const menuPanel  = document.getElementById('menu-panel');
 
@@ -50,7 +48,7 @@ if (menuToggle && menuPanel){
   });
 }
 
-// Drawer „Leistungen“
+// Drawer Leistungen
 const drawer       = document.getElementById('services-drawer');
 const openSvcBtn   = document.getElementById('open-services-cta');
 const menuLeistg   = document.getElementById('menu-leistungen');
@@ -64,7 +62,6 @@ function closeDrawer(){
   if (!drawer) return;
   drawer.setAttribute('aria-hidden','true');
   document.body.style.overflow = '';
-  // alle geöffneten Punkte schließen
   document.querySelectorAll('.svc-item').forEach(i => i.classList.remove('active'));
 }
 
@@ -80,7 +77,7 @@ if (drawer){
   });
 }
 
-// Accordion in den Leistungen (Text erscheint erst beim Klick)
+// Accordion im Drawer
 (function drawerAccordion(){
   const items = document.querySelectorAll('.svc-item');
   if (!items.length) return;
@@ -88,7 +85,6 @@ if (drawer){
   items.forEach(item => {
     const header = item.querySelector('.svc-header');
     header.addEventListener('click', ()=>{
-      // Nur einen Punkt offen halten
       items.forEach(other => { if (other !== item) other.classList.remove('active'); });
       item.classList.toggle('active');
     });

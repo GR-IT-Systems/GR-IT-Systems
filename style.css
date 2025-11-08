@@ -13,59 +13,64 @@
 html,body{margin:0;padding:0}
 body{
   font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:linear-gradient(180deg,#0b0e12 0%,#0e141b 100%);
-  color:var(--text); line-height:1.6;
+  background:#0b0e12;
+  color:var(--text);
+  line-height:1.6;
 }
-
-/* ===== beweglicher Hintergrund (unverändert) ===== */
-.site-bg{
-  position:fixed; inset:0; z-index:-1; pointer-events:none;
-  background:
-    radial-gradient(1200px 800px at 20% 10%, rgba(77,163,255,.16), transparent 60%),
-    radial-gradient(1000px 700px at 80% 90%, rgba(123,200,255,.12), transparent 60%),
-    linear-gradient(180deg,#0b0e12 0%,#0e141b 100%);
-  animation:bgFloat 22s ease-in-out infinite alternate;
-}
-@keyframes bgFloat{
-  0%{background-position:0 0,0 0,0 0}
-  100%{background-position:24px -24px,-34px 34px,0 0}
-}
-
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
-/* ===== Header: Logo + Hamburger RECHTS ===== */
+/* ==== IT-Hintergrund mit bewegenden blauen Rechtecken (dein PPT-Style) ==== */
+.site-bg{position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden;}
+.site-bg::before,
+.site-bg::after{
+  content:""; position:absolute; inset:0; background:linear-gradient(180deg,#0b0e12 0%, #0e141b 100%);
+}
+/* schwimmende Quadrate */
+.site-bg .sq{
+  position:absolute; width:140px; height:140px; background:rgba(77,163,255,.14);
+  border:1px solid rgba(123,200,255,.25); border-radius:6px; filter:blur(0.2px);
+  animation:float 18s ease-in-out infinite alternate;
+}
+.site-bg .sq.s1{ top:8%;  left:10%;  animation-duration:20s; }
+.site-bg .sq.s2{ top:20%; left:70%;  width:110px; height:110px; animation-duration:22s; }
+.site-bg .sq.s3{ top:65%; left:15%;  width:160px; height:160px; animation-duration:24s; }
+.site-bg .sq.s4{ top:75%; left:75%;  width:130px; height:130px; animation-duration:21s; }
+.site-bg .sq.s5{ top:40%; left:45%;  width:90px;  height:90px;  animation-duration:19s; }
+@keyframes float{
+  0%   { transform:translate3d(0,0,0) rotate(0.001deg)}
+  100% { transform:translate3d(24px,-28px,0) rotate(6deg)}
+}
+
+/* ==== Header: Brand links, Hamburger rechts ==== */
 .site-header{
   position:sticky; top:0; z-index:1000;
-  background:rgba(10,14,18,.92);
+  background:rgba(10,14,18,.88);
   backdrop-filter:saturate(140%) blur(8px);
   border-bottom:1px solid rgba(255,255,255,.06);
 }
-.header-row{display:flex;align-items:center;padding:12px 0}
-.spacer{flex:1}
-.right-group{margin-left:auto;display:flex;align-items:center;gap:12px}
+.header-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 
-/* Logo (PNG ohne weißen Kasten) */
-.logo-img{
-  height:34px; display:block;
-  mix-blend-mode:multiply;
-  filter: brightness(1.18) contrast(1.12) saturate(1.1);
+/* Brand-Text links (IT blau) */
+.brand{
+  font-weight:800; font-size:1.2rem; letter-spacing:.2px; user-select:none;
 }
-@media (min-width:720px){ .logo-img{ height:38px } }
+.brand a{ color:var(--text); text-decoration:none }
+.brand .it{ color:var(--brand) }
 
-/* Hamburger */
+/* Hamburger immer rechts */
 .hamburger{
-  width:42px;height:36px;border:none;background:transparent;cursor:pointer;
-  display:flex;flex-direction:column;justify-content:center;gap:6px;padding:6px
+  width:42px; height:36px; border:none; background:transparent; cursor:pointer;
+  display:flex; flex-direction:column; justify-content:center; gap:6px; padding:6px;
 }
 .hamburger span{
-  height:2px;width:100%;background:var(--text);border-radius:2px;
-  transition:transform .25s,opacity .25s
+  height:2px; width:100%; background:var(--text); border-radius:2px;
+  transition:transform .25s,opacity .25s;
 }
 .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
 .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
-/* Menü-Panel: RECHTS öffnend */
+/* Menü-Panel: rechts öffnend */
 .menu-panel{
   position:absolute; right:16px; top:64px;
   background:var(--panel); border:1px solid rgba(255,255,255,.08);
@@ -83,14 +88,16 @@ body{
 .menu-panel li:nth-child(5){animation-delay:.30s}
 .menu-panel li:nth-child(6){animation-delay:.36s}
 .menu-panel li:nth-child(7){animation-delay:.42s}
-.menu-link{display:block;padding:10px 12px;color:var(--text);text-decoration:none;border-radius:10px;font-weight:700}
+.menu-link{
+  display:block; padding:10px 12px; color:var(--text); text-decoration:none;
+  border-radius:10px; font-weight:700;
+}
 .menu-link:hover{background:rgba(255,255,255,.06)}
-.menu-panel .strong{color:var(--brand-2)}
 .menu-panel .sep{height:1px;background:rgba(255,255,255,.08);margin:6px 0}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @keyframes itemUp{to{opacity:1;transform:none}}
 
-/* ===== Hero & Sections — unverändert funktional ===== */
+/* Hero + Sections (wie gehabt) */
 .hero{padding:84px 0 56px;text-align:center}
 .eyebrow{letter-spacing:.12em;text-transform:uppercase;color:#cfe7ff;opacity:.85;font-weight:700;margin:0 0 8px}
 .claim{font-size:2.6rem;line-height:1.15;margin:0 0 12px}
@@ -109,38 +116,13 @@ body{
 .lead{font-size:1.08rem;color:#d8e5f2;max-width:900px;margin:6px auto 0}
 .textblock{max-width:900px;margin:10px auto 0;color:var(--muted)}
 
-/* Leistungen Akkordeon (falls genutzt) */
-.acc{display:flex;flex-direction:column;gap:12px;margin-top:14px}
-.acc-item{background:rgba(255,255,255,.035);border-radius:14px;box-shadow:var(--shadow);opacity:0;transform:translateY(14px) scale(.985);animation:popUp .34s cubic-bezier(.22,.61,.36,1) forwards}
-.acc-item:nth-child(1){animation-delay:.06s}
-.acc-item:nth-child(2){animation-delay:.12s}
-.acc-item:nth-child(3){animation-delay:.18s}
-.acc-item:nth-child(4){animation-delay:.24s}
-.acc-item:nth-child(5){animation-delay:.30s}
-.acc-item:nth-child(6){animation-delay:.36s}
-.acc-header{width:100%;text-align:left;border:none;background:transparent;cursor:pointer;padding:16px 18px;color:var(--text);font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:space-between}
-.acc-header::after{content:"";width:10px;height:10px;border-right:2px solid var(--text);border-bottom:2px solid var(--text);transform:rotate(-45deg);opacity:.7;transition:transform .25s,opacity .25s}
-.acc-item.active .acc-header::after{transform:rotate(45deg);opacity:1}
-.acc-content{max-height:0;overflow:hidden;color:var(--muted);padding:0 18px;transition:max-height .33s ease,padding .33s ease}
-.acc-item.active .acc-content{max-height:1200px;padding:0 18px 14px}
-.bullet{margin:8px 0 0;padding-left:18px}.bullet li{margin:6px 0}
-
-/* Formulare & Footer (wie gehabt) */
-.form{max-width:760px;margin-top:18px}
-.form-row{display:flex;flex-direction:column;margin:12px 0}
-.form-row label{font-weight:700;margin-bottom:6px}
-.form-row input,.form-row select,.form-row textarea{
-  appearance:none;background:rgba(255,255,255,.06); color:var(--text);
-  border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:12px 12px; outline:none;
-}
-.form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--ring)}
-.form-actions{display:flex;gap:10px;align-items:center;margin-top:10px}
-
 .site-footer{border-top:1px solid rgba(255,255,255,.06);padding:18px 0;margin-top:24px}
 .footer-row{display:flex;align-items:center;justify-content:space-between}
 .footer-links{display:flex;gap:10px;align-items:center}
 .footer-links a{color:var(--muted);text-decoration:none}
 .footer-links a:hover{color:var(--text)}
 
-@keyframes popUp{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
-@media (max-width:720px){.claim{font-size:2rem}.header-row{padding:10px 0}}
+@media (max-width:720px){
+  .claim{font-size:2rem}
+  .header-row{padding:10px 0}
+}

@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GR IT Systems – IT Service in München</title>
   <meta name="description" content="Professioneller IT Service in München. Hardware Reparatur, PC Zusammenbau, Netzwerke, Software Service, Website Erstellungen sowie Abhol und Bringservice." />
-  <link rel="icon" href="logo-icon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,18 +12,20 @@
 
   <header class="site-header">
     <div class="container header-row">
-      <div class="brand">
+      <div class="header-left">
+        <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="header-right">
         <img src="assets/logo-gritsystems.png" alt="GR IT Systems – Weil jedes System Vertrauen verdient" class="logo-img">
       </div>
-      <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
-        <span></span><span></span><span></span>
-      </button>
     </div>
     <nav id="menu-panel" class="menu-panel" aria-hidden="true">
       <ul>
         <li><a href="index.html" class="menu-link">Startseite</a></li>
         <li><a href="leistungen.html" class="menu-link">Leistungen</a></li>
-        <li><a href="ueber.html" class="menu-link">Über Uns</a></li>
+        <li><a href="wer-wir-sind.html" class="menu-link">Wer wir sind</a></li>
         <li><a href="preise.html" class="menu-link">Preise</a></li>
         <li><a href="tel:+4917660158769" class="menu-link strong">Notdienst 0176 6015 8769</a></li>
         <li class="sep"></li>
@@ -39,8 +37,8 @@
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero hero-gradient">
+    <!-- Hero ohne Balken -->
+    <section class="hero">
       <div class="container hero-inner">
         <p class="eyebrow">IT Service und Systemmanagement</p>
         <h1 class="claim">Weil jedes System Vertrauen verdient</h1>
@@ -52,45 +50,11 @@
       </div>
     </section>
 
-    <!-- Wie wir arbeiten -->
-    <section class="section section-alt">
-      <div class="container">
-        <h2>Wie wir arbeiten</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Anfrage</h3>
-            <p>Kurzer Anruf oder E Mail. Wir klären Ziel, Symptome und Rahmen.</p>
-          </div>
-          <div class="card">
-            <h3>Analyse und Vorschlag</h3>
-            <p>Gezielte Prüfung und ein klarer Vorschlag mit Aufwand und Preisrahmen.</p>
-          </div>
-          <div class="card">
-            <h3>Umsetzung und Übergabe</h3>
-            <p>Saubere Durchführung und Dokumentation. Auf Wunsch mit Abhol und Bringservice.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Warum -->
+    <!-- Wie wir arbeiten – Fließtext -->
     <section class="section">
       <div class="container">
-        <h2>Warum GR IT Systems</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Klar und verständlich</h3>
-            <p>Wir erklären jeden Schritt ohne Fachsprache. Sie behalten den Überblick.</p>
-          </div>
-          <div class="card">
-            <h3>Zuverlässige Ergebnisse</h3>
-            <p>Stabile Lösungen statt kurzfristiger Workarounds. Für den Alltag gemacht.</p>
-          </div>
-          <div class="card">
-            <h3>Nach Termin Vereinbarung</h3>
-            <p>Planbare Termine und Notdienst für dringende Fälle. München und Umgebung.</p>
-          </div>
-        </div>
+        <h2>Wie wir arbeiten</h2>
+        <p class="lead">Wir starten mit einer kurzen, klaren Abstimmung per Telefon oder E Mail. Ziel, Symptome und Rahmen werden verständlich erfasst. Danach prüfen wir das System gezielt und schlagen eine Lösung mit Aufwand und Preisrahmen vor. Die Umsetzung erfolgt strukturiert, dokumentiert und mit Übergabe der Ergebnisse. Auf Wunsch übernehmen wir Abhol und Bringservice. Unser Anspruch sind stabile Lösungen die im Alltag funktionieren, nicht kurzfristige Workarounds.</p>
       </div>
     </section>
 

@@ -13,8 +13,7 @@
   <header class="site-header">
     <div class="container header-row">
       <div class="brand">
-        <div class="logo">GR<span> IT</span> Systems</div>
-        <div class="tagline">IT Service in München</div>
+        <img src="assets/logo-gritsystems.png" alt="GR IT Systems – Logo" class="logo-img">
       </div>
       <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
         <span></span><span></span><span></span>
@@ -87,17 +86,15 @@
     <div class="container footer-row">
       <div>© <span id="year"></span> GR IT Systems</div>
       <div class="footer-links">
-        <a href="impressum.html">Impressum</a>
-        <span aria-hidden="true">•</span>
-        <a href="datenschutz.html">Datenschutz</a>
-        <span aria-hidden="true">•</span>
+        <a href="impressum.html">Impressum</a><span aria-hidden="true">•</span>
+        <a href="datenschutz.html">Datenschutz</a><span aria-hidden="true">•</span>
         <a href="agb.html">AGB</a>
       </div>
     </div>
 
     <script src="script.js"></script>
     <script>
-      // Mailto Versand
+      // Mailto-Versand
       document.getElementById('anfrageForm').addEventListener('submit', function(e){
         e.preventDefault();
         const vor = document.getElementById('vorname').value.trim();

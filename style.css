@@ -133,3 +133,35 @@ body{
 
 @keyframes popUp{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
 @media (max-width:720px){.claim{font-size:2rem}.header-row{padding:10px 0}}
+/* --- Header Layout rechts --- */
+.header-row{ display:flex; align-items:center; padding:12px 0 }
+.spacer{ flex:1 }
+.right-group{ margin-left:auto; display:flex; align-items:center; gap:12px }
+
+/* --- Hamburger (falls schon vorhanden, dieser Block überschreibt nichts Kritisches) --- */
+.hamburger{width:42px;height:36px;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:6px}
+.hamburger span{height:2px;width:100%;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* --- Logo ohne weißen Hintergrund, etwas heller --- */
+.logo-img{
+  height:34px; display:block;
+  /* Weiß wird „wegmultipliziert“, Schrift wirkt kräftiger */
+  mix-blend-mode:multiply;
+  filter: brightness(1.18) contrast(1.12) saturate(1.1);
+}
+@media (min-width:720px){ .logo-img{ height:38px } }
+
+/* --- Menü-Panel RECHTS öffnen (wichtig: left raus, right rein) --- */
+.menu-panel{
+  right:16px;              /* Panel rechts andocken */
+  left:auto !important;    /* falls früher left gesetzt war */
+  top:64px;
+}
+
+/* Optional: Panel-Breite auf kleineren Screens etwas schmaler */
+@media (max-width:420px){
+  .menu-panel{ width: 78vw }
+}

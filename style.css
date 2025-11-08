@@ -19,7 +19,7 @@ body{
 
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
-/* Site wide animated bg */
+/* animated background */
 .site-bg{
   position:fixed; inset:0; z-index:-1; pointer-events:none;
   background:
@@ -36,7 +36,7 @@ body{
 }
 @keyframes gridPan{0%{background-position:0 0}100%{background-position:600px 600px}}
 
-/* Header */
+/* header */
 .site-header{
   position:sticky; top:0; z-index:1000;
   backdrop-filter:saturate(150%) blur(10px);
@@ -44,11 +44,18 @@ body{
   border-bottom:1px solid rgba(255,255,255,.06);
 }
 .header-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-.logo{font-weight:800;letter-spacing:.3px;font-size:1.25rem}
-.logo span{color:var(--brand)}
-.tagline{font-size:.85rem;color:var(--muted)}
 
-/* Hamburger & menu */
+/* logo */
+.logo-img{
+  height:32px; display:block;
+  mix-blend-mode:multiply; /* blendet weißen PNG-Hintergrund aus */
+  image-rendering:auto;
+  transition:transform .2s ease;
+}
+.logo-img:hover{ transform:scale(1.03) }
+@media (min-width:721px){ .logo-img{height:36px} }
+
+/* menu */
 .hamburger{width:42px;height:36px;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:6px}
 .hamburger span{height:2px;width:100%;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
 .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
@@ -74,26 +81,29 @@ body{
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @keyframes itemUp{to{opacity:1;transform:none}}
 
-/* Hero */
+/* hero */
 .hero{padding:84px 0 56px;text-align:center}
-.claim{font-size:2.6rem;line-height:1.15;margin:0 0 10px;letter-spacing:.2px}
-.hero-sub{color:var(--muted);margin:0 auto;max-width:800px}
+.hero-gradient{
+  background: linear-gradient(120deg, rgba(68,184,210,.18), rgba(23,86,158,.18));
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.eyebrow{letter-spacing:.12em;text-transform:uppercase;color:#cfe7ff;opacity:.85;font-weight:700;margin:0 0 8px}
+.claim{font-size:2.6rem;line-height:1.15;margin:0 0 12px;letter-spacing:.2px}
+.hero-sub{color:var(--muted);margin:0 auto;max-width:860px}
 .cta-row{display:flex;gap:12px;justify-content:center;margin:22px 0}
 .btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow)}
 .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#071018;border-color:transparent}
 .btn-outline{background:transparent;color:var(--text)}
 
-/* Sections & legal */
+/* sections/cards */
 .section{padding:56px 0}
 .section-alt{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0) 60%)}
-.about{display:flex;gap:28px;align-items:center;justify-content:center}
-.values{margin:10px 0 0;padding-left:18px}
-.values li{margin:6px 0}
-.legal h1,.legal h2{margin-top:0}
-.legal h3{margin:18px 0 8px}
-.disclaimer{color:var(--muted);font-size:.9rem;margin-top:8px}
+.grid{display:grid;gap:16px;grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );}
+.card{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);padding:18px;border-radius:16px;box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s ease, box-shadow .2s ease}
+.card:hover{transform:translateY(-2px);border-color:var(--ring);box-shadow:0 12px 30px rgba(77,163,255,.12)}
+.muted{color:var(--muted)}
 
-/* Leistungen Akkordeon */
+/* leistungen akkordeon */
 .acc{display:flex;flex-direction:column;gap:12px;margin-top:14px}
 .acc-item{background:rgba(255,255,255,.035);border-radius:14px;box-shadow:var(--shadow);opacity:0;transform:translateY(14px) scale(.985);animation:popUp .34s cubic-bezier(.22,.61,.36,1) forwards}
 .acc-item:nth-child(1){animation-delay:.06s}
@@ -110,21 +120,18 @@ body{
 .bullet{margin:8px 0 0;padding-left:18px}
 .bullet li{margin:6px 0}
 
-/* Form – dunkler Look, ohne helle Linien */
+/* form */
 .form{max-width:760px;margin-top:18px}
 .form-row{display:flex;flex-direction:column;margin:12px 0}
 .form-row label{font-weight:700;margin-bottom:6px}
 .form-row input,.form-row select,.form-row textarea{
-  appearance:none; -webkit-appearance:none; -moz-appearance:none;
-  background:rgba(255,255,255,.06); color:var(--text);
-  border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:12px 12px;
-  outline:none; box-shadow:none;
+  appearance:none;background:rgba(255,255,255,.06); color:var(--text);
+  border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:12px 12px; outline:none;
 }
 .form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--ring)}
 .form-actions{display:flex;gap:10px;align-items:center;margin-top:10px}
-.muted{color:var(--muted)}
 
-/* Footer */
+/* footer */
 .site-footer{border-top:1px solid rgba(255,255,255,.06);padding:18px 0;margin-top:24px}
 .footer-row{display:flex;align-items:center;justify-content:space-between}
 .footer-links{display:flex;gap:10px;align-items:center}

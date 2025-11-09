@@ -13,7 +13,8 @@
   <header class="site-header">
     <div class="container header-row">
       <div class="brand">
-        <img src="assets/logo-gritsystems.png" alt="GR IT Systems – Logo" class="logo-img">
+        <div class="logo">GR<span> IT</span> Systems</div>
+        <div class="tagline">IT Service in München</div>
       </div>
       <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
         <span></span><span></span><span></span>
@@ -21,7 +22,6 @@
     </div>
     <nav id="menu-panel" class="menu-panel" aria-hidden="true">
       <ul>
-        <li><a href="index.html" class="menu-link">Startseite</a></li>
         <li><a href="leistungen.html" class="menu-link">Leistungen</a></li>
         <li><a href="ueber.html" class="menu-link">Über Uns</a></li>
         <li><a href="preise.html" class="menu-link">Preise</a></li>
@@ -86,15 +86,17 @@
     <div class="container footer-row">
       <div>© <span id="year"></span> GR IT Systems</div>
       <div class="footer-links">
-        <a href="impressum.html">Impressum</a><span aria-hidden="true">•</span>
-        <a href="datenschutz.html">Datenschutz</a><span aria-hidden="true">•</span>
+        <a href="impressum.html">Impressum</a>
+        <span aria-hidden="true">•</span>
+        <a href="datenschutz.html">Datenschutz</a>
+        <span aria-hidden="true">•</span>
         <a href="agb.html">AGB</a>
       </div>
     </div>
 
     <script src="script.js"></script>
     <script>
-      // Mailto-Versand
+      // Mailto Versand
       document.getElementById('anfrageForm').addEventListener('submit', function(e){
         e.preventDefault();
         const vor = document.getElementById('vorname').value.trim();

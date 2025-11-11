@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Beweglicher Hintergrund -->
   <div class="site-bg" aria-hidden="true">
     <div class="sq s1"></div><div class="sq s2"></div><div class="sq s3"></div><div class="sq s4"></div><div class="sq s5"></div>
   </div>
 
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-row">
       <div class="brand">
@@ -38,51 +40,110 @@
   </header>
 
   <main class="section">
-    <div class="container">
+    <div class="container reveal">
       <h1>Unsere Leistungen im Überblick</h1>
-      <p class="muted">Alles verständlich erklärt. Klicke auf einen Titel, um Details einzublenden.</p>
+      <p class="muted">Verständlich erklärt. Klicke einen Titel, um Details zu lesen.</p>
 
       <div class="accordion">
+        <!-- Hardware -->
         <div class="accordion-item">
           <button class="accordion-header">Hardware Reparaturen</button>
           <div class="accordion-content">
-            Fachgerechte Diagnose und Reparatur, Austausch defekter Komponenten, Reinigung und Wartung, Fehlerbehebung bei Startproblemen und Abstürzen, Datenrettung – mit Blick auf dauerhafte Stabilität.
+            Wir beheben Fehler dauerhaft – nicht nur Symptome. Dazu gehören:
+            <ul>
+              <li>Gründliche Diagnose bei Startproblemen, Abstürzen oder Geräuschen</li>
+              <li>Austausch defekter Teile wie Netzteil, Grafikkarte, Mainboard, RAM, SSD/HDD</li>
+              <li>Reinigung, Lüftertausch, neue Wärmeleitpaste gegen Überhitzung</li>
+              <li>Datenrettung bei beschädigten Laufwerken, wenn möglich</li>
+              <li>Aufrüstungen für mehr Leistung und längere Nutzungsdauer</li>
+            </ul>
           </div>
         </div>
+
+        <!-- PC-Build -->
         <div class="accordion-item">
           <button class="accordion-header">PC Zusammenbau und Komplettinstallation</button>
           <div class="accordion-content">
-            Individuelle Konfiguration, Zusammenbau, Betriebssysteminstallation, Treiber/Software Setup, Tests und Übergabe – sofort einsatzbereit, inkl. Datenübernahme auf Wunsch.
+            Der Rechner passt zu deinem Zweck und Budget – fertig eingerichtet:
+            <ul>
+              <li>Beratung zur passenden Hardware – Gaming, Büro, Multimedia oder Spezial</li>
+              <li>Sauberer Zusammenbau und Verkabelung, Qualitätschecks und Stresstests</li>
+              <li>Installation von Windows oder Linux inkl. Treibern und Updates</li>
+              <li>Nutzerkonten, Sicherheits- und Energiesetup, Peripherie einrichten</li>
+              <li>Datenübernahme vom alten System auf Wunsch</li>
+            </ul>
           </div>
         </div>
+
+        <!-- Netzwerk -->
         <div class="accordion-item">
           <button class="accordion-header">Netzwerkinstallation</button>
           <div class="accordion-content">
-            WLAN und LAN, Router/Access Points/Switches, Verkabelung, Sicherheit und Dokumentation, Fehleranalyse und Optimierung bestehender Netze sowie VPN/Remote-Zugriffe.
+            Stabiles, sicheres Netz – zu Hause und im kleinen Unternehmen:
+            <ul>
+              <li>WLAN und LAN einrichten, Router, Switches und Access Points konfigurieren</li>
+              <li>Verkabelung prüfen, Signal verbessern, Roaming optimieren</li>
+              <li>Firewall/Sicherheit, Gäste- und IoT-Netze, kindgerechte Filter</li>
+              <li>VPN und Remote-Zugriff einrichten</li>
+              <li>Analyse und Behebung von Verbindungsproblemen</li>
+            </ul>
           </div>
         </div>
+
+        <!-- Software -->
         <div class="accordion-item">
           <button class="accordion-header">Software Service und Updates</button>
           <div class="accordion-content">
-            Installation/Deinstallation, Systempflege, Malware-Bereinigung, Sicherheitschecks, Backups und Wiederherstellung, Performance-Optimierung.
+            Systeme bleiben schnell und geschützt:
+            <ul>
+              <li>Installation und Entfernung von Programmen, Treibern und Features</li>
+              <li>Systempflege, große Funktionsupdates, Fehlerbehebung</li>
+              <li>Malware- und Virenentfernung, Sicherheitscheck, Backup-Konzepte</li>
+              <li>Wiederherstellung nach Absturz, Performance-Tuning</li>
+              <li>Einrichtung von Office/Cloud-Diensten mit sinnvollen Voreinstellungen</li>
+            </ul>
           </div>
         </div>
+
+        <!-- Websites -->
         <div class="accordion-item">
           <button class="accordion-header">Website Erstellungen</button>
           <div class="accordion-content">
-            Schnelle, schlanke Websites inkl. Struktur, Design, Mobil-Optimierung, Basis-SEO und einfache Pflege. Auf Wunsch Domain & Hosting.
+            Schlanke, schnelle Websites mit klarer Struktur:
+            <ul>
+              <li>Layout im Markenlook, mobil optimiert</li>
+              <li>Basis-SEO, saubere Struktur und schnelle Ladezeiten</li>
+              <li>Einfache Pflege, auf Wunsch Domain/Hosting-Beratung</li>
+              <li>Datenschutz und Impressum berücksichtigt</li>
+            </ul>
           </div>
         </div>
+
+        <!-- Abhol/Bring -->
         <div class="accordion-item">
           <button class="accordion-header">Abhol und Bringservice</button>
           <div class="accordion-content">
-            Wir holen Ihr Gerät ab, reparieren es fachgerecht und bringen es zurück – auf Wunsch mit Vor-Ort-Übergabe und Einweisung.
+            Bequem und sicher:
+            <ul>
+              <li>Terminvereinbarung, sichere Abholung und Rücklieferung</li>
+              <li>Funktionsprüfung bei Übergabe, auf Wunsch Vor-Ort-Einweisung</li>
+              <li>Optional Express für dringende Fälle</li>
+            </ul>
           </div>
         </div>
+
+        <!-- Ergänzend -->
         <div class="accordion-item">
           <button class="accordion-header">Ergänzende Services</button>
           <div class="accordion-content">
-            Datensicherung & Cloud, Sicherheitschecks, Geräteberatung & Beschaffung, laufende Systembetreuung, Vor-Ort-Service, Smart-Home.
+            Sinnvolle Erweiterungen:
+            <ul>
+              <li>Datensicherung & Cloud-Integration</li>
+              <li>IT-Sicherheitschecks und Verschlüsselung</li>
+              <li>Geräteberatung & Beschaffung</li>
+              <li>Laufende Systembetreuung & Remote-Support</li>
+              <li>Vor-Ort-Service und Smart-Home-Einrichtung</li>
+            </ul>
           </div>
         </div>
       </div>

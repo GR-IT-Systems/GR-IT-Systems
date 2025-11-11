@@ -1,12 +1,12 @@
 // ===== GR IT Systems - script.js =====
 
-// © Jahr automatisch im Footer setzen
+// Jahr im Footer
 (function (){
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Hamburger-Menü (öffnet/schließt und schließt nach Klick)
+// Hamburger-Menü
 (function (){
   const toggle = document.getElementById('menu-toggle');
   const panel  = document.getElementById('menu-panel');
@@ -25,7 +25,7 @@
   });
 })();
 
-// Accordion (Leistungen): single-open
+// Accordion: nur ein Punkt offen
 (function (){
   const headers = document.querySelectorAll('.accordion-header');
   if (!headers.length) return;
@@ -37,4 +37,19 @@
       item.classList.toggle('active');
     });
   });
+})();
+
+// Reveal-on-scroll (sanftes Einfliegen)
+(function (){
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || !els.length) {
+    els.forEach(e=>e.classList.add('show'));
+    return;
+  }
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){ en.target.classList.add('show'); io.unobserve(en.target); }
+    });
+  }, {threshold:.12});
+  els.forEach(e=>io.observe(e));
 })();

@@ -39,10 +39,11 @@
   });
 })();
 
-// Reveal-on-scroll (sanftes Einfliegen)
+// Reveal-on-scroll (einfliegend unten -> oben)
 (function (){
   const els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window) || !els.length) {
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window)){
     els.forEach(e=>e.classList.add('show'));
     return;
   }

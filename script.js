@@ -1,5 +1,3 @@
-// ===== GR IT Systems - script.js =====
-
 // © Jahr automatisch im Footer setzen
 (function setYear() {
   const y = document.getElementById('year');
@@ -18,7 +16,7 @@
     panel.setAttribute('aria-hidden', !isOpen);
   });
 
-  // Menü schließen, wenn ein Link geklickt wird
+  // Menü schließen beim Klick
   document.querySelectorAll('.menu-link').forEach(link => {
     link.addEventListener('click', () => {
       panel.classList.remove('open');

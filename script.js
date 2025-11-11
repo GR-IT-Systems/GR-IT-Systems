@@ -6,7 +6,7 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Hamburger-Menü per aria-hidden
+// Hamburger-Menü
 (function (){
   const toggle = document.getElementById('menu-toggle');
   const panel  = document.getElementById('menu-panel');
@@ -20,16 +20,27 @@
     isOpen ? close() : open();
   });
 
-  // Menü schließt nach Navigation
+  // Menü schließt nach Linkklick
   document.querySelectorAll('#menu-panel .menu-link').forEach(a=>{
     a.addEventListener('click', ()=> close());
   });
+})();
 
-  // Klick außerhalb schließt
-  document.addEventListener('click', (e)=>{
-    if (!panel.contains(e.target) && !toggle.contains(e.target)) close();
+// Accordion: nur ein Punkt offen
+(function (){
+  const headers = document.querySelectorAll('.accordion-header');
+  if (!headers.length) return;
+
+  headers.forEach(h=>{
+    h.addEventListener('click', ()=>{
+      const item = h.parentElement;
+      const acc  = item && item.parentElement;
+      if (!acc) return;
+
+      acc.querySelectorAll('.accordion-item').forEach(other=>{
+        if (other !== item) other.classList.remove('active');
+      });
+      item.classList.toggle('active');
+    });
   });
-
-  // ESC schließt
-  document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') close(); });
 })();

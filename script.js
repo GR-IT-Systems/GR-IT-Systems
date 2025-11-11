@@ -1,27 +1,43 @@
 // © Jahr automatisch im Footer setzen
-(function setYear() {
+(function () {
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Hamburger-Menü öffnen/schließen
-(function mobileMenu() {
+// Hamburger-Menü: aria-hidden benutzen (keine Klassen nötig)
+(function () {
   const toggle = document.getElementById('menu-toggle');
   const panel = document.getElementById('menu-panel');
   if (!toggle || !panel) return;
 
+  const open = () => {
+    panel.setAttribute('aria-hidden', 'false');
+    toggle.setAttribute('aria-expanded', 'true');
+  };
+  const close = () => {
+    panel.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
   toggle.addEventListener('click', () => {
-    const isOpen = panel.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen);
-    panel.setAttribute('aria-hidden', !isOpen);
+    const isOpen = panel.getAttribute('aria-hidden') === 'false';
+    isOpen ? close() : open();
   });
 
-  // Menü schließen beim Klick
-  document.querySelectorAll('.menu-link').forEach(link => {
-    link.addEventListener('click', () => {
-      panel.classList.remove('open');
-      toggle.setAttribute('aria-expanded', false);
-      panel.setAttribute('aria-hidden', true);
-    });
+  // Schließen, wenn Link geklickt wurde
+  document.querySelectorAll('#menu-panel .menu-link').forEach(a => {
+    a.addEventListener('click', () => close());
+  });
+
+  // Schließen bei Klick außerhalb
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && !toggle.contains(e.target)) {
+      close();
+    }
+  });
+
+  // Esc schließt
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
   });
 })();

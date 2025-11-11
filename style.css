@@ -19,7 +19,7 @@ body{
   background:#0b0e12;
 }
 
-/* ===== animierter IT-Hintergrund (beweglich) ===== */
+/* ===== beweglicher IT-Hintergrund (auf jeder Seite gleich) ===== */
 .site-bg{position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden;}
 .site-bg::before{
   content:""; position:absolute; inset:0;
@@ -30,92 +30,69 @@ body{
 .site-bg .sq{
   position:absolute; border:1px solid rgba(123,200,255,.18);
   background:rgba(77,163,255,.07); border-radius:14px;
-  filter:saturate(120%); animation:float 22s ease-in-out infinite alternate;
+  animation:float 22s ease-in-out infinite alternate;
 }
 .s1{width:140px; height:140px; top:8%; left:8%}
 .s2{width:110px; height:110px; top:22%; left:72%; animation-duration:26s}
 .s3{width:170px; height:170px; top:64%; left:16%; animation-duration:28s}
 .s4{width:120px; height:120px; top:72%; left:76%; animation-duration:24s}
 .s5{width:105px; height:105px; top:40%; left:46%; animation-duration:21s}
-@keyframes float{
-  0%{transform:translate3d(0,0,0) rotate(.001deg)}
-  100%{transform:translate3d(26px,-30px,0) rotate(6deg)}
-}
+@keyframes float{0%{transform:translate(0,0)}100%{transform:translate(26px,-30px) rotate(6deg)}}
 
-/* ===== Layout ===== */
+/* ===== Layout & Header ===== */
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
-
 .site-header{
   position:sticky; top:0; z-index:1000;
   backdrop-filter:saturate(150%) blur(10px);
   background:rgba(10,14,18,.78);
   border-bottom:1px solid rgba(255,255,255,.06);
 }
-.header-row{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:14px 0;
-}
+.header-row{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
 .brand{user-select:none}
 .logo{font-weight:800; letter-spacing:.3px; font-size:1.25rem}
 .logo span{color:var(--brand)}
 .tagline{font-size:.85rem; color:var(--muted)}
 
-/* Hamburger */
-.hamburger{
-  width:42px; height:36px; border:none; background:transparent; cursor:pointer;
-  display:flex; flex-direction:column; justify-content:center; gap:6px; padding:6px;
-}
-.hamburger span{height:2px; width:100%; background:var(--text); border-radius:2px;}
-
-/* Rechtses Panel-Menü */
+/* Hamburger + Panel */
+.hamburger{width:42px; height:36px; border:none; background:transparent; cursor:pointer; display:flex; flex-direction:column; justify-content:center; gap:6px; padding:6px}
+.hamburger span{height:2px; width:100%; background:var(--text); border-radius:2px}
 .menu-panel{
   position:fixed; right:16px; top:72px;
   background:rgba(15,20,26,.98);
   border:1px solid rgba(255,255,255,.08);
   border-radius:14px; box-shadow:var(--shadow);
-  width:260px; max-height:70vh; overflow:auto;
-  padding:10px; display:none; z-index:1090;
+  width:260px; max-height:70vh; overflow:auto; padding:10px; display:none; z-index:1090;
 }
 .menu-panel[aria-hidden="false"]{display:block; animation:fadeIn .18s ease both}
 .menu-panel ul{list-style:none;margin:0;padding:6px}
 .menu-panel li{border-bottom:1px solid rgba(255,255,255,.06)}
 .menu-panel li.sep{border:none; margin:6px 0}
-.menu-panel a{display:block; padding:12px 12px; color:var(--text); text-decoration:none; font-weight:700; border-radius:10px}
+.menu-panel a{display:block; padding:12px; color:var(--text); text-decoration:none; font-weight:700; border-radius:10px}
 .menu-panel a:hover{background:rgba(255,255,255,.06)}
 @keyframes fadeIn{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
 
-/* Sektionen, Buttons, Cards */
+/* Sections, Buttons, Cards */
 .section{padding:56px 0}
 .section-alt{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0) 60%)}
-
 .hero{padding:72px 0 40px; text-align:center}
 .eyebrow{letter-spacing:.12em; text-transform:uppercase; color:#cfe7ff; opacity:.85; font-weight:700; margin:0 0 8px}
 .claim{font-size:2.4rem; margin:0 0 12px}
 .hero-sub{color:var(--muted); margin:0 auto; max-width:800px}
-
 .cta-row{display:flex; gap:12px; justify-content:center; margin:22px 0}
 .btn{display:inline-block; padding:12px 18px; border-radius:12px; font-weight:700; text-decoration:none; border:1px solid rgba(255,255,255,.12); box-shadow:var(--shadow)}
 .btn-primary{background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:#071018; border-color:transparent}
 .btn-outline{background:transparent; color:var(--text)}
-
 .grid{display:grid; gap:16px; grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) )}
 .card{background: rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.06); padding:18px; border-radius:16px; box-shadow:var(--shadow)}
 .muted{color:var(--muted)}
 .lead{font-size:1.05rem; color:#d9e5f2; max-width:900px}
 
-/* Accordion */
-.accordion{display:flex; flex-direction:column; gap:10px; margin-top:18px;}
+/* Accordion (Leistungen) */
+.accordion{display:flex; flex-direction:column; gap:10px; margin-top:18px}
 .accordion-item{background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:12px; overflow:hidden}
-.accordion-header{
-  width:100%; text-align:left; padding:14px 16px; background:transparent; border:none; cursor:pointer;
-  color:var(--text); font-weight:800;
-  display:flex; align-items:center; justify-content:space-between;
-}
+.accordion-header{width:100%; text-align:left; padding:14px 16px; background:transparent; border:none; cursor:pointer; color:var(--text); font-weight:800; display:flex; align-items:center; justify-content:space-between}
 .accordion-header:hover{background:rgba(255,255,255,.05)}
-.accordion-content{
-  max-height:0; overflow:hidden; padding:0 16px; color:var(--muted);
-  transition:max-height .45s ease, padding .45s ease;
-}
+.accordion-content{max-height:0; overflow:hidden; padding:0 16px; color:var(--muted); transition:max-height .45s ease, padding .45s ease}
 .accordion-item.active .accordion-content{max-height:420px; padding:0 16px 16px}
 
 /* Footer */
@@ -130,5 +107,5 @@ body{
   .header-row{padding:10px 0}
 }
 
-/* Notdienst-Link im Menü immer blau */
+/* Notdienst im Menü immer blau */
 .menu-panel .strong{color:var(--brand); font-weight:700}

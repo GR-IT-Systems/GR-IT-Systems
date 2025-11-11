@@ -1,38 +1,29 @@
-// Jahr
-(function(){const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();})();
+// ===== GR IT Systems - script.js =====
 
-// Smooth scroll für In-Page Links (falls vorhanden)
-(function(){
-  const links=document.querySelectorAll('a[href^="#"]');
-  links.forEach(a=>{
-    a.addEventListener('click',e=>{
-      const id=a.getAttribute('href').slice(1);
-      const el=document.getElementById(id);
-      if(el){ e.preventDefault(); closeMenu(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
-    });
-  });
+// © Jahr automatisch im Footer setzen
+(function setYear() {
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Menü
-const menuToggle=document.getElementById('menu-toggle');
-const menuPanel=document.getElementById('menu-panel');
-function openMenu(){ if(!menuPanel) return; menuPanel.setAttribute('aria-hidden','false'); menuToggle&&menuToggle.setAttribute('aria-expanded','true'); }
-function closeMenu(){ if(!menuPanel) return; menuPanel.setAttribute('aria-hidden','true'); menuToggle&&menuToggle.setAttribute('aria-expanded','false'); }
-if(menuToggle&&menuPanel){
-  menuToggle.addEventListener('click',()=>{ const open=menuPanel.getAttribute('aria-hidden')==='false'; open?closeMenu():openMenu(); });
-  document.addEventListener('click',e=>{ if(!menuPanel.contains(e.target)&&!menuToggle.contains(e.target)) closeMenu(); });
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
-}
+// Hamburger-Menü öffnen/schließen
+(function mobileMenu() {
+  const toggle = document.getElementById('menu-toggle');
+  const panel = document.getElementById('menu-panel');
+  if (!toggle || !panel) return;
 
-// Akkordeon (Leistungen Seite)
-(function(){
-  const items=document.querySelectorAll('.acc-item');
-  if(!items.length) return;
-  items.forEach(item=>{
-    const h=item.querySelector('.acc-header');
-    h.addEventListener('click',()=>{
-      items.forEach(o=>{ if(o!==item) o.classList.remove('active'); });
-      item.classList.toggle('active');
+  toggle.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+    panel.setAttribute('aria-hidden', !isOpen);
+  });
+
+  // Menü schließen, wenn ein Link geklickt wird
+  document.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', () => {
+      panel.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+      panel.setAttribute('aria-hidden', true);
     });
   });
 })();

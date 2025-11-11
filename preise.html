@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Preise – GR IT Systems</title>
+  <title>Preise & Anfrage – GR IT Systems</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -39,9 +39,32 @@
 
   <main class="section">
     <div class="container">
-      <h1>Preise</h1>
-      <!-- dein vorhandener Preisinhalt / Formular bleibt -->
-      <!-- … -->
+      <h1>Unverbindlich anfragen</h1>
+      <p class="muted">Nenne uns kurz dein Anliegen. Wir melden uns mit Vorschlag und Preisrahmen.</p>
+
+      <div class="card">
+        <form action="mailto:gritsystems@gmail.com" method="post" enctype="text/plain">
+          <div class="grid">
+            <div><label for="vn">Vorname</label><br><input id="vn" name="Vorname" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)"></div>
+            <div><label for="nn">Nachname</label><br><input id="nn" name="Nachname" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)"></div>
+            <div><label for="tel">Telefon</label><br><input id="tel" name="Telefon" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)"></div>
+            <div><label for="mail">E-Mail</label><br><input id="mail" type="email" name="E-Mail" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)"></div>
+            <div style="grid-column:1/-1"><label for="svc">Leistung</label><br>
+              <select id="svc" name="Leistung" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)">
+                <option>Hardware Reparaturen</option>
+                <option>PC Zusammenbau & Installation</option>
+                <option>Netzwerkinstallation</option>
+                <option>Software Service & Updates</option>
+                <option>Website Erstellungen</option>
+                <option>Abhol & Bringservice</option>
+                <option>Sonstiges</option>
+              </select>
+            </div>
+            <div style="grid-column:1/-1"><label for="msg">Kurzbeschreibung</label><br><textarea id="msg" name="Nachricht" rows="5" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)"></textarea></div>
+          </div>
+          <div style="margin-top:16px"><button class="btn btn-primary" type="submit">Jetzt unverbindlich anfragen</button></div>
+        </form>
+      </div>
     </div>
   </main>
 

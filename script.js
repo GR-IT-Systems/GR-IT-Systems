@@ -6,7 +6,7 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Hamburger-Menü
+// Hamburger-Menü (öffnet/schließt und schließt nach Klick)
 (function (){
   const toggle = document.getElementById('menu-toggle');
   const panel  = document.getElementById('menu-panel');
@@ -20,26 +20,20 @@
     isOpen ? close() : open();
   });
 
-  // Menü schließt nach Linkklick
   document.querySelectorAll('#menu-panel .menu-link').forEach(a=>{
     a.addEventListener('click', ()=> close());
   });
 })();
 
-// Accordion: nur ein Punkt offen
+// Accordion (Leistungen): single-open
 (function (){
   const headers = document.querySelectorAll('.accordion-header');
   if (!headers.length) return;
-
   headers.forEach(h=>{
     h.addEventListener('click', ()=>{
       const item = h.parentElement;
       const acc  = item && item.parentElement;
-      if (!acc) return;
-
-      acc.querySelectorAll('.accordion-item').forEach(other=>{
-        if (other !== item) other.classList.remove('active');
-      });
+      acc.querySelectorAll('.accordion-item').forEach(o=>{ if(o!==item) o.classList.remove('active'); });
       item.classList.toggle('active');
     });
   });

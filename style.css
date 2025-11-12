@@ -83,7 +83,7 @@ body{
 .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#071018;border-color:transparent}
 .btn-outline{background:transparent;color:var(--text)}
 
-/* Sections & legal */
+/* Sections & legal (für Unterseiten wiederverwendet) */
 .section{padding:56px 0}
 .section-alt{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0) 60%)}
 .about{display:flex;gap:28px;align-items:center;justify-content:center}
@@ -93,7 +93,7 @@ body{
 .legal h3{margin:18px 0 8px}
 .disclaimer{color:var(--muted);font-size:.9rem;margin-top:8px}
 
-/* Leistungen Akkordeon */
+/* Leistungen Akkordeon (Unterseite) */
 .acc{display:flex;flex-direction:column;gap:12px;margin-top:14px}
 .acc-item{background:rgba(255,255,255,.035);border-radius:14px;box-shadow:var(--shadow);opacity:0;transform:translateY(14px) scale(.985);animation:popUp .34s cubic-bezier(.22,.61,.36,1) forwards}
 .acc-item:nth-child(1){animation-delay:.06s}
@@ -110,7 +110,7 @@ body{
 .bullet{margin:8px 0 0;padding-left:18px}
 .bullet li{margin:6px 0}
 
-/* Form – dunkler Look, ohne helle Linien */
+/* Form – dunkler Look (Preise) */
 .form{max-width:760px;margin-top:18px}
 .form-row{display:flex;flex-direction:column;margin:12px 0}
 .form-row label{font-weight:700;margin-bottom:6px}

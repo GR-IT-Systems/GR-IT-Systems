@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Preise & Anfrage – GR IT Systems</title>
+  <title>Preise und Anfrage – GR IT Systems</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="site-bg" aria-hidden="true">
-    <div class="sq s1"></div><div class="sq s2"></div><div class="sq s3"></div><div class="sq s4"></div><div class="sq s5"></div>
-  </div>
+  <div class="site-bg" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container header-row">
       <div class="brand">
-        <div class="logo">GR <span>IT</span> Systems</div>
+        <div class="logo">GR<span> IT</span> Systems</div>
         <div class="tagline">IT Service in München</div>
       </div>
       <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
@@ -23,12 +22,10 @@
     </div>
     <nav id="menu-panel" class="menu-panel" aria-hidden="true">
       <ul>
-        <li><a href="index.html" class="menu-link">Startseite</a></li>
         <li><a href="leistungen.html" class="menu-link">Leistungen</a></li>
-        <li><a href="wer-wir-sind.html" class="menu-link">Über uns</a></li>
+        <li><a href="ueber.html" class="menu-link">Über Uns</a></li>
         <li><a href="preise.html" class="menu-link">Preise</a></li>
-        <li class="sep"></li>
-        <li><a href="notdienst.html" class="menu-link strong">Notdienst</a></li>
+        <li><a href="tel:+4917660158769" class="menu-link strong">Notdienst 0176 6015 8769</a></li>
         <li class="sep"></li>
         <li><a href="impressum.html" class="menu-link">Impressum</a></li>
         <li><a href="datenschutz.html" class="menu-link">Datenschutz</a></li>
@@ -39,32 +36,49 @@
 
   <main class="section">
     <div class="container">
-      <h1>Unverbindlich anfragen</h1>
-      <p class="muted">Nenne uns kurz dein Anliegen. Wir melden uns mit Vorschlag und Preisrahmen.</p>
+      <h1>Preise und unverbindliche Anfrage</h1>
+      <p class="muted">Senden Sie uns eine kurze Anfrage. Wir melden uns mit einem Vorschlag inklusive Preisrahmen.</p>
 
-      <div class="card">
-        <form action="mailto:gritsystems@gmail.com" method="post" enctype="text/plain">
-          <div class="grid">
-            <div><label for="vn">Vorname</label><br><input id="vn" name="Vorname" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)"></div>
-            <div><label for="nn">Nachname</label><br><input id="nn" name="Nachname" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)"></div>
-            <div><label for="tel">Telefon</label><br><input id="tel" name="Telefon" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)"></div>
-            <div><label for="mail">E-Mail</label><br><input id="mail" type="email" name="E-Mail" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)"></div>
-            <div style="grid-column:1/-1"><label for="svc">Leistung</label><br>
-              <select id="svc" name="Leistung" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)">
-                <option>Hardware Reparaturen</option>
-                <option>PC Zusammenbau & Installation</option>
-                <option>Netzwerkinstallation</option>
-                <option>Software Service & Updates</option>
-                <option>Website Erstellungen</option>
-                <option>Abhol & Bringservice</option>
-                <option>Sonstiges</option>
-              </select>
-            </div>
-            <div style="grid-column:1/-1"><label for="msg">Kurzbeschreibung</label><br><textarea id="msg" name="Nachricht" rows="5" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.03);color:var(--text)"></textarea></div>
-          </div>
-          <div style="margin-top:16px"><button class="btn btn-primary" type="submit">Jetzt unverbindlich anfragen</button></div>
-        </form>
-      </div>
+      <form id="anfrageForm" class="form">
+        <div class="form-row">
+          <label for="vorname">Vorname</label>
+          <input id="vorname" name="vorname" type="text" required />
+        </div>
+        <div class="form-row">
+          <label for="nachname">Nachname</label>
+          <input id="nachname" name="nachname" type="text" required />
+        </div>
+        <div class="form-row">
+          <label for="nummer">Telefonnummer</label>
+          <input id="nummer" name="nummer" type="tel" required />
+        </div>
+        <div class="form-row">
+          <label for="email">E Mail</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+        <div class="form-row">
+          <label for="leistung">Leistung</label>
+          <select id="leistung" name="leistung" required>
+            <option value="" disabled selected>Bitte auswählen</option>
+            <option>Hardware Reparaturen</option>
+            <option>PC Zusammenbau und Komplettinstallation</option>
+            <option>Netzwerkinstallation</option>
+            <option>Software Service und Updates</option>
+            <option>Website Erstellungen</option>
+            <option>Abhol und Bringservice</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="beschreibung">Kurzbeschreibung optional</label>
+          <textarea id="beschreibung" name="beschreibung" rows="4" placeholder="Zum Beispiel Laptop startet nicht oder WLAN bricht ab"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Jetzt unverbindlich anfragen</button>
+          <a class="btn btn-outline" href="index.html">Zur Startseite</a>
+        </div>
+        <p id="formHinweis" class="small-note"></p>
+      </form>
     </div>
   </main>
 
@@ -72,12 +86,43 @@
     <div class="container footer-row">
       <div>© <span id="year"></span> GR IT Systems</div>
       <div class="footer-links">
-        <a href="impressum.html">Impressum</a><span aria-hidden="true">•</span>
-        <a href="datenschutz.html">Datenschutz</a><span aria-hidden="true">•</span>
+        <a href="impressum.html">Impressum</a>
+        <span aria-hidden="true">•</span>
+        <a href="datenschutz.html">Datenschutz</a>
+        <span aria-hidden="true">•</span>
         <a href="agb.html">AGB</a>
       </div>
     </div>
+
     <script src="script.js"></script>
+    <script>
+      // Mailto Versand
+      document.getElementById('anfrageForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const vor = document.getElementById('vorname').value.trim();
+        const nach = document.getElementById('nachname').value.trim();
+        const tel = document.getElementById('nummer').value.trim();
+        const mail = document.getElementById('email').value.trim();
+        const leist = document.getElementById('leistung').value;
+        const besch = document.getElementById('beschreibung').value.trim();
+
+        const subject = 'Unverbindliche Anfrage';
+        const body =
+          'Name: ' + vor + ' ' + nach + '%0D%0A' +
+          'Telefon: ' + tel + '%0D%0A' +
+          'E Mail: ' + mail + '%0D%0A' +
+          'Leistung: ' + leist + '%0D%0A' +
+          'Beschreibung: ' + (besch || 'keine Angabe');
+
+        const href = 'mailto:gritsystems@gmail.com'
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + body;
+
+        document.getElementById('formHinweis').textContent =
+          'Ihr E Mail Programm öffnet sich gleich mit der Anfrage. Bitte prüfen und senden.';
+        window.location.href = href;
+      });
+    </script>
   </footer>
 </body>
 </html>

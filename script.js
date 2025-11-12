@@ -1,56 +1,38 @@
-// ===== GR IT Systems - script.js =====
+// Jahr
+(function(){const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();})();
 
-// Jahr im Footer
-(function (){
-  const y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
-})();
-
-// Hamburger-Menü
-(function (){
-  const toggle = document.getElementById('menu-toggle');
-  const panel  = document.getElementById('menu-panel');
-  if (!toggle || !panel) return;
-
-  const open  = () => { panel.setAttribute('aria-hidden','false'); toggle.setAttribute('aria-expanded','true'); };
-  const close = () => { panel.setAttribute('aria-hidden','true');  toggle.setAttribute('aria-expanded','false'); };
-
-  toggle.addEventListener('click', () => {
-    const isOpen = panel.getAttribute('aria-hidden') === 'false';
-    isOpen ? close() : open();
-  });
-
-  document.querySelectorAll('#menu-panel .menu-link').forEach(a=>{
-    a.addEventListener('click', ()=> close());
+// Smooth scroll für In-Page Links (falls vorhanden)
+(function(){
+  const links=document.querySelectorAll('a[href^="#"]');
+  links.forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href').slice(1);
+      const el=document.getElementById(id);
+      if(el){ e.preventDefault(); closeMenu(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+    });
   });
 })();
 
-// Accordion: nur ein Punkt offen
-(function (){
-  const headers = document.querySelectorAll('.accordion-header');
-  if (!headers.length) return;
-  headers.forEach(h=>{
-    h.addEventListener('click', ()=>{
-      const item = h.parentElement;
-      const acc  = item && item.parentElement;
-      acc.querySelectorAll('.accordion-item').forEach(o=>{ if(o!==item) o.classList.remove('active'); });
+// Menü
+const menuToggle=document.getElementById('menu-toggle');
+const menuPanel=document.getElementById('menu-panel');
+function openMenu(){ if(!menuPanel) return; menuPanel.setAttribute('aria-hidden','false'); menuToggle&&menuToggle.setAttribute('aria-expanded','true'); }
+function closeMenu(){ if(!menuPanel) return; menuPanel.setAttribute('aria-hidden','true'); menuToggle&&menuToggle.setAttribute('aria-expanded','false'); }
+if(menuToggle&&menuPanel){
+  menuToggle.addEventListener('click',()=>{ const open=menuPanel.getAttribute('aria-hidden')==='false'; open?closeMenu():openMenu(); });
+  document.addEventListener('click',e=>{ if(!menuPanel.contains(e.target)&&!menuToggle.contains(e.target)) closeMenu(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+}
+
+// Akkordeon (Leistungen Seite)
+(function(){
+  const items=document.querySelectorAll('.acc-item');
+  if(!items.length) return;
+  items.forEach(item=>{
+    const h=item.querySelector('.acc-header');
+    h.addEventListener('click',()=>{
+      items.forEach(o=>{ if(o!==item) o.classList.remove('active'); });
       item.classList.toggle('active');
     });
   });
-})();
-
-// Reveal-on-scroll (einfliegend unten -> oben)
-(function (){
-  const els = document.querySelectorAll('.reveal');
-  if (!els.length) return;
-  if (!('IntersectionObserver' in window)){
-    els.forEach(e=>e.classList.add('show'));
-    return;
-  }
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(en=>{
-      if(en.isIntersecting){ en.target.classList.add('show'); io.unobserve(en.target); }
-    });
-  }, {threshold:.12});
-  els.forEach(e=>io.observe(e));
 })();

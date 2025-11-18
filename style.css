@@ -10,12 +10,21 @@
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
+
+html,
+body{
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
 body{
   font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:linear-gradient(180deg,#e5e7eb 0%,#f9fafb 100%); /* Hell statt dunkel */
   color:var(--text);
   line-height:1.6;
+  display:flex;
+  flex-direction:column;
 }
 
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
@@ -248,6 +257,11 @@ body{
   to{opacity:1;transform:none}
 }
 
+/* Footer immer unten halten */
+main{
+  flex:1;   /* nimmt den restlichen Platz ein, Footer rutscht nach unten */
+}
+
 /* Mobile Anpassungen */
 @media (max-width:720px){
   .claim{font-size:2rem}
@@ -272,16 +286,4 @@ body{
     flex-direction:column;
     align-items:flex-start;
   }
-html, body {
-  height: 100%;
 }
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1; /* sorgt dafür, dass der Inhalt den Platz füllt */
-}
-

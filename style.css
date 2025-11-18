@@ -1,12 +1,13 @@
 :root{
-  --bg:#0b0f14;
-  --panel:#0f141a;
-  --text:#e7edf3;
-  --muted:#aab4bf;
-  --brand:#4da3ff;
-  --brand-2:#7bc8ff;
-  --ring: rgba(77,163,255,.5);
-  --shadow: 0 10px 25px rgba(0,0,0,.35);
+  --bg:#050814;              /* etwas dunkler & ruhiger Hintergrund */
+  --panel:#111827;           /* Panels klarer vom Hintergrund abgesetzt */
+  --text:#e5f0ff;            /* leicht helleres, weicheres Weiß */
+  --muted:#9ca3af;           /* elegantes Grau für Nebeninfos */
+  --brand:#3b82f6;           /* kräftiges, modernes Blau (Primary) */
+  --brand-2:#60a5fa;         /* helleres Blau für Verläufe/Highlights */
+  --ring: rgba(59,130,246,.6); /* Fokus-Ring leicht kräftiger */
+  --shadow: 0 16px 40px rgba(0,0,0,.45); /* etwas weichere, tiefere Schatten */
+
 }
 
 *{box-sizing:border-box}

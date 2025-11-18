@@ -1,14 +1,13 @@
 :root{
-  --bg:#050814;              /* etwas dunkler & ruhiger Hintergrund */
-  --panel:#111827;           /* Panels klarer vom Hintergrund abgesetzt */
-  --text:#e5f0ff;            /* leicht helleres, weicheres Weiß */
-  --muted:#9ca3af;           /* elegantes Grau für Nebeninfos */
-  --brand:#3b82f6;           /* kräftiges, modernes Blau (Primary) */
-  --brand-2:#60a5fa;         /* helleres Blau für Verläufe/Highlights */
-  --ring: rgba(59,130,246,.6); /* Fokus-Ring leicht kräftiger */
+  --bg:#030712;              /* sehr dunkler, neutraler Hintergrund (nicht mehr blau) */
+  --panel:#020617;           /* Panels etwas abgesetzt, aber auch neutral dunkel */
+  --text:#f9fafb;            /* fast weiß, gut lesbar */
+  --muted:#9ca3af;           /* dezentes Grau für Nebeninfos */
+  --brand:#ec4899;           /* kräftiges Pink als Hauptfarbe */
+  --brand-2:#8b5cf6;         /* Lila als zweite Akzentfarbe */
+  --ring: rgba(236,72,153,.6); /* Fokus-Ring in Pink */
   --shadow: 0 16px 40px rgba(0,0,0,.45); /* etwas weichere, tiefere Schatten */
 }
-
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}

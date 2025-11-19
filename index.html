@@ -16,12 +16,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Hintergrund -->
+  <!-- Seitenweiter Hintergrund -->
   <div class="site-bg" aria-hidden="true"></div>
 
+  <!-- HEADER (gleich wie auf Leistungen) -->
   <header class="site-header">
     <div class="container header-row">
-      <!-- Logo klickbar -->
+      <!-- Logo klickbar zur Startseite -->
       <a href="index.html" class="brand" style="text-decoration: none; color: inherit;">
         <div class="logo">GR<span> IT</span> Systems</div>
         <div class="tagline">IT Service in München</div>
@@ -47,11 +48,13 @@
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
         <h1 class="claim">Weil jedes System Vertrauen verdient</h1>
-        <p class="hero-sub">Professioneller IT Service für stabile Systeme, klare Kommunikation und saubere Umsetzung.</p>
+        <p class="hero-sub">
+          Professioneller IT Service für stabile Systeme, klare Kommunikation und saubere Umsetzung.
+        </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="tel:+4917660158769">Jetzt anrufen</a>
           <a class="btn btn-outline" href="leistungen.html">Leistungen ansehen</a>
@@ -60,7 +63,7 @@
       </div>
     </section>
 
-    <!-- Warum wir -->
+    <!-- WARUM WIR -->
     <section class="section section-alt">
       <div class="container">
         <h2>Warum GR IT Systems?</h2>
@@ -87,7 +90,7 @@
       </div>
     </section>
 
-    <!-- Leistungen -->
+    <!-- LEISTUNGEN IM ÜBERBLICK -->
     <section class="section">
       <div class="container">
         <h2>Leistungen im Überblick</h2>
@@ -96,3 +99,31 @@
         </p>
 
         <div class="services-grid">
+          <div class="service-pill">Hardware-Reparatur &amp; Austausch</div>
+          <div class="service-pill">PC- &amp; Gaming-Systeme</div>
+          <div class="service-pill">Fehleranalyse &amp; Optimierung</div>
+          <div class="service-pill">Windows &amp; Software Einrichtung</div>
+          <div class="service-pill">WLAN &amp; Netzwerk</div>
+          <div class="service-pill">Datensicherung &amp; Backups</div>
+          <div class="service-pill">Fernwartung</div>
+          <div class="service-pill">Abhol- &amp; Bringservice</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© <span id="year"></span> GR IT Systems</div>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <span aria-hidden="true">•</span>
+        <a href="datenschutz.html">Datenschutz</a>
+        <span aria-hidden="true">•</span>
+        <a href="agb.html">AGB</a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </footer>
+</body>
+</html>

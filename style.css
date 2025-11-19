@@ -9,6 +9,12 @@
   --shadow: 0 10px 25px rgba(15,23,42,.12); /* Leichter Card-Schatten */
 }
 
+/* NEU: Überschriften in dunkelblau */
+h1, h2, h3{
+  color:#1e3a8a;
+  font-weight:700;
+}
+
 *{box-sizing:border-box}
 
 html,
@@ -361,7 +367,7 @@ body{
   font-size:.95rem;
 }
 
-/* Leistungen Akkordeon (Unterseite) */
+/* Leistungen Akkordeon (Unterseite + Startseite FAQ) */
 .acc{
   display:flex;
   flex-direction:column;

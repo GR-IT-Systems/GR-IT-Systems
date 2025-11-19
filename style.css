@@ -293,7 +293,7 @@ body{
   margin-top:8px;
 }
 
-/* Karten unter "Warum GR IT Systems?" */
+/* Karten */
 .info-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -321,24 +321,7 @@ body{
   font-size:.95rem;
 }
 
-/* Leistungen im Überblick */
-.services-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:12px;
-}
-
-.service-pill{
-  padding:8px 14px;
-  border-radius:999px;
-  background:var(--panel);
-  border:1px solid rgba(15,23,42,.08);
-  box-shadow:var(--shadow);
-  font-size:.95rem;
-}
-
-/* Leistungen Akkordeon (Unterseite + FAQ Startseite) */
+/* Akkordeon */
 .acc{
   display:flex;
   flex-direction:column;
@@ -416,7 +399,7 @@ body{
   margin:6px 0;
 }
 
-/* Form – helle Felder */
+/* Form */
 .form{
   max-width:760px;
   margin-top:18px;
@@ -466,7 +449,7 @@ body{
   color:var(--muted);
 }
 
-/* Footer */
+/* Standard-Footer (wird nur auf Unterseiten genutzt, hier aber belassen) */
 .site-footer{
   border-top:1px solid rgba(15,23,42,.06);
   padding:18px 0;
@@ -549,37 +532,59 @@ main{
   font-size:.9rem;
 }
 
-/* HERO-BLOCK mit Bild (Hero + 3 Sections) */
-.hero-block{
+/* HERO NUR OBEN MIT BILD */
+.hero-img{
   position:relative;
+  width:100%;
+  padding:140px 0 120px;
   background:url("hero-bg.png") center/cover no-repeat;
   overflow:hidden;
-  animation:heroMove 14s ease-in-out infinite alternate;
+  animation:heroMove 18s ease-in-out infinite alternate;
 }
 
-.hero-block::before{
+/* dunkler Overlay, damit Bild sichtbar bleibt, Text aber lesbar */
+.hero-img::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(255,255,255,0.78); /* heller Schleier, damit Text gut lesbar bleibt */
-  backdrop-filter:blur(1px);
+  background:linear-gradient(
+    to bottom,
+    rgba(15,23,42,0.85),
+    rgba(15,23,42,0.55),
+    rgba(15,23,42,0.85)
+  );
 }
 
-/* alle direkten Kinder (Hero + Sections) über den Overlay legen */
-.hero-block > *{
+/* Inhalt über das Bild legen */
+.hero-inner{
   position:relative;
-  z-index:1;
+  z-index:2;
 }
 
-/* Hero im Block etwas großzügiger machen */
-.hero-img{
-  padding-top:140px;
+/* Text im Hero weiß machen */
+.hero-img .claim{
+  color:#f9fafb;
 }
 
-/* leichte Hintergrundbewegung */
+.hero-img .hero-sub{
+  color:#e5e7eb;
+}
+
+/* Buttons im Hero an dunklen Hintergrund anpassen */
+.hero-img .btn-outline{
+  background:rgba(255,255,255,0.08);
+  color:#f9fafb;
+  border-color:rgba(255,255,255,0.35);
+}
+
+.hero-img .btn-outline:hover{
+  background:rgba(255,255,255,0.18);
+}
+
+/* leichte Bewegung des Hintergrundbildes */
 @keyframes heroMove{
   0%{background-position:center}
-  100%{background-position:center 30px}
+  100%{background-position:center 28px}
 }
 
 /* Mobile Anpassungen */

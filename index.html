@@ -4,94 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GR IT Systems – IT Service in München</title>
-  <meta name="description" content="IT Service für Hardware Reparatur, PC Zusammenbau, Netzwerke, Software Service, Website Erstellungen und Abhol und Bringservice." />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="GR IT Systems – IT Service in München" />
-  <meta property="og:description" content="Weil jedes System Vertrauen verdient. Professionelle IT Lösungen für Menschen und Unternehmen in München." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="de_DE" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="description" content="Professioneller IT-Service in München. Reparaturen, Netzwerk, PC-Zusammenbau, Software Service und schnelle Unterstützung." />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  
+
+  <!-- Dunkelblau für Überschriften -->
   <style>
-    /* NEUE BLAUE ÜBERSCHRIFTEN */
-    h2 {
-      color: #2563eb;
+    h2, h3 {
+      color: #1e3a8a; /* modernes dunkles Blau */
       font-weight: 700;
     }
-
-    /* Großer Footerblock */
-    .big-footer {
-      background:#0e1a2b;
-      color:white;
-      padding:50px 0;
-      margin-top:40px;
-    }
-
-    .big-footer h3 {
-      margin-bottom:10px;
-      font-size:18px;
-      color:white;
-    }
-
-    .big-footer a {
-      display:block;
-      color:white;
-      opacity:0.8;
-      text-decoration:none;
-      margin:4px 0;
-    }
-
-    .big-footer a:hover {
-      opacity:1;
-    }
-
-    .big-footer-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:30px;
-    }
-
-    .footer-bottom-line {
-      height:1px;
-      background:#2e3b52;
-      margin:30px 0;
-    }
-
-    .footer-bottom-links {
-      text-align:center;
-      color:white;
-      opacity:0.8;
-      font-size:14px;
-    }
-
-    .footer-bottom-links a {
-      color:white;
-      text-decoration:none;
-      margin:0 8px;
-    }
-
-    .footer-bottom-links a:hover {
-      opacity:1;
-    }
   </style>
-
 </head>
-<body>
 
+<body>
   <div class="site-bg" aria-hidden="true"></div>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="container header-row">
+
       <a href="index.html" class="brand" style="text-decoration:none;color:inherit;">
         <div class="logo">GR<span> IT</span> Systems</div>
         <div class="tagline">IT Service in München</div>
       </a>
 
-      <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
+      <button id="menu-toggle" class="hamburger" aria-expanded="false" aria-controls="menu-panel">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -101,7 +38,7 @@
         <li><a href="leistungen.html" class="menu-link">Leistungen</a></li>
         <li><a href="ueber.html" class="menu-link">Über Uns</a></li>
         <li><a href="preise.html" class="menu-link">Preise</a></li>
-        <li><a href="notdienst.html" class="menu-link strong">Notdienst</a></li>
+        <li><a href="notdienst.html" class="menu-link strong">Notdienst 0176 6015 8769</a></li>
         <li class="sep"></li>
         <li><a href="impressum.html" class="menu-link">Impressum</a></li>
         <li><a href="datenschutz.html" class="menu-link">Datenschutz</a></li>
@@ -110,13 +47,15 @@
     </nav>
   </header>
 
+
   <main>
 
     <!-- HERO -->
     <section class="hero">
-      <div class="container hero-inner">
+      <div class="container">
         <h1 class="claim">Weil jedes System Vertrauen verdient</h1>
-        <p class="hero-sub">Professioneller IT Service für stabile Systeme, klare Kommunikation und saubere Umsetzung.</p>
+        <p class="hero-sub">Professioneller IT-Service für stabile Systeme, klare Kommunikation und saubere Umsetzung.</p>
+
         <div class="cta-row">
           <a class="btn btn-primary" href="tel:+4917660158769">Jetzt anrufen</a>
           <a class="btn btn-outline" href="leistungen.html">Leistungen ansehen</a>
@@ -126,93 +65,127 @@
     </section>
 
     <!-- Warum wir -->
-    <section class="section section-alt">
-      <div class="container">
-        <h2>Warum GR IT Systems?</h2>
-        <p class="section-sub">
-          Als leistungsstarkes IT-Systemhaus in München unterstützen wir Sie zuverlässig in allen Bereichen moderner IT-Infrastruktur – mit Kompetenz, Weitblick und einem klaren Fokus auf stabile, effiziente Systeme.
-        </p>
-
-        <p>
-          Unsere IT-Spezialisten verbinden tiefgreifendes technisches Fachwissen mit praxisorientierten Lösungen. Gemeinsam entwickeln, implementieren und betreuen wir individuelle IT-Systeme, die echten Mehrwert bieten.
-        </p>
-
-        <p>
-          Ob Netzwerkaufbau, Systemerweiterung oder Optimierung Ihrer bestehenden Infrastruktur – wir sorgen dafür, dass Ihre IT zu einem echten Wettbewerbsvorteil wird.
-        </p>
-      </div>
-    </section>
-
-    <!-- Prozess -->
     <section class="section">
       <div class="container">
-        <h2>Unser Arbeitsprozess</h2>
-        <p class="section-sub">Strukturiert. Transparent. Effizient.</p>
+        <h2>Warum GR IT Systems?</h2>
+        <p class="section-sub">Zuverlässig, modern und effizient – wir liefern IT-Lösungen, die funktionieren.</p>
 
         <div class="info-grid">
           <div class="info-card">
-            <h3>Analyse</h3>
-            <p>Wir prüfen Ihre IT auf Schwachstellen, Risiken und Optimierungspotenzial.</p>
+            <h3>Schnelle Hilfe</h3>
+            <p>Ob Hardware, Software oder Netzwerk – wir reagieren schnell und zuverlässig.</p>
           </div>
 
           <div class="info-card">
-            <h3>Konzeption</h3>
-            <p>Wir entwickeln eine maßgeschneiderte Strategie – perfekt für Ihr Unternehmen.</p>
+            <h3>Faire Preise</h3>
+            <p>Transparente Kosten ohne Überraschungen. Auf Wunsch Pauschalen.</p>
           </div>
 
           <div class="info-card">
-            <h3>Umsetzung</h3>
-            <p>Wir integrieren moderne Technologien und optimieren Ihre Systeme.</p>
-          </div>
-
-          <div class="info-card">
-            <h3>Betreuung</h3>
-            <p>Langfristige Wartung, Sicherheit und Weiterentwicklung Ihrer IT.</p>
+            <h3>Alles aus einer Hand</h3>
+            <p>Von Reparatur über Aufbau bis Betreuung – wir kümmern uns um alles.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section section-alt">
+
+    <!-- Zusatztext Abschnitt -->
+    <section class="section">
       <div class="container">
-        <h2>Häufig gestellte Fragen</h2>
-        <p class="section-sub">Ihre Fragen – verständlich beantwortet.</p>
+        <h2>Ihr IT-Partner für nachhaltige Lösungen</h2>
+
+        <p>
+          Als leistungsstarkes IT-Systemhaus in München unterstützen wir Sie zuverlässig in allen Bereichen moderner IT-Infrastruktur – mit Kompetenz, Weitblick und einem klaren Fokus auf stabile, effiziente Systeme.
+        </p>
+
+        <p>
+          Unsere IT-Spezialisten verbinden tiefgreifendes technisches Fachwissen mit praxisorientierten Lösungen. Gemeinsam entwickeln, implementieren und betreuen wir individuelle IT-Systeme, die nicht nur reibungslos funktionieren, sondern echten Mehrwert bieten – für Ihre Sicherheit, Ihre Leistungsfähigkeit und Ihr Unternehmenswachstum.
+        </p>
+
+        <p>
+          Ob Netzwerkaufbau, Systemerweiterung oder Optimierung Ihrer bestehenden Infrastruktur – wir stehen an Ihrer Seite, damit Ihre IT stabil, skalierbar und zu einem echten Wettbewerbsvorteil wird.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- Analyse / Konzeption / Umsetzung / Betreuung -->
+    <section class="section">
+      <div class="container">
+        <h2>Unser Ansatz für Ihren Erfolg</h2>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Analyse</h3>
+            <p>Wir prüfen Ihre bestehende IT-Infrastruktur auf Schwachstellen, Risiken und Optimierungsfelder.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Konzeption</h3>
+            <p>Wir entwickeln eine maßgeschneiderte IT-Strategie perfekt abgestimmt auf Ihr Unternehmen.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Umsetzung</h3>
+            <p>Moderne Technologien, klare Prozesse – mit minimaler Beeinträchtigung Ihres Betriebs.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Betreuung</h3>
+            <p>Dauerhafte Unterstützung, proaktive Wartung & persönlicher Support für stabile Systeme.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container">
+        <h2>Häufig gestellte Fragen (FAQ)</h2>
 
         <div class="acc">
 
           <section class="acc-item">
-            <button class="acc-header">Wie schnell können Sie bei Problemen vor Ort sein?</button>
+            <button class="acc-header">Für wen bieten Sie Ihre IT-Dienstleistungen an?</button>
             <div class="acc-content">
-              <p>Im Raum München oft noch am selben Tag – viele Probleme lösen wir sofort per Fernwartung.</p>
+              <p>Wir unterstützen Privatkunden, Selbstständige und kleine bis mittelständische Unternehmen.</p>
             </div>
           </section>
 
           <section class="acc-item">
-            <button class="acc-header">Welche Dienstleistungen bieten Sie an?</button>
+            <button class="acc-header">Wie schnell sind Sie vor Ort?</button>
             <div class="acc-content">
-              <p>Hardware, Software, Netzwerke, Webseiten, Reparaturen und mehr.</p>
+              <p>In der Regel innerhalb von 24 Stunden, im Notdienst sogar noch schneller.</p>
             </div>
           </section>
 
           <section class="acc-item">
-            <button class="acc-header">Bieten Sie auch Hilfe für Privatkunden an?</button>
+            <button class="acc-header">Bieten Sie auch Vor-Ort-Service an?</button>
             <div class="acc-content">
-              <p>Ja, wir betreuen sowohl Privatkunden als auch Unternehmen.</p>
+              <p>Ja, wir kommen direkt zu Ihnen – ob Zuhause oder im Unternehmen.</p>
             </div>
           </section>
 
           <section class="acc-item">
-            <button class="acc-header">Welche Support-Modelle bieten Sie an?</button>
+            <button class="acc-header">Erstellen Sie auch individuelle PC-Systeme?</button>
             <div class="acc-content">
-              <p>Einmalige Hilfe, regelmäßige Wartung oder komplette IT-Betreuung.</p>
+              <p>Ja, wir konfigurieren und bauen PCs nach Ihren Anforderungen und Budget.</p>
             </div>
           </section>
 
           <section class="acc-item">
-            <button class="acc-header">Arbeiten Sie mit bestehenden IT-Abteilungen zusammen?</button>
+            <button class="acc-header">Können Sie bestehende IT-Systeme optimieren?</button>
             <div class="acc-content">
-              <p>Ja, wir unterstützen interne Teams flexibel bei Engpässen oder Projekten.</p>
+              <p>Natürlich – häufig bringen Optimierungen enorme Leistungssteigerungen.</p>
+            </div>
+          </section>
+
+          <section class="acc-item">
+            <button class="acc-header">Unterstützen Sie beim Thema Datensicherheit?</button>
+            <div class="acc-content">
+              <p>Ja, inklusive Backups, Virenschutz, Sicherheitschecks und Netzwerkabsicherung.</p>
             </div>
           </section>
 
@@ -222,64 +195,21 @@
 
   </main>
 
-  <!-- NEUER BIG FOOTER -->
-  <section class="big-footer">
-    <div class="container big-footer-grid">
-
-      <div>
-        <h3>Kontakt</h3>
-        <a href="tel:+4917660158769">📞 0176 6015 8769</a>
-        <a href="mailto:kontakt@gr-it-systems.de">✉️ kontakt@gr-it-systems.de</a>
-        <a href="preise.html">📅 Termin vereinbaren</a>
-      </div>
-
-      <div>
-        <h3>IT-Beratung</h3>
-        <a href="leistungen.html">Digitalisierung</a>
-        <a href="leistungen.html">Sicherheitsanalyse</a>
-        <a href="leistungen.html">Infrastrukturplanung</a>
-        <a href="leistungen.html">IT-Awareness</a>
-      </div>
-
-      <div>
-        <h3>Dienstleistungen</h3>
-        <a href="leistungen.html">IT-Sicherheit</a>
-        <a href="leistungen.html">IT-Support</a>
-        <a href="leistungen.html">Netzwerk & Infrastruktur</a>
-        <a href="leistungen.html">PC-Service</a>
-      </div>
-
-      <div>
-        <h3>Unternehmen</h3>
-        <a href="ueber.html">Über Uns</a>
-        <a href="preise.html">Anfragen</a>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom-line"></div>
-
-    <div class="footer-bottom-links">
-      <a href="agb.html">AGB</a> |
-      <a href="datenschutz.html">Datenschutz</a> |
-      <a href="impressum.html">Impressum</a><br><br>
-      © 2025 GR IT Systems – Ihr IT-Dienstleister aus München
-    </div>
-  </section>
 
   <footer class="site-footer">
     <div class="container footer-row">
       <div>© <span id="year"></span> GR IT Systems</div>
       <div class="footer-links">
         <a href="impressum.html">Impressum</a>
-        <span aria-hidden="true">•</span>
+        <span>•</span>
         <a href="datenschutz.html">Datenschutz</a>
-        <span aria-hidden="true">•</span>
+        <span>•</span>
         <a href="agb.html">AGB</a>
       </div>
     </div>
-    <script src="script.js"></script>
   </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>

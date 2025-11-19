@@ -14,6 +14,61 @@
       color: #1e3a8a; /* modernes dunkles Blau */
       font-weight: 700;
     }
+
+    /* Neuer großer Footerblock */
+    .mega-footer {
+      background: #0f172a;
+      color: white;
+      padding: 50px 0;
+      margin-top: 40px;
+    }
+
+    .mega-footer h3 {
+      color: white;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .mega-footer a {
+      color: #cbd5e1;
+      text-decoration: none;
+      display: block;
+      margin: 6px 0;
+    }
+
+    .mega-footer a:hover {
+      color: white;
+    }
+
+    .mega-footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .mega-footer-contact {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: #cbd5e1;
+      margin-top: 35px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 800px) {
+      .mega-footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .mega-footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -89,7 +144,6 @@
       </div>
     </section>
 
-
     <!-- Zusatztext Abschnitt -->
     <section class="section">
       <div class="container">
@@ -109,7 +163,6 @@
       </div>
     </section>
 
-
     <!-- Analyse / Konzeption / Umsetzung / Betreuung -->
     <section class="section">
       <div class="container">
@@ -118,27 +171,26 @@
         <div class="info-grid">
           <div class="info-card">
             <h3>Analyse</h3>
-            <p>Wir prüfen Ihre bestehende IT-Infrastruktur auf Schwachstellen, Risiken und Optimierungsfelder.</p>
+            <p>Wir prüfen Ihre IT-Infrastruktur auf Schwachstellen und Optimierungspotenziale.</p>
           </div>
 
           <div class="info-card">
             <h3>Konzeption</h3>
-            <p>Wir entwickeln eine maßgeschneiderte IT-Strategie perfekt abgestimmt auf Ihr Unternehmen.</p>
+            <p>Wir entwickeln eine maßgeschneiderte Strategie für Ihre Anforderungen.</p>
           </div>
 
           <div class="info-card">
             <h3>Umsetzung</h3>
-            <p>Moderne Technologien, klare Prozesse – mit minimaler Beeinträchtigung Ihres Betriebs.</p>
+            <p>Reibungslose Ausführung mit modernen Technologien und klaren Prozessen.</p>
           </div>
 
           <div class="info-card">
             <h3>Betreuung</h3>
-            <p>Dauerhafte Unterstützung, proaktive Wartung & persönlicher Support für stabile Systeme.</p>
+            <p>Proaktive Wartung, Support & Weiterentwicklung für stabile Systeme.</p>
           </div>
         </div>
       </div>
     </section>
-
 
     <!-- FAQ -->
     <section class="section">
@@ -150,42 +202,42 @@
           <section class="acc-item">
             <button class="acc-header">Für wen bieten Sie Ihre IT-Dienstleistungen an?</button>
             <div class="acc-content">
-              <p>Wir unterstützen Privatkunden, Selbstständige und kleine bis mittelständische Unternehmen.</p>
+              <p>Wir unterstützen Privatkunden, Selbstständige und mittelständische Unternehmen.</p>
             </div>
           </section>
 
           <section class="acc-item">
             <button class="acc-header">Wie schnell sind Sie vor Ort?</button>
             <div class="acc-content">
-              <p>In der Regel innerhalb von 24 Stunden, im Notdienst sogar noch schneller.</p>
+              <p>In der Regel innerhalb von 24 Stunden, im Notdienst noch schneller.</p>
             </div>
           </section>
 
           <section class="acc-item">
-            <button class="acc-header">Bieten Sie auch Vor-Ort-Service an?</button>
+            <button class="acc-header">Bieten Sie Vor-Ort-Service an?</button>
             <div class="acc-content">
-              <p>Ja, wir kommen direkt zu Ihnen – ob Zuhause oder im Unternehmen.</p>
+              <p>Ja, wir kommen direkt zu Ihnen – egal ob privat oder geschäftlich.</p>
             </div>
           </section>
 
           <section class="acc-item">
-            <button class="acc-header">Erstellen Sie auch individuelle PC-Systeme?</button>
+            <button class="acc-header">Erstellen Sie individuelle PC-Systeme?</button>
             <div class="acc-content">
-              <p>Ja, wir konfigurieren und bauen PCs nach Ihren Anforderungen und Budget.</p>
+              <p>Ja, wir konfigurieren und bauen PC-Systeme nach Wunsch & Budget.</p>
             </div>
           </section>
 
           <section class="acc-item">
-            <button class="acc-header">Können Sie bestehende IT-Systeme optimieren?</button>
+            <button class="acc-header">Optimieren Sie bestehende Systeme?</button>
             <div class="acc-content">
-              <p>Natürlich – häufig bringen Optimierungen enorme Leistungssteigerungen.</p>
+              <p>Ja – von Performance bis Sicherheit, wir holen das Maximum heraus.</p>
             </div>
           </section>
 
           <section class="acc-item">
-            <button class="acc-header">Unterstützen Sie beim Thema Datensicherheit?</button>
+            <button class="acc-header">Unterstützen Sie bei Datensicherheit?</button>
             <div class="acc-content">
-              <p>Ja, inklusive Backups, Virenschutz, Sicherheitschecks und Netzwerkabsicherung.</p>
+              <p>Backup, Virenschutz, Sicherheit – alles in einem Paket.</p>
             </div>
           </section>
 
@@ -196,16 +248,53 @@
   </main>
 
 
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <div>© <span id="year"></span> GR IT Systems</div>
-      <div class="footer-links">
-        <a href="impressum.html">Impressum</a>
-        <span>•</span>
-        <a href="datenschutz.html">Datenschutz</a>
-        <span>•</span>
-        <a href="agb.html">AGB</a>
+  <!-- NEUER GROßER FOOTER -->
+  <footer class="mega-footer">
+    <div class="container">
+
+      <div class="mega-footer-grid">
+
+        <!-- Kontakt -->
+        <div class="mega-footer-contact">
+          <h3>Kontakt</h3>
+          <p>📞 0176 / 6015 8769</p>
+          <p>📧 info@gr-it-systems.de</p>
+          <p>📍 München & Umgebung</p>
+          <a href="notdienst.html">Notdienst</a>
+        </div>
+
+        <!-- Leistungen -->
+        <div>
+          <h3>IT-Dienstleistungen</h3>
+          <a href="leistungen.html">Hardware Reparaturen</a>
+          <a href="leistungen.html">PC Zusammenbau</a>
+          <a href="leistungen.html">Netzwerk & WiFi</a>
+          <a href="leistungen.html">Software Service</a>
+          <a href="leistungen.html">Website Erstellung</a>
+        </div>
+
+        <!-- Infos -->
+        <div>
+          <h3>Unternehmen</h3>
+          <a href="ueber.html">Über uns</a>
+          <a href="preise.html">Preise</a>
+          <a href="notdienst.html">Notdienst</a>
+        </div>
+
+        <!-- Rechtliches -->
+        <div>
+          <h3>Rechtliches</h3>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+        </div>
+
       </div>
+
+      <div class="footer-bottom">
+        © <span id="year"></span> GR IT Systems – Ihr IT-Dienstleister aus München
+      </div>
+
     </div>
   </footer>
 

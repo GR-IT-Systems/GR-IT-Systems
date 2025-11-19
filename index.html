@@ -17,9 +17,10 @@
 </head>
 
 <body>
-  <div class="site-bg"></div>
+  <!-- Seitenweiter Hintergrund -->
+  <div class="site-bg" aria-hidden="true"></div>
 
-  <!-- EINHEITLICHER HEADER -->
+  <!-- HEADER (klickbares Logo + Hamburger) -->
   <header class="site-header">
     <div class="container header-row">
       <a href="index.html" class="brand" style="text-decoration:none;color:inherit;">
@@ -47,55 +48,30 @@
   </header>
 
   <main>
+    <!-- Hero wie früher -->
     <section class="hero">
       <div class="container hero-inner">
         <h1 class="claim">Weil jedes System Vertrauen verdient</h1>
-        <p class="hero-sub">Professioneller IT Service für stabile Systeme, klare Kommunikation und saubere Umsetzung.</p>
-
+        <p class="hero-sub">
+          Professioneller IT Service für stabile Systeme, klare Kommunikation und saubere Umsetzung.
+        </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="tel:+4917660158769">Jetzt anrufen</a>
           <a class="btn btn-outline" href="leistungen.html">Leistungen ansehen</a>
-          <a class="btn btn-outline" href="preise.html">Preise & Anfrage</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Abschnitt: Warum wir? -->
-    <section class="section">
-      <div class="container">
-        <h2>Warum GR IT Systems?</h2>
-        <p class="section-sub">Technik verständlich, zuverlässig und für jeden greifbar.</p>
-
-        <div class="info-grid">
-          <div class="info-card">
-            <h3>Persönliche Betreuung</h3>
-            <p>Direkte Kommunikation ohne Wartezeiten. Ein Ansprechpartner für alles.</p>
-          </div>
-
-          <div class="info-card">
-            <h3>Faire Preise</h3>
-            <p>Klar strukturiert, transparent und ohne versteckte Kosten.</p>
-          </div>
-
-          <div class="info-card">
-            <h3>Schnelle Hilfe</h3>
-            <p>Ob vor Ort oder remote – wir reagieren zuverlässig und zeitnah.</p>
-          </div>
+          <a class="btn btn-outline" href="preise.html">Preise und Anfrage</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-row">
       <div>© <span id="year"></span> GR IT Systems</div>
-
       <div class="footer-links">
         <a href="impressum.html">Impressum</a>
-        <span>•</span>
+        <span aria-hidden="true">•</span>
         <a href="datenschutz.html">Datenschutz</a>
-        <span>•</span>
+        <span aria-hidden="true">•</span>
         <a href="agb.html">AGB</a>
       </div>
     </div>

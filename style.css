@@ -39,7 +39,7 @@ body{
   padding:0 20px;
 }
 
-/* Hintergrund deaktiviert */
+/* Hintergrund-Layer ausgeschaltet */
 .site-bg{
   display:none;
 }
@@ -554,7 +554,7 @@ main{
   position:relative;
   width:100%;
   padding:140px 0 120px;
-  background:url("hero-bg.jpg") center/cover no-repeat;
+  background:url("hero-bg.png") center/cover no-repeat;
   overflow:hidden;
 }
 

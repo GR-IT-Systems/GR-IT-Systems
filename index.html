@@ -7,83 +7,21 @@
   <meta name="description" content="Professioneller IT-Service in München. Reparaturen, Netzwerk, PC-Zusammenbau, Software Service und schnelle Unterstützung." />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Dunkelblau für Überschriften -->
-  <style>
-    h2, h3 {
-      color: #1e3a8a; /* modernes dunkles Blau */
-      font-weight: 700;
-    }
-
-    /* Neuer großer Footerblock */
-    .mega-footer {
-      background: #0f172a;
-      color: white;
-      padding: 50px 0;
-      margin-top: 40px;
-    }
-
-    .mega-footer h3 {
-      color: white;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
-
-    .mega-footer a {
-      color: #cbd5e1;
-      text-decoration: none;
-      display: block;
-      margin: 6px 0;
-    }
-
-    .mega-footer a:hover {
-      color: white;
-    }
-
-    .mega-footer-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 30px;
-    }
-
-    .mega-footer-contact {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      color: #cbd5e1;
-      margin-top: 35px;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 800px) {
-      .mega-footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .mega-footer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 
 <body>
+  <!-- animierter Hintergrund ist jetzt deaktiviert (siehe style.css .site-bg{display:none}) -->
   <div class="site-bg" aria-hidden="true"></div>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-row">
-
       <a href="index.html" class="brand" style="text-decoration:none;color:inherit;">
         <div class="logo">GR<span> IT</span> Systems</div>
         <div class="tagline">IT Service in München</div>
       </a>
 
-      <button id="menu-toggle" class="hamburger" aria-expanded="false" aria-controls="menu-panel">
+      <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -94,7 +32,6 @@
         <li><a href="leistungen.html" class="menu-link">Leistungen</a></li>
         <li><a href="ueber.html" class="menu-link">Über Uns</a></li>
         <li><a href="preise.html" class="menu-link">Preise</a></li>
-        <!-- HIER angepasst: nur "Notdienst" ohne Nummer -->
         <li><a href="notdienst.html" class="menu-link strong">Notdienst</a></li>
         <li class="sep"></li>
         <li><a href="impressum.html" class="menu-link">Impressum</a></li>
@@ -104,12 +41,11 @@
     </nav>
   </header>
 
-
   <main>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
+    <!-- HERO mit Bild im Hintergrund -->
+    <section class="hero hero-img">
+      <div class="container hero-inner">
         <h1 class="claim">Weil jedes System Vertrauen verdient</h1>
         <p class="hero-sub">Professioneller IT-Service für stabile Systeme, klare Kommunikation und saubere Umsetzung.</p>
 
@@ -173,22 +109,22 @@
         <div class="info-grid">
           <div class="info-card">
             <h3>Analyse</h3>
-            <p>Wir prüfen Ihre IT-Infrastruktur auf Schwachstellen und Optimierungspotenziale.</p>
+            <p>Wir prüfen Ihre IT-Infrastruktur auf Schwachstellen, Sicherheitsrisiken und Optimierungspotenziale.</p>
           </div>
 
           <div class="info-card">
             <h3>Konzeption</h3>
-            <p>Wir entwickeln eine maßgeschneiderte Strategie für Ihre Anforderungen.</p>
+            <p>Auf Basis einer klaren Bewertung entwickeln wir eine zur Situation passende IT-Strategie.</p>
           </div>
 
           <div class="info-card">
             <h3>Umsetzung</h3>
-            <p>Reibungslose Ausführung mit modernen Technologien und klaren Prozessen.</p>
+            <p>Wir setzen Lösungen zuverlässig um – mit moderner Technologie und klaren Prozessen.</p>
           </div>
 
           <div class="info-card">
             <h3>Betreuung</h3>
-            <p>Proaktive Wartung, Support & Weiterentwicklung für stabile Systeme.</p>
+            <p>Auch nach der Implementierung bleiben wir an Ihrer Seite und betreuen Ihre Systeme weiter.</p>
           </div>
         </div>
       </div>
@@ -204,42 +140,42 @@
           <section class="acc-item">
             <button class="acc-header">Für wen bieten Sie Ihre IT-Dienstleistungen an?</button>
             <div class="acc-content">
-              <p>Wir unterstützen Privatkunden, Selbstständige und mittelständische Unternehmen.</p>
+              <p>Wir unterstützen Privatkunden, Selbstständige und mittelständische Unternehmen im Raum München.</p>
             </div>
           </section>
 
           <section class="acc-item">
             <button class="acc-header">Wie schnell sind Sie vor Ort?</button>
             <div class="acc-content">
-              <p>In der Regel innerhalb von 24 Stunden, im Notdienst noch schneller.</p>
+              <p>In der Regel innerhalb von 24 Stunden, im Notdienst nach Vereinbarung deutlich schneller.</p>
             </div>
           </section>
 
           <section class="acc-item">
             <button class="acc-header">Bieten Sie Vor-Ort-Service an?</button>
             <div class="acc-content">
-              <p>Ja, wir kommen direkt zu Ihnen – egal ob privat oder geschäftlich.</p>
+              <p>Ja, wir kommen direkt zu Ihnen – sowohl bei Privatkunden als auch in Unternehmen.</p>
             </div>
           </section>
 
           <section class="acc-item">
             <button class="acc-header">Erstellen Sie individuelle PC-Systeme?</button>
             <div class="acc-content">
-              <p>Ja, wir konfigurieren und bauen PC-Systeme nach Wunsch & Budget.</p>
+              <p>Ja, wir konfigurieren und bauen PC-Systeme nach Ihren Anforderungen und Ihrem Budget.</p>
             </div>
           </section>
 
           <section class="acc-item">
             <button class="acc-header">Optimieren Sie bestehende Systeme?</button>
             <div class="acc-content">
-              <p>Ja – von Performance bis Sicherheit, wir holen das Maximum heraus.</p>
+              <p>Ja – wir analysieren Ihre vorhandene IT und verbessern Leistung, Stabilität und Sicherheit.</p>
             </div>
           </section>
 
           <section class="acc-item">
             <button class="acc-header">Unterstützen Sie bei Datensicherheit?</button>
             <div class="acc-content">
-              <p>Backup, Virenschutz, Sicherheit – alles in einem Paket.</p>
+              <p>Wir beraten zu Backup, Virenschutz, Zugriffsschutz und setzen passende Lösungen um.</p>
             </div>
           </section>
 
@@ -249,8 +185,7 @@
 
   </main>
 
-
-  <!-- GROßER FOOTER -->
+  <!-- GROßER FOOTERBLOCK -->
   <footer class="mega-footer">
     <div class="container">
 
@@ -270,16 +205,16 @@
           <h3>IT-Dienstleistungen</h3>
           <a href="leistungen.html">Hardware Reparaturen</a>
           <a href="leistungen.html">PC Zusammenbau</a>
-          <a href="leistungen.html">Netzwerk & WiFi</a>
+          <a href="leistungen.html">Netzwerk & WLAN</a>
           <a href="leistungen.html">Software Service</a>
-          <a href="leistungen.html">Website Erstellung</a>
+          <a href="leistungen.html">Abhol- & Bringservice</a>
         </div>
 
-        <!-- Infos -->
+        <!-- Unternehmen -->
         <div>
           <h3>Unternehmen</h3>
           <a href="ueber.html">Über uns</a>
-          <a href="preise.html">Preise</a>
+          <a href="preise.html">Preise & Anfrage</a>
           <a href="notdienst.html">Notdienst</a>
         </div>
 
@@ -298,9 +233,9 @@
       </div>
 
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
+  </footer>
 
 </body>
 </html>

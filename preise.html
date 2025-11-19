@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Preise – GR IT Systems</title>
-  <meta name="description" content="Faire und transparente Preise für IT-Service, PC-Reparatur, Netzwerktechnik, Software, Webseiten und mehr. Jetzt informieren." />
+  <title>Preise & unverbindliche Anfrage – GR IT Systems</title>
+  <meta name="description" content="Stellen Sie eine unverbindliche Anfrage für IT-Service, PC-Reparatur, Netzwerke, Software oder Webseiten bei GR IT Systems in München." />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -42,38 +42,70 @@
   <!-- INHALT -->
   <main class="section">
     <div class="container">
-      <h1>Preise</h1>
-      <p class="muted">Transparente und faire Preisgestaltung – ohne versteckte Kosten.</p>
+      <h1>Unverbindlich anfragen</h1>
+      <p class="section-sub">
+        Beschreiben Sie kurz Ihr Anliegen – wir melden uns mit einer Einschätzung und einem transparenten Vorschlag.
+        Es erfolgt keine automatische Buchung, nur eine unverbindliche Anfrage.
+      </p>
 
-      <div class="info-grid">
-        <div class="info-card">
-          <h3>Vor-Ort-Service</h3>
-          <p>ab 39 € zzgl. Anfahrt</p>
+      <div class="about" style="align-items:flex-start;gap:32px;flex-wrap:wrap;">
+        <!-- Linke Seite: Hinweise / Liste -->
+        <div style="flex:1;min-width:260px;">
+          <h2>So läuft Ihre Anfrage ab</h2>
+          <ul class="bullet">
+            <li>Sie beschreiben kurz, worum es geht (z. B. PC startet nicht, Netzwerk langsam, neue Hardware etc.).</li>
+            <li>Wir prüfen Ihre Angaben und melden uns mit Rückfragen oder einer ersten Einschätzung.</li>
+            <li>Sie erhalten einen unverbindlichen Vorschlag – erst danach entscheiden Sie, ob Sie den Auftrag erteilen.</li>
+          </ul>
+          <p class="muted" style="margin-top:10px;">
+            Je genauer Ihre Beschreibung ist, desto besser können wir Aufwand und mögliche Kosten vorab einschätzen.
+          </p>
         </div>
-        <div class="info-card">
-          <h3>PC Reinigung & Wartung</h3>
-          <p>ab 45 €</p>
-        </div>
-        <div class="info-card">
-          <h3>Netzwerkeinrichtung</h3>
-          <p>ab 49 €</p>
-        </div>
-        <div class="info-card">
-          <h3>Website-Erstellung</h3>
-          <p>ab 299 € (je nach Umfang)</p>
-        </div>
-        <div class="info-card">
-          <h3>Datenrettung</h3>
-          <p>ab 69 €</p>
-        </div>
-        <div class="info-card">
-          <h3>Software-Installation</h3>
-          <p>ab 29 €</p>
-        </div>
-      </div>
 
-      <div class="drawer-cta" style="margin-top:20px;">
-        <a href="notdienst.html" class="btn btn-primary">Notdienst & Kontakt</a>
+        <!-- Rechte Seite: Formular -->
+        <div style="flex:1;min-width:260px;">
+          <h2>Ihre Anfrage</h2>
+          <form class="form">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" placeholder="Ihr Name" required>
+            </div>
+
+            <div class="form-row">
+              <label for="email">E-Mail</label>
+              <input id="email" type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+            </div>
+
+            <div class="form-row">
+              <label for="phone">Telefon (optional)</label>
+              <input id="phone" type="tel" name="phone" placeholder="Ihre Telefonnummer">
+            </div>
+
+            <div class="form-row">
+              <label for="service">Worum geht es?</label>
+              <select id="service" name="service">
+                <option value="">Bitte auswählen</option>
+                <option>Hardware Reparatur</option>
+                <option>PC / System Zusammenbau</option>
+                <option>Netzwerk / WLAN</option>
+                <option>Software / Windows / Programme</option>
+                <option>Website</option>
+                <option>Abhol- & Bringservice</option>
+                <option>Sonstiges</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="message">Beschreibung</label>
+              <textarea id="message" name="message" rows="5" placeholder="Beschreiben Sie kurz das Problem oder Ihren Wunsch."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Unverbindlich anfragen</button>
+              <span class="muted">Es erfolgt keine automatische Buchung.</span>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </main>

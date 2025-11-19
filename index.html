@@ -16,15 +16,16 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Seitenweiter, lebendiger IT Hintergrund -->
+  <!-- Hintergrund -->
   <div class="site-bg" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container header-row">
-   <a href="index.html" class="brand" style="text-decoration: none; color: inherit;">
-  <div class="logo">GR<span> IT</span> Systems</div>
-  <div class="tagline">IT Service in München</div>
-</a>
+      <!-- Logo klickbar -->
+      <a href="index.html" class="brand" style="text-decoration: none; color: inherit;">
+        <div class="logo">GR<span> IT</span> Systems</div>
+        <div class="tagline">IT Service in München</div>
+      </a>
 
       <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
         <span></span><span></span><span></span>
@@ -46,6 +47,7 @@
   </header>
 
   <main>
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero-inner">
         <h1 class="claim">Weil jedes System Vertrauen verdient</h1>
@@ -53,24 +55,44 @@
         <div class="cta-row">
           <a class="btn btn-primary" href="tel:+4917660158769">Jetzt anrufen</a>
           <a class="btn btn-outline" href="leistungen.html">Leistungen ansehen</a>
-          <a class="btn btn-outline" href="preise.html">Preise und Anfrage</a>
+          <a class="btn btn-outline" href="preise.html">Kontakt &amp; Angebot</a>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <div>© <span id="year"></span> GR IT Systems</div>
-      <div class="footer-links">
-        <a href="impressum.html">Impressum</a>
-        <span aria-hidden="true">•</span>
-        <a href="datenschutz.html">Datenschutz</a>
-        <span aria-hidden="true">•</span>
-        <a href="agb.html">AGB</a>
+    <!-- Warum wir -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2>Warum GR IT Systems?</h2>
+        <p class="section-sub">
+          Wir kümmern uns um Ihre IT, als wäre es unsere eigene: zuverlässig, transparent und mit einem festen Ansprechpartner.
+        </p>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Schnelle Hilfe</h3>
+            <p>Kurze Reaktionszeiten bei Störungen und klare Absprachen, damit Ihr Alltag nicht stillsteht.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Saubere Umsetzung</h3>
+            <p>Strukturierte Fehlersuche, Dokumentation und verständliche Erklärungen statt Fachchinesisch.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Auf Augenhöhe</h3>
+            <p>Ehrliche Beratung ohne versteckte Überraschungen – passend zu Ihrem Budget und Bedarf.</p>
+          </article>
+        </div>
       </div>
-    </div>
-    <script src="script.js"></script>
-  </footer>
-</body>
-</html>
+    </section>
+
+    <!-- Leistungen -->
+    <section class="section">
+      <div class="container">
+        <h2>Leistungen im Überblick</h2>
+        <p class="section-sub">
+          Vom privaten Laptop bis zum kleinen Unternehmen: Wir unterstützen Sie rund um Hardware, Software und Netzwerke.
+        </p>
+
+        <div class="services-grid">

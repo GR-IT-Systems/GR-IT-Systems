@@ -4,24 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Impressum – GR IT Systems</title>
+  <meta name="description" content="Impressum von GR IT Systems – gesetzliche Pflichtangaben, Kontaktinformationen und Hinweise gemäß §5 TMG." />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="site-bg" aria-hidden="true"></div>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-row">
-     <a href="index.html" class="brand" style="text-decoration: none; color: inherit;">
-  <div class="logo">GR<span> IT</span> Systems</div>
-  <div class="tagline">IT Service in München</div>
-</a>
+      <a href="index.html" class="brand" style="text-decoration:none;color:inherit;">
+        <div class="logo">GR<span> IT</span> Systems</div>
+        <div class="tagline">IT Service in München</div>
+      </a>
+
+      <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
     <nav id="menu-panel" class="menu-panel" aria-hidden="true">
       <ul>
         <li><a href="leistungen.html" class="menu-link">Leistungen</a></li>
         <li><a href="ueber.html" class="menu-link">Über Uns</a></li>
         <li><a href="preise.html" class="menu-link">Preise</a></li>
-        <li><a href="tel:+4917660158769" class="menu-link strong">Notdienst 0176 6015 8769</a></li>
+        <li><a href="notdienst.html" class="menu-link strong">Notdienst</a></li>
         <li class="sep"></li>
         <li><a href="impressum.html" class="menu-link">Impressum</a></li>
         <li><a href="datenschutz.html" class="menu-link">Datenschutz</a></li>
@@ -30,26 +39,67 @@
     </nav>
   </header>
 
-  <main class="section">
-    <div class="container legal">
+  <!-- INHALT -->
+  <main class="section legal">
+    <div class="container">
+
       <h1>Impressum</h1>
-      <p><strong>Verantwortlich</strong> Ilja Grichevski, München</p>
-      <p><strong>Kontakt</strong> gritsystems@gmail.com · 0176 6015 8769</p>
-      <p>Inhaltlich verantwortlich gemäß Paragraf 55 Absatz 2 RStV Ilja Grichevski.</p>
-      <p class="disclaimer">Mustertext keine Rechtsberatung.</p>
+
+      <h2>Angaben gemäß §5 TMG</h2>
+      <p>
+        GR IT Systems<br>
+        Inhaber: Gabriel Reimer<br>
+        Musterstraße 12<br>
+        81739 München
+      </p>
+
+      <h3>Kontakt</h3>
+      <p>
+        Telefon: 0176 6015 8769<br>
+        E-Mail: kontakt@git-systems.de
+      </p>
+
+      <h3>Umsatzsteuer-ID</h3>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz: DE000000000</p>
+
+      <h3>Verantwortlich für den Inhalt nach §55 Abs. 2 RStV</h3>
+      <p>Gabriel Reimer, Anschrift wie oben.</p>
+
+      <h3>Haftung für Inhalte</h3>
+      <p>
+        Als Dienstanbieter sind wir gemäß §7 Abs.1 TMG für eigene Inhalte auf diesen Seiten verantwortlich.
+        Nach §§8–10 TMG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+      </p>
+
+      <h3>Haftung für Links</h3>
+      <p>
+        Unser Angebot enthält Links zu externen Webseiten, auf deren Inhalte wir keinen Einfluss haben.
+        Deshalb übernehmen wir für diese fremden Inhalte keine Gewähr.
+      </p>
+
+      <h3>Urheberrecht</h3>
+      <p>
+        Die durch den Seitenbetreiber erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht.
+      </p>
+
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-row">
       <div>© <span id="year"></span> GR IT Systems</div>
       <div class="footer-links">
-        <a href="impressum.html">Impressum</a><span aria-hidden="true">•</span>
-        <a href="datenschutz.html">Datenschutz</a><span aria-hidden="true">•</span>
+        <a href="impressum.html">Impressum</a>
+        <span>•</span>
+        <a href="datenschutz.html">Datenschutz</a>
+        <span>•</span>
         <a href="agb.html">AGB</a>
       </div>
     </div>
+
     <script src="script.js"></script>
   </footer>
+
 </body>
 </html>

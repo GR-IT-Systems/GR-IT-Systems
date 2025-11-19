@@ -26,7 +26,7 @@ body{
 
 body{
   font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:#ffffff;      /* jetzt komplett weiß */
+  background:#ffffff;
   color:var(--text);
   line-height:1.6;
   display:flex;
@@ -549,36 +549,37 @@ main{
   font-size:.9rem;
 }
 
-/* HERO mit Bild */
-.hero-img{
+/* HERO-BLOCK mit Bild (Hero + 3 Sections) */
+.hero-block{
   position:relative;
-  width:100%;
-  padding:140px 0 120px;
   background:url("hero-bg.png") center/cover no-repeat;
   overflow:hidden;
-}
-
-.hero-img::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,0.78);   /* Weißlicher Schleier, damit Text gut lesbar ist */
-  backdrop-filter:blur(1px);
-}
-
-.hero-inner{
-  position:relative;
-  z-index:2;
-}
-
-/* leichte Bewegung des Hintergrundbildes */
-.hero-img{
   animation:heroMove 14s ease-in-out infinite alternate;
 }
 
+.hero-block::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,0.78); /* heller Schleier, damit Text gut lesbar bleibt */
+  backdrop-filter:blur(1px);
+}
+
+/* alle direkten Kinder (Hero + Sections) über den Overlay legen */
+.hero-block > *{
+  position:relative;
+  z-index:1;
+}
+
+/* Hero im Block etwas großzügiger machen */
+.hero-img{
+  padding-top:140px;
+}
+
+/* leichte Hintergrundbewegung */
 @keyframes heroMove{
   0%{background-position:center}
-  100%{background-position:center 20px}
+  100%{background-position:center 30px}
 }
 
 /* Mobile Anpassungen */

@@ -1,38 +1,82 @@
-// Jahr
-(function(){const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();})();
+document.addEventListener("DOMContentLoaded", () => {
+  // Jahr im Footer automatisch setzen
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
-// Smooth scroll für In-Page Links (falls vorhanden)
-(function(){
-  const links=document.querySelectorAll('a[href^="#"]');
-  links.forEach(a=>{
-    a.addEventListener('click',e=>{
-      const id=a.getAttribute('href').slice(1);
-      const el=document.getElementById(id);
-      if(el){ e.preventDefault(); closeMenu(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+  // Menü (Hamburger)
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuPanel = document.getElementById("menu-panel");
+
+  function openMenu() {
+    if (!menuPanel || !menuToggle) return;
+    menuPanel.setAttribute("aria-hidden", "false");
+    menuToggle.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu() {
+    if (!menuPanel || !menuToggle) return;
+    menuPanel.setAttribute("aria-hidden", "true");
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
+
+  if (menuToggle && menuPanel) {
+    // Klick auf den Hamburger
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = menuPanel.getAttribute("aria-hidden") === "false";
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Klick irgendwo anders schließt das Menü
+    document.addEventListener("click", (e) => {
+      if (!menuPanel.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // ESC schließt das Menü
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+    });
+  }
+
+  // Smooth Scroll für Anker-Links (falls vorhanden)
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  anchorLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const id = link.getAttribute("href").slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        closeMenu();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     });
   });
-})();
 
-// Menü
-const menuToggle=document.getElementById('menu-toggle');
-const menuPanel=document.getElementById('menu-panel');
-function openMenu(){ if(!menuPanel) return; menuPanel.setAttribute('aria-hidden','false'); menuToggle&&menuToggle.setAttribute('aria-expanded','true'); }
-function closeMenu(){ if(!menuPanel) return; menuPanel.setAttribute('aria-hidden','true'); menuToggle&&menuToggle.setAttribute('aria-expanded','false'); }
-if(menuToggle&&menuPanel){
-  menuToggle.addEventListener('click',()=>{ const open=menuPanel.getAttribute('aria-hidden')==='false'; open?closeMenu():openMenu(); });
-  document.addEventListener('click',e=>{ if(!menuPanel.contains(e.target)&&!menuToggle.contains(e.target)) closeMenu(); });
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
-}
+  // Akkordeon (Leistungen-Seite)
+  const accItems = document.querySelectorAll(".acc-item");
+  if (accItems.length > 0) {
+    accItems.forEach((item) => {
+      const header = item.querySelector(".acc-header");
+      if (!header) return;
 
-// Akkordeon (Leistungen Seite)
-(function(){
-  const items=document.querySelectorAll('.acc-item');
-  if(!items.length) return;
-  items.forEach(item=>{
-    const h=item.querySelector('.acc-header');
-    h.addEventListener('click',()=>{
-      items.forEach(o=>{ if(o!==item) o.classList.remove('active'); });
-      item.classList.toggle('active');
+      header.addEventListener("click", () => {
+        accItems.forEach((other) => {
+          if (other !== item) {
+            other.classList.remove("active");
+          }
+        });
+        item.classList.toggle("active");
+      });
     });
-  });
-})();
+  }
+});

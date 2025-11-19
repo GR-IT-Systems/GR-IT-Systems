@@ -4,24 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Notdienst – GR IT Systems</title>
-  <meta name="description" content="Notdienst bei dringenden IT Fällen. Schnelle Hilfe bei Ausfällen, Netzwerkstörungen, Hardwareproblemen und Datenverlust." />
+  <meta name="description" content="IT Notdienst für München. Schnelle Hilfe bei PC-Ausfall, Netzwerkproblemen und dringenden IT-Störungen." />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="site-bg" aria-hidden="true"></div>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-row">
-      <a href="index.html" class="brand" style="text-decoration: none; color: inherit;">
-  <div class="logo">GR<span> IT</span> Systems</div>
-  <div class="tagline">IT Service in München</div>
-</a>
+      <a href="index.html" class="brand" style="text-decoration:none;color:inherit;">
+        <div class="logo">GR<span> IT</span> Systems</div>
+        <div class="tagline">IT Service in München</div>
+      </a>
 
       <button id="menu-toggle" class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu-panel">
         <span></span><span></span><span></span>
       </button>
     </div>
+
     <nav id="menu-panel" class="menu-panel" aria-hidden="true">
       <ul>
         <li><a href="leistungen.html" class="menu-link">Leistungen</a></li>
@@ -36,40 +39,61 @@
     </nav>
   </header>
 
+  <!-- INHALT -->
   <main class="section">
     <div class="container">
-      <h1>Notdienst bei dringenden Fällen</h1>
-      <p>Wenn Geräte nicht starten, das Netzwerk ausfällt oder ein wichtiger Rechner plötzlich streikt, zählt jede Minute. Unser Notdienst hilft bei akuten IT Problemen schnell und zuverlässig.</p>
-      <p>Wir unterstützen bei Hardwaredefekten, Virenbefall, Datenverlust, Netzwerkstörungen und anderen dringenden Situationen per Fernhilfe oder vor Ort nach Absprache.</p>
+      <h1>IT Notdienst in München</h1>
+      <p class="section-sub">
+        Schnelle Hilfe bei akuten IT-Problemen – wenn Systeme ausfallen, nichts mehr geht oder sofort Unterstützung benötigt wird.
+      </p>
 
-      <div style="margin-top:20px;">
-        <a class="btn btn-primary" href="tel:+4917660158769">Jetzt anrufen</a>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Wann greift der Notdienst?</h3>
+          <p>Wenn Ihr PC, Netzwerk oder wichtiges System plötzlich ausfällt und schnelle Hilfe notwendig ist.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Mögliche Einsatzfälle</h3>
+          <p>Systemabsturz, Netzwerkprobleme, kein Internet, Bootfehler, wichtige Daten nicht erreichbar und mehr.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Einsatzgebiet</h3>
+          <p>Raum München und Umgebung nach Absprache.</p>
+        </div>
       </div>
 
-      <div style="margin-top:28px;">
-        <h3>Was Sie erwarten können</h3>
-        <ul class="bullet">
-          <li>Schnelle Erstaufnahme und Einschätzung</li>
-          <li>Fernwartung oder Vor Ort Termin nach Absprache</li>
-          <li>Klare Kommunikation zu Aufwand und Vorgehen</li>
-          <li>Stabilisierung und Wiederherstellung mit Augenmaß</li>
-        </ul>
-      </div>
+      <section class="section" style="padding-top:32px;">
+        <h2>Kontakt für Notfälle</h2>
+        <p>
+          Im Notfall erreichen Sie uns schnell und direkt unter:
+        </p>
+        <p style="font-size:1.6rem;font-weight:700;margin:8px 0;">
+          📞 <a href="tel:+4917660158769" style="text-decoration:none;color:inherit;">0176 6015 8769</a>
+        </p>
+        <p class="muted">
+          Bitte schildern Sie kurz das Problem, das betroffene Gerät und wie dringend der Einsatz ist.
+        </p>
+      </section>
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-row">
       <div>© <span id="year"></span> GR IT Systems</div>
       <div class="footer-links">
         <a href="impressum.html">Impressum</a>
-        <span aria-hidden="true">•</span>
+        <span>•</span>
         <a href="datenschutz.html">Datenschutz</a>
-        <span aria-hidden="true">•</span>
+        <span>•</span>
         <a href="agb.html">AGB</a>
       </div>
     </div>
+
     <script src="script.js"></script>
   </footer>
+
 </body>
 </html>

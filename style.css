@@ -1,15 +1,15 @@
 :root{
-  --bg:#f3f4f6;              /* Heller Seitenhintergrund */
-  --panel:#ffffff;           /* Weiße Panels/Karten */
-  --text:#111827;            /* Dunkler Text für gute Lesbarkeit */
-  --muted:#6b7280;           /* Dezentes Grau für Nebeninfos */
-  --brand:#2563eb;           /* Frisches Blau als Akzent, nicht als Hintergrund */
-  --brand-2:#38bdf8;         /* Hellblau für Verläufe */
-  --ring: rgba(37,99,235,.45); /* Fokus-Ring */
-  --shadow: 0 10px 25px rgba(15,23,42,.12); /* Leichter Card-Schatten */
+  --bg:#f3f4f6;
+  --panel:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --brand:#2563eb;
+  --brand-2:#38bdf8;
+  --ring: rgba(37,99,235,.45);
+  --shadow: 0 10px 25px rgba(15,23,42,.12);
 }
 
-/* NEU: Überschriften in dunkelblau */
+/* Überschriften dunkelblau */
 h1, h2, h3{
   color:#1e3a8a;
   font-weight:700;
@@ -26,7 +26,7 @@ body{
 
 body{
   font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:linear-gradient(180deg,#e5e7eb 0%,#f9fafb 100%); /* Hell statt dunkel */
+  background:#ffffff;      /* jetzt komplett weiß */
   color:var(--text);
   line-height:1.6;
   display:flex;
@@ -39,41 +39,12 @@ body{
   padding:0 20px;
 }
 
-/* Site wide animated bg – jetzt hell & dezent */
+/* Hintergrund deaktiviert */
 .site-bg{
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  background:
-    radial-gradient(1200px 800px at 20% 10%, rgba(37,99,235,.10), transparent 60%),
-    radial-gradient(1000px 700px at 80% 90%, rgba(56,189,248,.08), transparent 60%),
-    linear-gradient(180deg,#e5e7eb 0%,#f9fafb 100%);
-  animation:bgMove 18s ease-in-out infinite alternate;
+  display:none;
 }
 
-@keyframes bgMove{
-  0%{background-position:0 0,0 0,0 0}
-  100%{background-position:20px -20px,-30px 30px,0 0}
-}
-
-.site-bg::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  opacity:.18;
-  mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 200 200'><g stroke='rgba(148,163,184,0.45)' stroke-width='0.4' fill='none'><path d='M0 20 H200 M0 40 H200 M0 60 H200 M0 80 H200 M0 100 H200 M0 120 H200 M0 140 H200 M0 160 H200 M0 180 H200'/><path d='M20 0 V200 M40 0 V200 M60 0 V200 M80 0 V200 M100 0 V200 M120 0 V200 M140 0 V200 M160 0 V200 M180 0 V200'/></g></svg>");
-  background-size:600px 600px;
-  animation:gridPan 24s linear infinite;
-}
-
-@keyframes gridPan{
-  0%{background-position:0 0}
-  100%{background-position:600px 600px}
-}
-
-/* Header – jetzt hell, wie ein klassisches Top-Navi */
+/* Header */
 .site-header{
   position:sticky;
   top:0;
@@ -211,7 +182,7 @@ body{
   to{opacity:1;transform:none}
 }
 
-/* Hero */
+/* Hero Grundlayout */
 .hero{
   padding:84px 0 56px;
   text-align:center;
@@ -367,7 +338,7 @@ body{
   font-size:.95rem;
 }
 
-/* Leistungen Akkordeon (Unterseite + Startseite FAQ) */
+/* Leistungen Akkordeon (Unterseite + FAQ Startseite) */
 .acc{
   display:flex;
   flex-direction:column;
@@ -531,7 +502,83 @@ body{
 
 /* Footer immer unten halten */
 main{
-  flex:1;   /* nimmt den restlichen Platz ein, Footer rutscht nach unten */
+  flex:1;
+}
+
+/* Mega-Footer (Startseite) */
+.mega-footer{
+  background:#0f172a;
+  color:#e5e7eb;
+  padding:50px 0;
+  margin-top:40px;
+}
+
+.mega-footer h3{
+  color:#ffffff;
+  margin-bottom:10px;
+  font-size:1.1rem;
+}
+
+.mega-footer a{
+  color:#cbd5e1;
+  text-decoration:none;
+  display:block;
+  margin:4px 0;
+  font-size:.95rem;
+}
+
+.mega-footer a:hover{
+  color:#ffffff;
+}
+
+.mega-footer-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:30px;
+}
+
+.mega-footer-contact{
+  font-size:.95rem;
+  line-height:1.6;
+}
+
+.footer-bottom{
+  text-align:center;
+  color:#cbd5e1;
+  margin-top:35px;
+  font-size:.9rem;
+}
+
+/* HERO mit Bild */
+.hero-img{
+  position:relative;
+  width:100%;
+  padding:140px 0 120px;
+  background:url("hero-bg.jpg") center/cover no-repeat;
+  overflow:hidden;
+}
+
+.hero-img::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,0.78);   /* Weißlicher Schleier, damit Text gut lesbar ist */
+  backdrop-filter:blur(1px);
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+}
+
+/* leichte Bewegung des Hintergrundbildes */
+.hero-img{
+  animation:heroMove 14s ease-in-out infinite alternate;
+}
+
+@keyframes heroMove{
+  0%{background-position:center}
+  100%{background-position:center 20px}
 }
 
 /* Mobile Anpassungen */
@@ -566,6 +613,10 @@ main{
   }
 
   .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .mega-footer-grid{
     grid-template-columns:1fr;
   }
 }

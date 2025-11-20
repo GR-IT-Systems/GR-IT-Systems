@@ -558,7 +558,7 @@ main{
   padding:140px 0 120px;
   background:url("hero-bg.png") center/cover no-repeat;
   overflow:hidden;
-  animation:heroMove 10s ease-in-out infinite alternate;
+  animation:heroMove 10s ease-in-out infinite;
 }
 
 /* Dunkler Overlay, damit Bild kräftig sichtbar, Text aber lesbar */
@@ -600,13 +600,13 @@ main{
   background:rgba(255,255,255,0.18);
 }
 
-/* Animation: Bild bewegt sich von oben nach unten, flüssig */
+/* NUR HIER: Bildbewegung von oben nach unten */
 @keyframes heroMove{
   0%{
-    background-position:center -40px;
+    background-position:center 0px;
   }
   100%{
-    background-position:center 40px;
+    background-position:center 60px;
   }
 }
 

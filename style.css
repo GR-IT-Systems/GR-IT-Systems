@@ -234,6 +234,7 @@ h1,h2,h3{
   color:var(--text);
 }
 
+/* Button Hover */
 .btn-primary:hover{
   filter:brightness(1.06);
   transform:translateY(-1px);
@@ -322,7 +323,7 @@ h1,h2,h3{
   font-size:.95rem;
 }
 
-/* Leistungen Übersicht-Pills */
+/* Leistungen Übersicht-Pills (falls verwendet) */
 .services-grid{
   display:flex;
   flex-wrap:wrap;
@@ -417,7 +418,7 @@ h1,h2,h3{
   margin:6px 0;
 }
 
-/* Formulare */
+/* Formulare (Preise etc.) */
 .form{
   max-width:760px;
   margin-top:18px;
@@ -438,12 +439,15 @@ h1,h2,h3{
 .form-row select,
 .form-row textarea{
   appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
   background:#f9fafb;
   color:var(--text);
   border:1px solid rgba(148,163,184,.8);
   border-radius:12px;
   padding:12px 12px;
   outline:none;
+  box-shadow:none;
 }
 
 .form-row input:focus,
@@ -464,7 +468,7 @@ h1,h2,h3{
   color:var(--muted);
 }
 
-/* Standard-Footer */
+/* Standard-Footer (Unterseiten) */
 .site-footer{
   border-top:1px solid rgba(15,23,42,.06);
   padding:18px 0;
@@ -498,11 +502,12 @@ h1,h2,h3{
   to{opacity:1;transform:none}
 }
 
+/* Footer immer unten halten */
 main{
   flex:1;
 }
 
-/* Mega-Footer */
+/* Mega-Footer (Startseite) */
 .mega-footer{
   background:#0f172a;
   color:#e5e7eb;
@@ -546,17 +551,17 @@ main{
   font-size:.9rem;
 }
 
-/* HERO Bild */
+/* HERO nur oben mit Bild (Weil jedes System Vertrauen verdient) */
 .hero-img{
   position:relative;
   width:100%;
   padding:140px 0 120px;
   background:url("hero-bg.png") center/cover no-repeat;
   overflow:hidden;
-  animation:heroMove 10s ease-in-out infinite alternate;
+  animation:heroMove 10s ease-in-out infinite;
 }
 
-/* Overlay */
+/* Dunkler Overlay, damit Bild kräftig sichtbar, Text aber lesbar */
 .hero-img::before{
   content:"";
   position:absolute;
@@ -569,12 +574,13 @@ main{
   );
 }
 
-/* Inhalt im Hero */
+/* Inhalt im Hero über das Bild legen */
 .hero-inner{
   position:relative;
   z-index:2;
 }
 
+/* Hero-Text weiß auf dem Bild */
 .hero-img .claim{
   color:#f9fafb;
 }
@@ -583,6 +589,7 @@ main{
   color:#e5e7eb;
 }
 
+/* Buttons im Hero auf dunklem Hintergrund */
 .hero-img .btn-outline{
   background:rgba(255,255,255,0.08);
   color:#f9fafb;
@@ -593,13 +600,13 @@ main{
   background:rgba(255,255,255,0.18);
 }
 
-/* KORREKTUR: Bild bewegt sich von oben → unten */
+/* Bildbewegung: startet normal und bewegt sich nach oben, ohne grauen Rand */
 @keyframes heroMove{
   0%{
-    background-position:center -60px; /* Start oben */
+    background-position:center 0px;    /* Startposition – so wie jetzt */
   }
   100%{
-    background-position:center 60px; /* geht sichtbar nach unten */
+    background-position:center -60px;  /* Bild wandert leicht nach oben */
   }
 }
 

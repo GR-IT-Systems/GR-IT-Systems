@@ -1,14 +1,15 @@
 :root{
-  --bg:#f3f4f6;
-  --panel:#ffffff;
-  --text:#111827;
-  --muted:#6b7280;
-  --brand:#2563eb;
-  --brand-2:#38bdf8;
-  --ring: rgba(37,99,235,.45);
-  --shadow: 0 10px 25px rgba(15,23,42,.12);
+  --bg:#f3f4f6;              /* Heller Seitenhintergrund */
+  --panel:#ffffff;           /* Weiße Panels/Karten */
+  --text:#111827;            /* Dunkler Text für gute Lesbarkeit */
+  --muted:#6b7280;           /* Dezentes Grau für Nebeninfos */
+  --brand:#2563eb;           /* Frisches Blau als Akzent */
+  --brand-2:#38bdf8;         /* Hellblau für Verläufe */
+  --ring: rgba(37,99,235,.45); /* Fokus-Ring */
+  --shadow: 0 10px 25px rgba(15,23,42,.12); /* Leichter Card-Schatten */
 }
 
+/* Globale Einstellungen */
 *{box-sizing:border-box}
 
 html,
@@ -33,24 +34,15 @@ body{
   padding:0 20px;
 }
 
-/* Hero Bild */
-.hero-img{
-  width:100%;
-  height:380px;
-  background:url("hero-bg.png") center/cover no-repeat;
-  border-radius:18px;
-  animation:heroMove 8s ease-in-out infinite alternate;
-  margin-bottom:26px;
+/* Überschriften allgemein */
+h1,h2,h3{
+  color:#1e3a8a;
+  font-weight:700;
 }
 
-/* GEÄNDERTE Animation – flüssig, schneller, oben → unten */
-@keyframes heroMove{
-  0%{
-    background-position:center 0px;
-  }
-  100%{
-    background-position:center -60px;
-  }
+/* Hintergrund-Layer deaktiviert */
+.site-bg{
+  display:none;
 }
 
 /* Header */
@@ -85,6 +77,7 @@ body{
   color:var(--muted);
 }
 
+/* Hamburger & Menü */
 .hamburger{
   width:42px;
   height:36px;
@@ -182,31 +175,32 @@ body{
   margin:6px 0;
 }
 
-/* HERO TEXT */
-.hero{
-  padding:44px 0 12px;
-  text-align:center;
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:none}
+}
 
-  /* NEU: garantiert perfekte Zentrierung */
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+@keyframes itemUp{
+  to{opacity:1;transform:none}
+}
+
+/* Hero-Bereich (Startseite) */
+.hero{
+  padding:84px 0 56px;
+  text-align:center;
 }
 
 .claim{
   font-size:2.6rem;
-  font-weight:700;
-  color:#1e3a8a;
   line-height:1.15;
-  margin:0 0 12px;
+  margin:0 0 10px;
+  letter-spacing:.2px;
 }
 
 .hero-sub{
   color:var(--muted);
   margin:0 auto;
-  max-width:760px;
-  font-size:1.1rem;
+  max-width:800px;
 }
 
 .cta-row{
@@ -231,32 +225,82 @@ body{
 
 .btn-primary{
   background:linear-gradient(135deg,var(--brand),var(--brand-2));
-  color:#fff;
+  color:#f9fafb;
   border-color:transparent;
 }
 
-/* SECTION */
+.btn-outline{
+  background:var(--panel);
+  color:var(--text);
+}
+
+/* Button Hover */
+.btn-primary:hover{
+  filter:brightness(1.06);
+  transform:translateY(-1px);
+}
+
+.btn-outline:hover{
+  background:#e5e7eb;
+}
+
+/* Sektionen allgemein */
 .section{
   padding:56px 0;
 }
 
+.section-alt{
+  background:linear-gradient(180deg,rgba(15,23,42,.03),rgba(15,23,42,0) 60%);
+}
+
 .section h2{
-  font-size:2rem;
-  color:#1e3a8a;
-  margin-bottom:8px;
+  font-size:1.8rem;
+  margin:0 0 8px;
 }
 
 .section-sub{
   color:var(--muted);
   max-width:700px;
-  margin-bottom:24px;
+  margin:0 0 18px;
 }
 
-/* Info Karten */
+.about{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  justify-content:center;
+}
+
+.values{
+  margin:10px 0 0;
+  padding-left:18px;
+}
+
+.values li{
+  margin:6px 0;
+}
+
+.legal h1,
+.legal h2{
+  margin-top:0;
+}
+
+.legal h3{
+  margin:18px 0 8px;
+}
+
+.disclaimer{
+  color:var(--muted);
+  font-size:.9rem;
+  margin-top:8px;
+}
+
+/* Info-Karten Startseite */
 .info-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:16px;
+  margin-top:14px;
 }
 
 .info-card{
@@ -265,51 +309,166 @@ body{
   padding:16px 18px;
   box-shadow:var(--shadow);
   border:1px solid rgba(15,23,42,.06);
+  text-align:left;
 }
 
 .info-card h3{
-  color:#1e3a8a;
   margin:0 0 6px;
+  font-size:1rem;
 }
 
 .info-card p{
   margin:0;
   color:var(--muted);
+  font-size:.95rem;
 }
 
-/* FAQ */
-.faq{
-  max-width:800px;
-  margin:0 auto;
+/* Leistungen Übersicht-Pills (falls verwendet) */
+.services-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
 }
 
-.faq-item{
-  border:1px solid rgba(15,23,42,.12);
-  border-radius:14px;
-  padding:16px;
-  margin-bottom:12px;
-  background:#fff;
+.service-pill{
+  padding:8px 14px;
+  border-radius:999px;
+  background:var(--panel);
+  border:1px solid rgba(15,23,42,.08);
   box-shadow:var(--shadow);
+  font-size:.95rem;
 }
 
-.faq-question{
-  font-weight:700;
-  font-size:1.1rem;
-  color:#1e3a8a;
+/* Akkordeon (Leistungen + FAQ Startseite) */
+.acc{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:14px;
+}
+
+.acc-item{
+  background:var(--panel);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(15,23,42,.06);
+  opacity:0;
+  transform:translateY(14px) scale(.985);
+  animation:popUp .34s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+.acc-item:nth-child(1){animation-delay:.06s}
+.acc-item:nth-child(2){animation-delay:.12s}
+.acc-item:nth-child(3){animation-delay:.18s}
+.acc-item:nth-child(4){animation-delay:.24s}
+.acc-item:nth-child(5){animation-delay:.30s}
+.acc-item:nth-child(6){animation-delay:.36s}
+
+.acc-header{
+  width:100%;
+  text-align:left;
+  border:none;
+  background:transparent;
   cursor:pointer;
+  padding:16px 18px;
+  color:var(--text);
+  font-weight:800;
+  font-size:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-.faq-answer{
-  margin-top:8px;
+.acc-header::after{
+  content:"";
+  width:10px;
+  height:10px;
+  border-right:2px solid var(--text);
+  border-bottom:2px solid var(--text);
+  transform:rotate(-45deg);
+  opacity:.7;
+  transition:transform .25s,opacity .25s;
+}
+
+.acc-item.active .acc-header::after{
+  transform:rotate(45deg);
+  opacity:1;
+}
+
+.acc-content{
+  max-height:0;
+  overflow:hidden;
   color:var(--muted);
-  display:none;
+  padding:0 18px;
+  transition:max-height .33s ease,padding .33s ease;
 }
 
-.faq-item.open .faq-answer{
-  display:block;
+.acc-item.active .acc-content{
+  max-height:1200px;
+  padding:0 18px 14px;
 }
 
-/* Footer */
+.bullet{
+  margin:8px 0 0;
+  padding-left:18px;
+}
+
+.bullet li{
+  margin:6px 0;
+}
+
+/* Formulare (Preise etc.) */
+.form{
+  max-width:760px;
+  margin-top:18px;
+}
+
+.form-row{
+  display:flex;
+  flex-direction:column;
+  margin:12px 0;
+}
+
+.form-row label{
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea{
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  background:#f9fafb;
+  color:var(--text);
+  border:1px solid rgba(148,163,184,.8);
+  border-radius:12px;
+  padding:12px 12px;
+  outline:none;
+  box-shadow:none;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus{
+  border-color:var(--ring);
+  box-shadow:0 0 0 1px rgba(37,99,235,.15);
+}
+
+.form-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-top:10px;
+}
+
+.muted{
+  color:var(--muted);
+}
+
+/* Standard-Footer (Unterseiten) */
 .site-footer{
   border-top:1px solid rgba(15,23,42,.06);
   padding:18px 0;
@@ -338,11 +497,155 @@ body{
   color:var(--text);
 }
 
-/* Mobile */
+@keyframes popUp{
+  from{opacity:0;transform:translateY(16px) scale(.985)}
+  to{opacity:1;transform:none}
+}
+
+/* Footer immer unten halten */
+main{
+  flex:1;
+}
+
+/* Mega-Footer (Startseite) */
+.mega-footer{
+  background:#0f172a;
+  color:#e5e7eb;
+  padding:50px 0;
+  margin-top:40px;
+}
+
+.mega-footer h3{
+  color:#ffffff;
+  margin-bottom:10px;
+  font-size:1.1rem;
+}
+
+.mega-footer a{
+  color:#cbd5e1;
+  text-decoration:none;
+  display:block;
+  margin:4px 0;
+  font-size:.95rem;
+}
+
+.mega-footer a:hover{
+  color:#ffffff;
+}
+
+.mega-footer-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:30px;
+}
+
+.mega-footer-contact{
+  font-size:.95rem;
+  line-height:1.6;
+}
+
+.footer-bottom{
+  text-align:center;
+  color:#cbd5e1;
+  margin-top:35px;
+  font-size:.9rem;
+}
+
+/* HERO nur oben mit Bild (Weil jedes System Vertrauen verdient) */
+.hero-img{
+  position:relative;
+  width:100%;
+  padding:140px 0 120px;
+  background:url("hero-bg.png") center/cover no-repeat;
+  overflow:hidden;
+  animation:heroMove 10s ease-in-out infinite alternate;
+}
+
+/* Dunkler Overlay, damit Bild kräftig sichtbar, Text aber lesbar */
+.hero-img::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(15,23,42,0.85),
+    rgba(15,23,42,0.55),
+    rgba(15,23,42,0.85)
+  );
+}
+
+/* Inhalt im Hero über das Bild legen */
+.hero-inner{
+  position:relative;
+  z-index:2;
+}
+
+/* Hero-Text weiß auf dem Bild */
+.hero-img .claim{
+  color:#f9fafb;
+}
+
+.hero-img .hero-sub{
+  color:#e5e7eb;
+}
+
+/* Buttons im Hero auf dunklem Hintergrund */
+.hero-img .btn-outline{
+  background:rgba(255,255,255,0.08);
+  color:#f9fafb;
+  border-color:rgba(255,255,255,0.35);
+}
+
+.hero-img .btn-outline:hover{
+  background:rgba(255,255,255,0.18);
+}
+
+/* Animation: Bild bewegt sich von oben nach unten, flüssig */
+@keyframes heroMove{
+  0%{
+    background-position:center -40px;
+  }
+  100%{
+    background-position:center 40px;
+  }
+}
+
+/* Mobile Anpassungen */
 @media (max-width:720px){
-  .claim{font-size:2.1rem;}
-  .info-grid{grid-template-columns:1fr;}
-  .cta-row{flex-direction:column;}
-  .btn{width:100%;}
-  .footer-row{flex-direction:column;gap:8px;}
+  .claim{
+    font-size:2rem;
+  }
+
+  .header-row{
+    padding:10px 0;
+  }
+
+  .cta-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .footer-row{
+    flex-direction:column;
+    gap:8px;
+    text-align:center;
+  }
+
+  .about{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .mega-footer-grid{
+    grid-template-columns:1fr;
+  }
 }

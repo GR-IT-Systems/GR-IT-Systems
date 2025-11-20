@@ -33,33 +33,24 @@ body{
   padding:0 20px;
 }
 
-/* Hintergrundbild Hero */
+/* Hero Bild */
 .hero-img{
   width:100%;
   height:380px;
   background:url("hero-bg.png") center/cover no-repeat;
   border-radius:18px;
-  animation:heroMove 16s ease-in-out infinite alternate;
+  animation:heroMove 8s ease-in-out infinite alternate;
   margin-bottom:26px;
 }
 
-/* ✓ NUR DIESE ANIMATION WURDE GEÄNDERT */
+/* GEÄNDERTE Animation – flüssig, schneller, oben → unten */
 @keyframes heroMove{
   0%{
     background-position:center 0px;
   }
   100%{
-    background-position:center -28px;
+    background-position:center -60px;
   }
-}
-
-/* Site wide animated bg */
-.site-bg{
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  background:transparent; /* Ausgeschaltet, weil du weiß wolltest */
 }
 
 /* Header */
@@ -94,7 +85,6 @@ body{
   color:var(--muted);
 }
 
-/* Hamburger */
 .hamburger{
   width:42px;
   height:36px;
@@ -192,10 +182,16 @@ body{
   margin:6px 0;
 }
 
-/* Hero Text */
+/* HERO TEXT */
 .hero{
   padding:44px 0 12px;
   text-align:center;
+
+  /* NEU: garantiert perfekte Zentrierung */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 }
 
 .claim{
@@ -239,7 +235,7 @@ body{
   border-color:transparent;
 }
 
-/* Info-Karten */
+/* SECTION */
 .section{
   padding:56px 0;
 }
@@ -256,6 +252,7 @@ body{
   margin-bottom:24px;
 }
 
+/* Info Karten */
 .info-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));

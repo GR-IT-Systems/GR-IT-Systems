@@ -9,12 +9,6 @@
   --shadow: 0 10px 25px rgba(15,23,42,.12);
 }
 
-/* Überschriften dunkelblau */
-h1, h2, h3{
-  color:#1e3a8a;
-  font-weight:700;
-}
-
 *{box-sizing:border-box}
 
 html,
@@ -39,9 +33,33 @@ body{
   padding:0 20px;
 }
 
-/* Hintergrund-Layer ausgeschaltet */
+/* Hintergrundbild Hero */
+.hero-img{
+  width:100%;
+  height:380px;
+  background:url("hero-bg.png") center/cover no-repeat;
+  border-radius:18px;
+  animation:heroMove 16s ease-in-out infinite alternate;
+  margin-bottom:26px;
+}
+
+/* ✓ NUR DIESE ANIMATION WURDE GEÄNDERT */
+@keyframes heroMove{
+  0%{
+    background-position:center 0px;
+  }
+  100%{
+    background-position:center -28px;
+  }
+}
+
+/* Site wide animated bg */
 .site-bg{
-  display:none;
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:transparent; /* Ausgeschaltet, weil du weiß wolltest */
 }
 
 /* Header */
@@ -76,7 +94,7 @@ body{
   color:var(--muted);
 }
 
-/* Hamburger & menu */
+/* Hamburger */
 .hamburger{
   width:42px;
   height:36px;
@@ -149,6 +167,7 @@ body{
 .menu-panel li:nth-child(5){animation-delay:.30s}
 .menu-panel li:nth-child(6){animation-delay:.36s}
 .menu-panel li:nth-child(7){animation-delay:.42s}
+.menu-panel li:nth-child(8){animation-delay:.48s}
 
 .menu-panel a{
   display:block;
@@ -173,32 +192,25 @@ body{
   margin:6px 0;
 }
 
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(6px)}
-  to{opacity:1;transform:none}
-}
-
-@keyframes itemUp{
-  to{opacity:1;transform:none}
-}
-
-/* Hero Grundlayout */
+/* Hero Text */
 .hero{
-  padding:84px 0 56px;
+  padding:44px 0 12px;
   text-align:center;
 }
 
 .claim{
   font-size:2.6rem;
+  font-weight:700;
+  color:#1e3a8a;
   line-height:1.15;
-  margin:0 0 10px;
-  letter-spacing:.2px;
+  margin:0 0 12px;
 }
 
 .hero-sub{
   color:var(--muted);
   margin:0 auto;
-  max-width:800px;
+  max-width:760px;
+  font-size:1.1rem;
 }
 
 .cta-row{
@@ -223,82 +235,31 @@ body{
 
 .btn-primary{
   background:linear-gradient(135deg,var(--brand),var(--brand-2));
-  color:#f9fafb;
+  color:#fff;
   border-color:transparent;
 }
 
-.btn-outline{
-  background:var(--panel);
-  color:var(--text);
-}
-
-/* Button Hover */
-.btn-primary:hover{
-  filter:brightness(1.06);
-  transform:translateY(-1px);
-}
-
-.btn-outline:hover{
-  background:#e5e7eb;
-}
-
-/* Sections & legal (für Unterseiten wiederverwendet) */
+/* Info-Karten */
 .section{
   padding:56px 0;
 }
 
-.section-alt{
-  background:linear-gradient(180deg,rgba(15,23,42,.03),rgba(15,23,42,0) 60%);
-}
-
 .section h2{
-  font-size:1.8rem;
-  margin:0 0 8px;
+  font-size:2rem;
+  color:#1e3a8a;
+  margin-bottom:8px;
 }
 
 .section-sub{
   color:var(--muted);
   max-width:700px;
-  margin:0 0 18px;
+  margin-bottom:24px;
 }
 
-.about{
-  display:flex;
-  gap:28px;
-  align-items:center;
-  justify-content:center;
-}
-
-.values{
-  margin:10px 0 0;
-  padding-left:18px;
-}
-
-.values li{
-  margin:6px 0;
-}
-
-.legal h1,
-.legal h2{
-  margin-top:0;
-}
-
-.legal h3{
-  margin:18px 0 8px;
-}
-
-.disclaimer{
-  color:var(--muted);
-  font-size:.9rem;
-  margin-top:8px;
-}
-
-/* Karten */
 .info-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:16px;
-  margin-top:14px;
 }
 
 .info-card{
@@ -307,149 +268,51 @@ body{
   padding:16px 18px;
   box-shadow:var(--shadow);
   border:1px solid rgba(15,23,42,.06);
-  text-align:left;
 }
 
 .info-card h3{
+  color:#1e3a8a;
   margin:0 0 6px;
-  font-size:1rem;
 }
 
 .info-card p{
   margin:0;
   color:var(--muted);
-  font-size:.95rem;
 }
 
-/* Akkordeon */
-.acc{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin-top:14px;
+/* FAQ */
+.faq{
+  max-width:800px;
+  margin:0 auto;
 }
 
-.acc-item{
-  background:var(--panel);
+.faq-item{
+  border:1px solid rgba(15,23,42,.12);
   border-radius:14px;
+  padding:16px;
+  margin-bottom:12px;
+  background:#fff;
   box-shadow:var(--shadow);
-  border:1px solid rgba(15,23,42,.06);
-  opacity:0;
-  transform:translateY(14px) scale(.985);
-  animation:popUp .34s cubic-bezier(.22,.61,.36,1) forwards;
 }
 
-.acc-item:nth-child(1){animation-delay:.06s}
-.acc-item:nth-child(2){animation-delay:.12s}
-.acc-item:nth-child(3){animation-delay:.18s}
-.acc-item:nth-child(4){animation-delay:.24s}
-.acc-item:nth-child(5){animation-delay:.30s}
-.acc-item:nth-child(6){animation-delay:.36s}
-
-.acc-header{
-  width:100%;
-  text-align:left;
-  border:none;
-  background:transparent;
-  cursor:pointer;
-  padding:16px 18px;
-  color:var(--text);
-  font-weight:800;
-  font-size:1rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.acc-header::after{
-  content:"";
-  width:10px;
-  height:10px;
-  border-right:2px solid var(--text);
-  border-bottom:2px solid var(--text);
-  transform:rotate(-45deg);
-  opacity:.7;
-  transition:transform .25s,opacity .25s;
-}
-
-.acc-item.active .acc-header::after{
-  transform:rotate(45deg);
-  opacity:1;
-}
-
-.acc-content{
-  max-height:0;
-  overflow:hidden;
-  color:var(--muted);
-  padding:0 18px;
-  transition:max-height .33s ease,padding .33s ease;
-}
-
-.acc-item.active .acc-content{
-  max-height:1200px;
-  padding:0 18px 14px;
-}
-
-.bullet{
-  margin:8px 0 0;
-  padding-left:18px;
-}
-
-.bullet li{
-  margin:6px 0;
-}
-
-/* Form */
-.form{
-  max-width:760px;
-  margin-top:18px;
-}
-
-.form-row{
-  display:flex;
-  flex-direction:column;
-  margin:12px 0;
-}
-
-.form-row label{
+.faq-question{
   font-weight:700;
-  margin-bottom:6px;
+  font-size:1.1rem;
+  color:#1e3a8a;
+  cursor:pointer;
 }
 
-.form-row input,
-.form-row select,
-.form-row textarea{
-  appearance:none;
-  -webkit-appearance:none;
-  -moz-appearance:none;
-  background:#f9fafb;
-  color:var(--text);
-  border:1px solid rgba(148,163,184,.8);
-  border-radius:12px;
-  padding:12px 12px;
-  outline:none;
-  box-shadow:none;
-}
-
-.form-row input:focus,
-.form-row select:focus,
-.form-row textarea:focus{
-  border-color:var(--ring);
-  box-shadow:0 0 0 1px rgba(37,99,235,.15);
-}
-
-.form-actions{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  margin-top:10px;
-}
-
-.muted{
+.faq-answer{
+  margin-top:8px;
   color:var(--muted);
+  display:none;
 }
 
-/* Standard-Footer (wird nur auf Unterseiten genutzt, hier aber belassen) */
+.faq-item.open .faq-answer{
+  display:block;
+}
+
+/* Footer */
 .site-footer{
   border-top:1px solid rgba(15,23,42,.06);
   padding:18px 0;
@@ -478,151 +341,11 @@ body{
   color:var(--text);
 }
 
-@keyframes popUp{
-  from{opacity:0;transform:translateY(16px) scale(.985)}
-  to{opacity:1;transform:none}
-}
-
-/* Footer immer unten halten */
-main{
-  flex:1;
-}
-
-/* Mega-Footer (Startseite) */
-.mega-footer{
-  background:#0f172a;
-  color:#e5e7eb;
-  padding:50px 0;
-  margin-top:40px;
-}
-
-.mega-footer h3{
-  color:#ffffff;
-  margin-bottom:10px;
-  font-size:1.1rem;
-}
-
-.mega-footer a{
-  color:#cbd5e1;
-  text-decoration:none;
-  display:block;
-  margin:4px 0;
-  font-size:.95rem;
-}
-
-.mega-footer a:hover{
-  color:#ffffff;
-}
-
-.mega-footer-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:30px;
-}
-
-.mega-footer-contact{
-  font-size:.95rem;
-  line-height:1.6;
-}
-
-.footer-bottom{
-  text-align:center;
-  color:#cbd5e1;
-  margin-top:35px;
-  font-size:.9rem;
-}
-
-/* HERO NUR OBEN MIT BILD */
-.hero-img{
-  position:relative;
-  width:100%;
-  padding:140px 0 120px;
-  background:url("hero-bg.png") center/cover no-repeat;
-  overflow:hidden;
-  animation:heroMove 18s ease-in-out infinite alternate;
-}
-
-/* dunkler Overlay, damit Bild sichtbar bleibt, Text aber lesbar */
-.hero-img::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(15,23,42,0.85),
-    rgba(15,23,42,0.55),
-    rgba(15,23,42,0.85)
-  );
-}
-
-/* Inhalt über das Bild legen */
-.hero-inner{
-  position:relative;
-  z-index:2;
-}
-
-/* Text im Hero weiß machen */
-.hero-img .claim{
-  color:#f9fafb;
-}
-
-.hero-img .hero-sub{
-  color:#e5e7eb;
-}
-
-/* Buttons im Hero an dunklen Hintergrund anpassen */
-.hero-img .btn-outline{
-  background:rgba(255,255,255,0.08);
-  color:#f9fafb;
-  border-color:rgba(255,255,255,0.35);
-}
-
-.hero-img .btn-outline:hover{
-  background:rgba(255,255,255,0.18);
-}
-
-/* leichte Bewegung des Hintergrundbildes */
-@keyframes heroMove{
-  0%{background-position:center}
-  100%{background-position:center 28px}
-}
-
-/* Mobile Anpassungen */
+/* Mobile */
 @media (max-width:720px){
-  .claim{
-    font-size:2rem;
-  }
-
-  .header-row{
-    padding:10px 0;
-  }
-
-  .cta-row{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .btn{
-    width:100%;
-    text-align:center;
-  }
-
-  .footer-row{
-    flex-direction:column;
-    gap:8px;
-    text-align:center;
-  }
-
-  .about{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .info-grid{
-    grid-template-columns:1fr;
-  }
-
-  .mega-footer-grid{
-    grid-template-columns:1fr;
-  }
+  .claim{font-size:2.1rem;}
+  .info-grid{grid-template-columns:1fr;}
+  .cta-row{flex-direction:column;}
+  .btn{width:100%;}
+  .footer-row{flex-direction:column;gap:8px;}
 }

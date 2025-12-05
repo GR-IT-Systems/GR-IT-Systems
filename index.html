@@ -237,5 +237,52 @@
     <script src="script.js"></script>
   </footer>
 
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #222;
+    color: #fff;
+    padding: 14px 20px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    z-index: 99999;
+  ">
+    <span>
+      Wir verwenden Cookies, um Ihre Erfahrung zu verbessern.
+      <a href="datenschutz.html" style="color: #0af;">Mehr erfahren</a>
+    </span>
+    <div>
+      <button id="cookie-accept" style="margin-right: 10px; padding: 6px 12px;">Akzeptieren</button>
+      <button id="cookie-decline" style="padding: 6px 12px;">Ablehnen</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const banner = document.getElementById("cookie-banner");
+      const consent = localStorage.getItem("cookieConsent");
+
+      if (!consent) {
+        banner.style.display = "flex";
+      }
+
+      document.getElementById("cookie-accept").addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "accepted");
+        banner.style.display = "none";
+      });
+
+      document.getElementById("cookie-decline").addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "declined");
+        banner.style.display = "none";
+      });
+    })();
+  </script>
+
 </body>
 </html>
